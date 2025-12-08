@@ -76,6 +76,7 @@
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension">
       <path value="Organization.address.line.extension" />
+      <max value="3" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse">
@@ -125,7 +126,51 @@
     <element id="Organization.address:Postfach">
       <path value="Organization.address" />
       <sliceName value="Postfach" />
-      <max value="0" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.type">
+      <path value="Organization.address.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.line">
+      <path value="Organization.address.line" />
+      <short value="Postfach" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.line.extension">
+      <path value="Organization.address.line.extension" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.line.extension:Postfach">
+      <path value="Organization.address.line.extension" />
+      <sliceName value="Postfach" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.line.extension:Postfach.value[x]">
+      <path value="Organization.address.line.extension.value[x]" />
+      <short value="Konkrete Postfachbezeichnung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.city">
+      <path value="Organization.address.city" />
+      <short value="Name der Stadt" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.postalCode">
+      <path value="Organization.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach.country">
+      <path value="Organization.address.country" />
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
