@@ -3,15 +3,15 @@
     Author: Ludger Schröder
     Datum:  09.12.2025
 
-    Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallbetrieb_01" dient der Validierung 
-    folgenden Szenarios (Standardfall):
+    Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallbetrieb_07" dient der Validierung 
+    folgenden Szenarios:
     
-    P: Maximalbefüllung eines Unfallbetriebs (volle Straßenadresse; mit Postfach)
+    N: Mehrere telecom-Angaben (Kardinalitätsverletzung)
 
 
 -->
 <Organization xmlns="http://hl7.org/fhir">
-    <id value="unfbetr-01" />
+    <id value="unfbetr-telecommehrfach-07" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
     </meta>
@@ -31,6 +31,12 @@
     <telecom>
         <system value="phone"/>
         <value value="+49 89 11 22 33 44"/>
+    </telecom>
+
+    <!-- 2. (überzählig): Mail-Kontakt Unfallbetrieb -->
+    <telecom>
+        <system value="email"/>
+        <value value="vn.nn@betrieb.de"/>
     </telecom>
 
     <!-- Strassenanschrift des Unfallbetriebs -->

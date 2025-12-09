@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  09.12.2025
+
+    Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallbetrieb_02" dient der Validierung 
+    folgenden Szenarios:
+    
+    P: Minimalbefüllung eines Unfallbetriebs (keine Kontaktangabe; Straßenadresse nur mit Ort; kein Postfach)
+
+
+-->
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="unfbetr-02" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h1>Hier finden Sie ein Beispiel für den Unfallbetrieb einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+        </div>
+    </text> 
+
+
+    <!-- Bezeichnung des Unfallbetriebs-->
+    <name value="Unfallvermeidungsgesellschaft mbH"/>
+
+    <!-- Strassenanschrift des Unfallbetriebs -->
+    <address>
+        <type value="both"/>
+        <city value="Sankt Fridolin"/>
+    </address>
+
+</Organization>
