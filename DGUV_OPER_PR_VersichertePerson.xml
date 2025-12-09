@@ -23,6 +23,13 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.meta.profile">
+      <path value="Patient.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.extension">
       <path value="Patient.extension" />
       <mustSupport value="true" />
@@ -86,9 +93,38 @@
       <sliceName value="VersichertenId" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.identifier:VersichertenId.type">
+      <path value="Patient.identifier.type" />
+      <short value="Kennzeichnung des Identifikators als lebenslange Krankenversichertennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:VersichertenId.system">
+      <path value="Patient.identifier.system" />
+      <short value="Namensraum der lebenslangen Krankenversichertennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:VersichertenId.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.identifier:VersichertenId_GKV">
       <path value="Patient.identifier" />
       <sliceName value="VersichertenId_GKV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:VersichertenId_GKV.type">
+      <path value="Patient.identifier.type" />
+      <short value="Kennzeichnung des Identifikators als GKV-Versichertennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:VersichertenId_GKV.system">
+      <path value="Patient.identifier.system" />
+      <short value="Menge der verfügbaren GKV-Versichertennummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:VersichertenId_GKV.value">
+      <path value="Patient.identifier.value" />
+      <short value="Konkrete GKV-Versichertennummer" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.identifier:Patientennummer">
@@ -96,9 +132,44 @@
       <sliceName value="Patientennummer" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.identifier:Patientennummer.type">
+      <path value="Patient.identifier.type" />
+      <short value="Kennzeichnung des Identifikators als Patientennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer.system">
+      <path value="Patient.identifier.system" />
+      <short value="Menge der im Krankenhaus-/Praxisverwaltungssystem verfügbaren Patientennummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Patientennummer.value">
+      <path value="Patient.identifier.value" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.identifier:Versichertennummer_PKV">
       <path value="Patient.identifier" />
       <sliceName value="Versichertennummer_PKV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.type">
+      <path value="Patient.identifier.type" />
+      <short value="Kennzeichnung des Identifikators als Versichertennummer einer privaten Krankenversicherung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.value">
+      <path value="Patient.identifier.value" />
+      <short value="Konkrete Versichertennummer innerhalb der PKV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner">
+      <path value="Patient.identifier.assigner" />
+      <short value="PKV-Versichertennummer ausgebende Stelle" />
+      <definition value="Assigner bei PKV immer anzugeben, da Versichertennummer_PKV nicht mit Sicherheit eindeutig" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.identifier:Versichertennummer_PKV.assigner.display">
+      <path value="Patient.identifier.assigner.display" />
+      <short value="Konkrete Bezeichnung der PKV-Nr-ausgebenden Stelle" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.name">
@@ -131,14 +202,29 @@
       <sliceName value="namenszusatz" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.name:Name.family.extension:namenszusatz.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.name:Name.family.extension:nachname">
       <path value="Patient.name.family.extension" />
       <sliceName value="nachname" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.name:Name.family.extension:nachname.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <short value="Konkreter Nachname" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.name:Name.family.extension:vorsatzwort">
       <path value="Patient.name.family.extension" />
       <sliceName value="vorsatzwort" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.name:Name.family.extension:vorsatzwort.value[x]">
+      <path value="Patient.name.family.extension.value[x]" />
+      <short value="Konkretes Vorsatzwort" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.name:Name.given">
@@ -239,6 +325,11 @@
       <definition value="Grund, warum das richtige Geburtsdatum nicht vorliegt" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.birthDate.extension:data_absent_reason.value[x]">
+      <path value="Patient.birthDate.extension.value[x]" />
+      <short value="Kürzel des konkreten Grundes für Fehlen des Geburtsdatums" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.address">
       <path value="Patient.address" />
       <short value="Adresse der versicherten Person" />
@@ -261,6 +352,11 @@
       <sliceName value="Stadtteil" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.address:Strassenanschrift.extension:Stadtteil.value[x]">
+      <path value="Patient.address.extension.value[x]" />
+      <short value="Konkreter Name des Stadt- oder Ortsteils" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.address:Strassenanschrift.type">
       <path value="Patient.address.type" />
       <mustSupport value="true" />
@@ -277,11 +373,18 @@
       <path value="Patient.address.line.extension" />
       <min value="2" />
       <max value="3" />
+      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Strasse">
       <path value="Patient.address.line.extension" />
       <sliceName value="Strasse" />
+      <short value="Straßenname (ohne Hausnummer)" />
       <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Strasse.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <short value="Konkreter Straßenname" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Hausnummer">
@@ -290,9 +393,19 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <short value="Konkrete Hausnummer" />
+      <mustSupport value="true" />
+    </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz">
       <path value="Patient.address.line.extension" />
       <sliceName value="Adresszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
+      <path value="Patient.address.line.extension.value[x]" />
+      <short value="Konkreter Adresszusatz" />
       <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.city">
@@ -322,8 +435,10 @@
     </element>
     <element id="Patient.address:Postfach.line">
       <path value="Patient.address.line" />
+      <short value="Postfach" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.line.extension">
       <path value="Patient.address.line.extension" />
@@ -351,6 +466,7 @@
     <element id="Patient.address:Postfach.postalCode">
       <path value="Patient.address.postalCode" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.country">
       <path value="Patient.address.country" />
