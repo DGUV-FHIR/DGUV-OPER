@@ -38,6 +38,7 @@
     </element>
     <element id="Organization.telecom">
       <path value="Organization.telecom" />
+      <short value="Angaben zu bestehenden Kontaktmöglichkeiten (Telefon, Fax, E-Mail usw.)" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
