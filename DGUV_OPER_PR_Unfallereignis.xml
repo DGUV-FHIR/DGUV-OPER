@@ -9,4 +9,22 @@
   <type value="Observation" />
   <baseDefinition value="http://fhir.dguv.de/Basis/Observation/DGUV-Basis-PR-Unfallereignis" />
   <derivation value="constraint" />
+  <differential>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile">
+      <path value="Observation.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
 </StructureDefinition>
