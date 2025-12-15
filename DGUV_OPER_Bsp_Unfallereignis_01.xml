@@ -19,15 +19,15 @@
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">
-      <h1>Hier finden Sie ein Beispiel der Unfallereignis einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+      <h1>Hier finden Sie ein Beispiel des Unfallereignisses einer verunfallten Person entsprechend dem Profil DGUV_OPER_PR_Unfallereignis</h1>
     </div>
   </text> 
 
 
-  <!-- Pflegeunfall slicing -->
+  <!-- Extension Pflegeunfall -->
   <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Pflegeunfall">
       <extension url="Pflegeunfall">
-        <valueBoolean value="false"/>
+        <valueBoolean value="true"/>
       </extension>
       <extension url="Pflegekasse">
         <valueReference>
@@ -39,12 +39,12 @@
   <!-- Observation status -->
   <status value="final"/>
 
-  <!-- Beispiel Durchgangsarztverfahren  -->
+  <!-- Teilberichtsinhalt Unfallereignis  -->
   <code>
     <coding>
-      <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-Verletzungsartenverzeichnis"/>
-      <code value="10.1V"/>
-      <display value="Schwere Verletzungen und Verletzungskombinationen (Polytrauma) mit einem Injury Severity Score (ISS) zwischen 16 und 24."/>
+      <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+      <code value="UE"/>
+      <display value="Unfallereignis"/>
     </coding>
   </code>
 
@@ -53,39 +53,17 @@
     <reference value="Farad_Rudi/T995030511" />
   </subject>
 
-  <!-- Relevante klinische(-r) Zeit/Zeitraum der Observation effective[x]-->
-  <effectiveDateTime value="2018-08-24T13:00:00+00:00"/>
+  <!-- Unfallzeitpunkt-->
+  <effectiveDateTime value="2025-12-12T17:00:00+00:00"/>
 
   <!-- Behandelnde(-r) Ärtztin/Arzt-->
+  <!--
   <performer>
     <reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466"/>
   </performer>
+  -->
 
-  <!-- Unfallereignis Komponente -->
-  <component>
-    <code>
-      <coding>
-        <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-UnfallereignisComponents"/>
-        <code value="03"/>
-        <display value="Unfallhergang"/>
-      </coding>
-    </code>
-    <valueString value="Der Versicherte ist auf dem Weg zum Sechstagerennen mit seinem Motorrad mit einer geschätzten Geschwindigkeit von 60 km/h gegen eine Leitplanke gefahren"/>
-  </component>
-
-  <!-- Unfallereignis Komponente -->
-  <component>
-    <code>
-      <coding>
-        <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-UnfallereignisComponents"/>
-        <code value="04"/>
-        <display value="Beschwerden/Klagen"/>
-      </coding>
-    </code>
-    <valueString value="Starke Schmerzen rechter Oberschenkel, Gefühlsstörung im Fuss"/>
-  </component>
-
-  <!-- Unfallereignis Komponente -->
+  <!-- Unfallereignis Komponente "Beschäftigt als"-->
   <component>
     <code>
       <coding>
@@ -94,7 +72,7 @@
         <display value="Beschäftigt als"/>
       </coding>
     </code>
-    <valueString value="Schrittmacher"/>
+    <valueString value="Mädchen für alles"/>
   </component>
 
   <!-- Unfallereignis Komponente -->
