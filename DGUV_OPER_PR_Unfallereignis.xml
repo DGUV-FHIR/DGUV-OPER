@@ -34,6 +34,18 @@
     <element id="Observation.extension:Pflegeunfall">
       <path value="Observation.extension" />
       <sliceName value="Pflegeunfall" />
+      <constraint>
+        <key value="dguv-pflegeunfall-1" />
+        <severity value="error" />
+        <human value="Wenn es sich um einen Pflegeunfall handelt, muss die Referenz zur Pflegekasse vorhanden sein." />
+        <expression value="(extension.where(url = 'Pflegeunfall').valueBoolean = true) implies (extension.where(url = 'Pflegekasse').exists())" />
+      </constraint>
+      <constraint>
+        <key value="dguv-pflegeunfall-2" />
+        <severity value="error" />
+        <human value="Wenn es sich um keinen Pflegeunfall handelt, darf die Referenz zur Pflegekasse nicht vorhanden sein." />
+        <expression value="(extension.where(url = 'Pflegeunfall').value = false) implies (extension.where(url = 'Pflegekasse').empty())" />
+      </constraint>
       <mustSupport value="true" />
     </element>
     <element id="Observation.extension:Pflegeunfall.extension">

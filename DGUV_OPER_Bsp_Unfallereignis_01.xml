@@ -6,7 +6,7 @@
     Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallereignis_01" dient der Validierung 
     folgenden Szenarios:
     
-    P: Maximalbefüllung eines Unfallereignisses (Pflegeunfall,-kasse, ...) >>>> Standardfall
+    P: Maximalbefüllung eines Unfallereignisses (Pflegeunfall,-kasse, Constraints “dguv-pflegeunfall-1/2“ eingehalten, ...) >>>> Standardfall
 
 
 -->
@@ -23,8 +23,7 @@
     </div>
   </text> 
 
-
-  <!-- Extension Pflegeunfall -->
+  <!-- Extension Pflegeunfall mit Pflegekasse -->
   <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Pflegeunfall">
       <extension url="Pflegeunfall">
         <valueBoolean value="true"/>
@@ -75,7 +74,7 @@
     <valueString value="Mädchen für alles"/>
   </component>
 
-  <!-- Unfallereignis Komponente -->
+  <!-- Unfallereignis Komponente "Beschäftigungsbeginn"-->
   <component>
     <code>
       <coding>
