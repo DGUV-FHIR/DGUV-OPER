@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Encounter/DGUV-OPER-PR-Aufenthaltsinformationen" />
+  <version value="1.0" />
+  <name value="DGUV_OPER_PR_Aufenthaltsinformationen" />
+  <title value="Aufenthaltsinformationen" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet die allgemeinen Daten zum stationären Aufenthalt ab." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Encounter" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Encounter" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Encounter.id">
+      <path value="Encounter.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.meta">
+      <path value="Encounter.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.meta.profile">
+      <path value="Encounter.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Encounter/DGUV-OPER-PR-Aufenthaltsinformationen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier">
+      <path value="Encounter.identifier" />
+      <short value="Identifier bildet Fallnummer ab" />
+      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers." />
+      <max value="1" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://fhir.de/StructureDefinition/identifier-abrechnungsnummer" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.type">
+      <path value="Encounter.identifier.type" />
+      <short value="Typ des Identifiers" />
+      <patternCodeableConcept>
+        <coding>
+          <code value="VN" />
+        </coding>
+        <text value="An identifier that is unique to an account." />
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type" />
+      </binding>
+    </element>
+    <element id="Encounter.identifier.type.coding">
+      <path value="Encounter.identifier.type.coding" />
+      <short value="Typ des Identifiers in kodierter Form" />
+      <min value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="VN" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.type.coding.system">
+      <path value="Encounter.identifier.type.coding.system" />
+      <short value="Werteraum des Identifier-Typs" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.type.coding.code">
+      <path value="Encounter.identifier.type.coding.code" />
+      <short value="Kürzel des Identifier-Typs" />
+      <min value="1" />
+      <patternCode value="VN" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.system">
+      <path value="Encounter.identifier.system" />
+      <short value="Wertebereich für die Fallnummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.identifier.value">
+      <path value="Encounter.identifier.value" />
+      <short value="Konkrete eindeutige Fallnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.subject">
+      <path value="Encounter.subject" />
+      <short value="Verweis auf die versicherte Person" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
