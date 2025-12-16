@@ -26,7 +26,7 @@
     </div>
   </text>
   
-  <!--<extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
    
     <extension url="code" >
         <valueCodeableConcept>
@@ -43,10 +43,10 @@
         <end value="2024-01-01"/>
       </valuePeriod>
     </extension>
-  </extension> -->
+  </extension> 
 
   <!-- GKV Identifier -->
-  <!-- Validierung: Constraint wirft keinen Fehler, da es nur der GKV Eintrag vorliegt -->
+  <!-- Validierung: Constraint wirft keinen Fehler -->
   <identifier>
     <type>
         <coding>
