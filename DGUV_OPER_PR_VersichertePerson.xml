@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-VersichertePerson" />
   <url value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
   <version value="0.1" />
   <name value="DGUV_OPER_PR_VersichertePerson" />
