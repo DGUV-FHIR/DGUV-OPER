@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-Composition" />
+  <url value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
+  <name value="DGUV_OPER_PR_Composition" />
+  <title value="OPER-Composition" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses “Profil” stellt ein Inhaltsverzeichnis aller Profile und profillosen Teilberichte für den Operationsbericht OPER dar." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Composition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Composition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Composition.id">
+      <path value="Composition.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta">
+      <path value="Composition.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta.profile">
+      <path value="Composition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.status">
+      <path value="Composition.status" />
+      <fixedCode value="final" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type">
+      <path value="Composition.type" />
+      <short value="Kennzeichnung Composition als Operationsbericht" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding">
+      <path value="Composition.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.system">
+      <path value="Composition.type.coding.system" />
+      <short value="Code-System mit Formtextvarianten bzw. Berichtstypen" />
+      <definition value="Mögliche Varianten an Formtexten bzw. Berichtstypen" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-Formtexte" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.code">
+      <path value="Composition.type.coding.code" />
+      <short value="Kürzel des konkreten Berichtstypen" />
+      <min value="1" />
+      <fixedCode value="OPER" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.type.coding.display">
+      <path value="Composition.type.coding.display" />
+      <short value="Bezeichnung des konkreten Berichtstypen" />
+      <min value="1" />
+      <fixedString value="Operationsbericht" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject">
+      <path value="Composition.subject" />
+      <short value="Verweis auf betroffene versicherte Person" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.subject.reference">
+      <path value="Composition.subject.reference" />
+      <short value="Konkreter Verweis auf versicherte Person" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.date">
+      <path value="Composition.date" />
+      <short value="Erstellungsdatum des Operationsberichts" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author">
+      <path value="Composition.author" />
+      <short value="Verweis auf Ersteller des Operationsberichts" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.author.reference">
+      <path value="Composition.author.reference" />
+      <short value="Konkreter Verweis auf Ersteller des Operationsberichts" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.title">
+      <path value="Composition.title" />
+      <short value="Menschenlesbarer Name/Titel des Berichts" />
+      <fixedString value="Operationsbericht" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section">
+      <path value="Composition.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="closed" />
+      </slicing>
+      <short value="Auflistung OPER-Profiltypen in OPER" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb">
+      <path value="Composition.section" />
+      <sliceName value="Unfallbetrieb" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <short value="Werteraum der Section-Typen" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <short value="Kürzel des Section-Typs" />
+      <min value="1" />
+      <fixedCode value="UNBT" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <short value="Bezeichnung des Section-Typs" />
+      <fixedString value="Unfallbetrieb" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.entry">
+      <path value="Composition.section.entry" />
+      <short value="Verweis auf das OPER-Profil Unfallbetrieb" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallbetrieb.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis">
+      <path value="Composition.section" />
+      <sliceName value="Unfallereignis" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <short value="Werteraum der Section-Typen" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <short value="Kürzel des Section-Typs" />
+      <min value="1" />
+      <fixedCode value="UFER" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <short value="Bezeichnung des Section-Typs" />
+      <fixedString value="Unfallereignis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.entry">
+      <path value="Composition.section.entry" />
+      <short value="Verweis auf das OPER-Profil Unfallereignis" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfallereignis.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
