@@ -51,10 +51,6 @@
         <text value="An identifier that is unique to an account." />
       </patternCodeableConcept>
       <mustSupport value="true" />
-      <binding>
-        <strength value="extensible" />
-        <valueSet value="http://hl7.org/fhir/ValueSet/identifier-type" />
-      </binding>
     </element>
     <element id="Encounter.identifier.type.coding">
       <path value="Encounter.identifier.type.coding" />
@@ -99,6 +95,14 @@
         <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="Encounter.serviceProvider">
+      <path value="Encounter.serviceProvider" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/Basis/Organization/DGUV-Basis-PR-BehandelndeEinrichtung" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>
