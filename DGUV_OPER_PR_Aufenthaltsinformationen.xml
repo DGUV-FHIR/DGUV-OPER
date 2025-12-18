@@ -33,7 +33,7 @@
     <element id="Encounter.identifier">
       <path value="Encounter.identifier" />
       <short value="Identifier bildet Fallnummer ab" />
-      <definition value="An identifier - identifies some entity uniquely and unambiguously. Typically this is used for business identifiers." />
+      <min value="1" />
       <max value="1" />
       <type>
         <code value="Identifier" />

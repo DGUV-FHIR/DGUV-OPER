@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: AFW
+    Datum:  18.12.25
+
+    Die vorliegende Beispiel Datei .... dient der Validierung 
+    der Datenaufnahme zu dem ......
+    
+    Zu beachten ist dabei ...
+
+    Durchzuführende Massnahmen:
+
+
+-->
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="DGUV-ENLA-Bsp-Aufenthaltsinformationen" />
+    <meta>
+        <profile value="http://fhir.dguv.de/ENLA/Encounter/DGUV-ENLA-PR-Aufenthaltsinformationen" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h1>Hier finden Sie ein Beispiel der Aufenthaltsinformationen einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+        </div>
+    </text> 
+
+    <status value="finished" />
+    <class>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+        <code value="IMP" />
+        <display value="inpatient encounter" />
+    </class>
+    <subject>
+        <reference value="Patient/Pat37501234" />
+    </subject>
+	<identifier>
+		<type>
+			<coding>
+				<system   value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="VN" />
+			</coding>
+		</type>
+    <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+    <value value="Fall123456789" />
+  </identifier>
+</Encounter>
