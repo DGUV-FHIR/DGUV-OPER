@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
+  <name value="DGUV_OPER_PR_Unfallereignis" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Observation" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Observation/DGUV-Basis-PR-Unfallereignis" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta">
+      <path value="Observation.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile">
+      <path value="Observation.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall">
+      <path value="Observation.extension" />
+      <sliceName value="Pflegeunfall" />
+      <constraint>
+        <key value="dguv-pflegeunfall-1" />
+        <severity value="error" />
+        <human value="Wenn es sich um einen Pflegeunfall handelt, muss die Referenz zur Pflegekasse vorhanden sein." />
+        <expression value="(extension.where(url = 'Pflegeunfall').valueBoolean = true) implies (extension.where(url = 'Pflegekasse').exists())" />
+      </constraint>
+      <constraint>
+        <key value="dguv-pflegeunfall-2" />
+        <severity value="error" />
+        <human value="Wenn es sich um keinen Pflegeunfall handelt, darf die Referenz zur Pflegekasse nicht vorhanden sein." />
+        <expression value="(extension.where(url = 'Pflegeunfall').value = false) implies (extension.where(url = 'Pflegekasse').empty())" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension">
+      <path value="Observation.extension.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension:Pflegeunfall">
+      <path value="Observation.extension.extension" />
+      <sliceName value="Pflegeunfall" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension:Pflegeunfall.value[x]">
+      <path value="Observation.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension:Pflegekasse">
+      <path value="Observation.extension.extension" />
+      <sliceName value="Pflegekasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension:Pflegekasse.value[x]">
+      <path value="Observation.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:Pflegeunfall.extension:Pflegekasse.value[x].reference">
+      <path value="Observation.extension.extension.value[x].reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.status">
+      <path value="Observation.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <short value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
+      <definition value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:DAV">
+      <path value="Observation.code.coding" />
+      <sliceName value="DAV" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:SAV-VAV">
+      <path value="Observation.code.coding" />
+      <sliceName value="SAV-VAV" />
+      <max value="0" />
+    </element>
+    <element id="Observation.code.coding:Teilberichtsinhalt">
+      <path value="Observation.code.coding" />
+      <sliceName value="Teilberichtsinhalt" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:Teilberichtsinhalt.system">
+      <path value="Observation.code.coding.system" />
+      <short value="CodeSystem für OPER-Teilberichtsinhalte" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:Teilberichtsinhalt.code">
+      <path value="Observation.code.coding.code" />
+      <short value="Kürzel für konkreten OPER-Teilberichtsinhalt" />
+      <min value="1" />
+      <fixedCode value="UE" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding:Teilberichtsinhalt.display">
+      <path value="Observation.code.coding.display" />
+      <short value="Konkrete Bezeichnung für OPER-Teilberichtsinhalt" />
+      <min value="1" />
+      <fixedString value="Unfallereignis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.subject">
+      <path value="Observation.subject" />
+      <short value="Verweis auf betroffene versicherte Person" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.subject.reference">
+      <path value="Observation.subject.reference" />
+      <short value="Konkreter Verweis auf versicherte Person" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.effective[x]">
+      <path value="Observation.effective[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component">
+      <path value="Observation.component" />
+      <min value="2" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeginnDerArbeitszeit">
+      <path value="Observation.component" />
+      <sliceName value="BeginnDerArbeitszeit" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:EndeDerArbeitszeit">
+      <path value="Observation.component" />
+      <sliceName value="EndeDerArbeitszeit" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:Unfallhergang">
+      <path value="Observation.component" />
+      <sliceName value="Unfallhergang" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:BeschwerdenKlagen">
+      <path value="Observation.component" />
+      <sliceName value="BeschwerdenKlagen" />
+      <max value="0" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls">
+      <path value="Observation.component" />
+      <sliceName value="BeschaeftigtAls" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.code">
+      <path value="Observation.component.code" />
+      <short value="Kennzeichnung Component als &quot;Beschäftigt als&quot;" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.code.coding">
+      <path value="Observation.component.code.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.code.coding.system">
+      <path value="Observation.component.code.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.code.coding.code">
+      <path value="Observation.component.code.coding.code" />
+      <short value="Code für Componenttyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.code.coding.display">
+      <path value="Observation.component.code.coding.display" />
+      <short value="Bezeichnung für Componenttyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:BeschaeftigtAls.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="Konkrete Beschreibung der Tätigkeit (Beruf)" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn">
+      <path value="Observation.component" />
+      <sliceName value="Beschaeftigungsbeginn" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.code">
+      <path value="Observation.component.code" />
+      <short value="Kennzeichnung Component als &quot;Beschäftigungsbeginn&quot;" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.code.coding">
+      <path value="Observation.component.code.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.code.coding.system">
+      <path value="Observation.component.code.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.code.coding.code">
+      <path value="Observation.component.code.coding.code" />
+      <short value="Code für Componenttyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.code.coding.display">
+      <path value="Observation.component.code.coding.display" />
+      <short value="Bezeichnung für Componenttyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.component:Beschaeftigungsbeginn.value[x]">
+      <path value="Observation.component.value[x]" />
+      <short value="Konkreter Beschäftigungsbeginn" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

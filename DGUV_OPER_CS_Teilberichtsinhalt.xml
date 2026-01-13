@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-CS-Teilberichtsinhalt" />
+  <url value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+  <version value="1.0" />
+  <name value="DGUV_OPER_CS_Teilberichtsinhalt" />
+  <title value="Teilberichtsinhalt" />
+  <status value="draft" />
+  <experimental value="false" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.dguv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses CodeSystem enthält die Codes und Displays zur differenzierteren Kennzeichnung von Profilen auf der Grundlage der Ressource Observation." />
+  <content value="complete" />
+  <concept>
+    <code value="UE" />
+    <display value="Unfallereignis" />
+  </concept>
+</CodeSystem>
