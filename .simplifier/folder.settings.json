@@ -1,4 +1,4 @@
 {
   "IncludeSubdirectories": true,
-  "PreferredFormat": "Json"
+  "PreferredFormat": "Xml"
 }
