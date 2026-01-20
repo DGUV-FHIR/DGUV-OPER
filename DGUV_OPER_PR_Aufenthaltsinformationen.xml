@@ -45,6 +45,7 @@
     <element id="Encounter.identifier:Fallnummer">
       <path value="Encounter.identifier" />
       <sliceName value="Fallnummer" />
+      <short value="Identifier bildet Fallnummer ab" />
       <min value="1" />
       <max value="1" />
       <patternIdentifier>
@@ -85,6 +86,7 @@
     </element>
     <element id="Encounter.identifier:Fallnummer.type.coding.code">
       <path value="Encounter.identifier.type.coding.code" />
+      <short value="Hier ist stets der Wert VN anzugeben." />
       <min value="1" />
       <patternCode value="VN" />
       <mustSupport value="true" />
@@ -93,6 +95,7 @@
       <path value="Encounter.identifier.system" />
       <min value="1" />
       <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
     </element>
     <element id="Encounter.identifier:Fallnummer.value">
       <path value="Encounter.identifier.value" />
