@@ -15,7 +15,7 @@
 <Encounter xmlns="http://hl7.org/fhir">
     <id value="DGUV-ENLA-Bsp-Aufenthaltsinformationen" />
     <meta>
-        <profile value="http://fhir.dguv.de/ENLA/Encounter/DGUV-ENLA-PR-Aufenthaltsinformationen" />
+        <profile value="http://fhir.dguv.de/OPER/Encounter/DGUV-OPER-PR-Aufenthaltsinformationen" />
     </meta>
 
     <text>
@@ -24,7 +24,16 @@
             <h1>Hier finden Sie ein Beispiel der Aufenthaltsinformationen einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
         </div>
     </text> 
-
+    <identifier>
+		<type>
+			<coding>
+				<system   value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+				<code value="VN" />
+			</coding>
+		</type>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <value value="Fall123456789" />
+    </identifier>
     <status value="finished" />
     <class>
         <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
@@ -34,14 +43,5 @@
     <subject>
         <reference value="Patient/Pat37501234" />
     </subject>
-	<identifier>
-		<type>
-			<coding>
-				<system   value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
-				<code value="VN" />
-			</coding>
-		</type>
-    <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-    <value value="Fall123456789" />
-  </identifier>
+	
 </Encounter>
