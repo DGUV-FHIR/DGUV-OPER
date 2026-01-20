@@ -12,36 +12,47 @@
 
 
 -->
-<Encounter xmlns="http://hl7.org/fhir">
-    <id value="DGUV-ENLA-Bsp-Aufenthaltsinformationen" />
-    <meta>
-        <profile value="http://fhir.dguv.de/OPER/Encounter/DGUV-OPER-PR-Aufenthaltsinformationen" />
-    </meta>
 
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>Hier finden Sie ein Beispiel der Aufenthaltsinformationen einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
-        </div>
-    </text> 
-    <identifier>
-		<type>
-			<coding>
-				<system   value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
-				<code value="VN" />
-			</coding>
-		</type>
-        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-        <value value="Fall123456789" />
-    </identifier>
-    <status value="finished" />
-    <class>
-        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
-        <code value="IMP" />
-        <display value="inpatient encounter" />
-    </class>
-    <subject>
-        <reference value="Patient/Pat37501234" />
-    </subject>
-	
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="aufenthalt-2026-04-02"/>
+
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Encounter/DGUV-OPER-PR-Aufenthaltsinformationen"/>
+  </meta>
+
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      Beispiel-Aufenthaltsinformation nach DGUV-OPER
+    </div>
+  </text>
+
+  <!-- Slice: Fallnummer (v2‑0203:VN muss enthalten sein) -->
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="VN"/>
+      </coding>
+    </type>
+
+    <!-- Kein example.org, kein urn:oid -->
+    <system value="https://fhir.dguv.de/fallnummer"/>
+    <value value="VN-2026-123456"/>
+  </identifier>
+
+  <status value="finished"/>
+  
+  <!-- Pflichtfeld laut deinem aktualisierten Profil -->
+  <class>
+    <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+    <code value="IMP"/>
+  </class>
+  <subject>
+    <reference value="Patient/VP-2026-011"/>
+  </subject>
+
+  <serviceProvider>
+    <reference value="Organization/KH-Sankt-Augustin"/>
+  </serviceProvider>
 </Encounter>

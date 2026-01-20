@@ -94,17 +94,36 @@
     <element id="Encounter.identifier:Fallnummer.system">
       <path value="Encounter.identifier.system" />
       <min value="1" />
-      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.identifier:Fallnummer.value">
       <path value="Encounter.identifier.value" />
+      <short value="Konkrete eindeutige Fallnummer" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Encounter.status">
       <path value="Encounter.status" />
       <fixedCode value="finished" />
+    </element>
+    <element id="Encounter.class">
+      <path value="Encounter.class" />
+      <short value="Art des Aufenthalts eines Patienten" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.system">
+      <path value="Encounter.class.system" />
+      <short value="CodeSystem für die Art des Aufenthalts eines Patienten" />
+      <min value="1" />
+      <fixedUri value="http://terminology.hl7.org/CodeSystem/v3-ActCode" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Encounter.class.code">
+      <path value="Encounter.class.code" />
+      <short value="Kürzel für einen stationären Krankenhausaufenthalt" />
+      <min value="1" />
+      <fixedCode value="IMP" />
+      <mustSupport value="true" />
     </element>
     <element id="Encounter.subject">
       <path value="Encounter.subject" />
