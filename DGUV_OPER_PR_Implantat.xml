@@ -32,7 +32,7 @@
     </element>
     <element id="Device.patient">
       <path value="Device.patient" />
-      <short value="Verweis auf versicherte Person, die mit Implantat versehen wird" />
+      <short value="Verweis auf versicherte Person, der Implantat eingesetzt wird" />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -42,7 +42,7 @@
     </element>
     <element id="Device.patient.reference">
       <path value="Device.patient.reference" />
-      <short value="Konkreter Verweis auf versicherte Person, die mit Implantat versehen wird" />
+      <short value="Konkreter Verweis auf versicherte Person, der Implantat eingesetzt wird" />
       <mustSupport value="true" />
     </element>
   </differential>
