@@ -125,6 +125,13 @@
       <fixedCode value="IMP" />
       <mustSupport value="true" />
     </element>
+    <element id="Encounter.class.display">
+      <path value="Encounter.class.display" />
+      <short value="Bezeichnung als stationärer Krankenhausaufenthalt" />
+      <min value="1" />
+      <fixedString value="inpatient encounter" />
+      <mustSupport value="true" />
+    </element>
     <element id="Encounter.subject">
       <path value="Encounter.subject" />
       <short value="Verweis auf die versicherte Person" />
