@@ -91,6 +91,10 @@
       <patternCode value="VN" />
       <mustSupport value="true" />
     </element>
+    <element id="Encounter.identifier:Fallnummer.type.coding.display">
+      <path value="Encounter.identifier.type.coding.display" />
+      <min value="1" />
+    </element>
     <element id="Encounter.identifier:Fallnummer.system">
       <path value="Encounter.identifier.system" />
       <min value="1" />
