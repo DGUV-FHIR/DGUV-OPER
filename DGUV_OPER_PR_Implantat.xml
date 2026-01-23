@@ -30,6 +30,30 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
       <mustSupport value="true" />
     </element>
+    <element id="Device.extension">
+      <path value="Device.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName">
+      <path value="Device.deviceName" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.name">
+      <path value="Device.deviceName.name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.type">
+      <path value="Device.deviceName.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type">
+      <path value="Device.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.type.text">
+      <path value="Device.type.text" />
+      <mustSupport value="true" />
+    </element>
     <element id="Device.patient">
       <path value="Device.patient" />
       <short value="Verweis auf versicherte Person, der Implantat eingesetzt wird" />
@@ -43,6 +67,7 @@
     <element id="Device.patient.reference">
       <path value="Device.patient.reference" />
       <short value="Konkreter Verweis auf versicherte Person, der Implantat eingesetzt wird" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
   </differential>
