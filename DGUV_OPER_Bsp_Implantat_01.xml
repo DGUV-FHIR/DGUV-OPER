@@ -10,7 +10,7 @@
 
 
 -->
-<Organization xmlns="http://hl7.org/fhir">
+<Device xmlns="http://hl7.org/fhir">
     <id value="implant-01" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
@@ -19,50 +19,22 @@
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>Hier finden Sie ein Beispiel für den Unfallbetrieb einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+            <h1>Hier finden Sie ein Beispiel für ein in einer Operation bei einer verunfallten Person eingesetztes Implantat.</h1>
         </div>
     </text> 
 
+    <!-- Extension für Seitigkeit ?-->
 
-    <!-- Bezeichnung des Unfallbetriebs-->
-    <name value="Unfallvermeidungsgesellschaft mbH"/>
+    <!-- deviceName für Implantatname ?-->
 
-    <!-- Telefon Kontakt Unfallbetrieb -->
-    <telecom>
-        <system value="phone"/>
-        <value value="+49 89 11 22 33 44"/>
-    </telecom>
+    <!-- type für Implantatbeschreibung -->
+    <type>
+        <text value="Synthes 4-Loch VA-LCP anterolat. prox. Tibiaplatte Stahl, Synthes LCP 6-Loch prox. posteromediale Tibiaplatte Titan, 2 x KLS Martin Herbertschrauben Midi, 2 x Kortikaliszugschraube 3.5 mm Stahl mit Unterlegscheibe" />
+    </type> 
 
-    <!-- Strassenanschrift des Unfallbetriebs -->
-    <address>
-        <type value="both"/>
-        <line value="Johann-Lafer-Gasse 2">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
-                <valueString value="Johann-Lafer-Gasse"/>
-            </extension>
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-                <valueString value="2"/>
-            </extension>
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
-                <valueString value="hinten rum"/>
-            </extension>
-        </line>
-        <city value="Sankt Fridolin"/>
-        <postalCode value="53757"/>
-        <country value="DE"/>
-    </address>
+    <!-- Referenz auf Patient / VersichertePerson -->
+    <patient> 
+        <reference value="482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+    </patient>
 
-    <!-- Postfachadresse des Unfallbetriebs -->
-    <address>
-        <type value="postal"/>
-        <line value="Postfach 4711">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
-                <valueString value="Postfach 4711"/>
-            </extension>
-        </line>
-        <city value="Sankt Augustin"/>
-        <postalCode value="53700"/>
-        <country value="DE"/>
-    </address>
-
-</Organization>
+</Device>
