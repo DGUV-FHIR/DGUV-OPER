@@ -71,5 +71,9 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Device.location">
+      <path value="Device.location" />
+      <mustSupport value="true" />
+    </element>
   </differential>
 </StructureDefinition>
