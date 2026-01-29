@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+  <name value="DGUV_OPER_PR_Leistungserbringer" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Practitioner/DGUV-Basis-PR-Leistungserbringer" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner.id">
+      <path value="Practitioner.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta">
+      <path value="Practitioner.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.profile">
+      <path value="Practitioner.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <max value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier:EFN">
+      <path value="Practitioner.identifier" />
+      <sliceName value="EFN" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name">
+      <path value="Practitioner.name" />
+      <sliceName value="Name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.family">
+      <path value="Practitioner.name.family" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.given">
+      <path value="Practitioner.name.given" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.prefix">
+      <path value="Practitioner.name.prefix" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.prefix.extension">
+      <path value="Practitioner.name.prefix.extension" />
+      <min value="1" />
+    </element>
+    <element id="Practitioner.name:Name.prefix.extension:prefix-qualifier">
+      <path value="Practitioner.name.prefix.extension" />
+      <sliceName value="prefix-qualifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.prefix.extension:prefix-qualifier.value[x]">
+      <path value="Practitioner.name.prefix.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Geburtsname">
+      <path value="Practitioner.name" />
+      <sliceName value="Geburtsname" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.telecom">
+      <path value="Practitioner.telecom" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.address">
+      <path value="Practitioner.address" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.gender">
+      <path value="Practitioner.gender" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.birthDate">
+      <path value="Practitioner.birthDate" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
