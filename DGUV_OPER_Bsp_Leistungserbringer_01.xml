@@ -1,5 +1,4 @@
-<Practitioner xmlns="http://hl7.org/fhir">
-    <!--
+  <!--
     Author: AFW
     Datum:  22.01.26
 
@@ -12,7 +11,9 @@
 
 
 -->
-    <id value="DGUV-OPER-Bsp-Leistungserbringer" />
+
+<Practitioner xmlns="http://hl7.org/fhir">
+      <id value="DGUV-OPER-Bsp-Leistungserbringer" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer"/> 
     </meta>
