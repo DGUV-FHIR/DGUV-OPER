@@ -44,6 +44,7 @@
     </element>
     <element id="Device.deviceName.type">
       <path value="Device.deviceName.type" />
+      <comment value="Hier wird angegeben, um welche Art Namen es sich handelt." />
       <mustSupport value="true" />
     </element>
     <element id="Device.type">
@@ -60,7 +61,7 @@
     </element>
     <element id="Device.patient">
       <path value="Device.patient" />
-      <short value="Verweis auf versicherte Person, der Implantat eingesetzt wird" />
+      <short value="Verweis auf versicherte Person, der das Implantat eingesetzt wurde" />
       <min value="1" />
       <type>
         <code value="Reference" />
@@ -70,12 +71,8 @@
     </element>
     <element id="Device.patient.reference">
       <path value="Device.patient.reference" />
-      <short value="Konkreter Verweis auf versicherte Person, der Implantat eingesetzt wird" />
+      <short value="Konkreter Verweis auf versicherte Person, der das Implantat eingesetzt wurde" />
       <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.location">
-      <path value="Device.location" />
       <mustSupport value="true" />
     </element>
   </differential>
