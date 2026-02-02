@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  02.02.2026
+
+    Die vorliegende Beispiel Datei "DGUV_OPER_PR_Unfallversicherungstraeger_01" dient der Validierung 
+    folgenden Szenarios (Standardfall):
+    
+    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse, Postfach)
+
+-->
+
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="uv-traeger-01" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Hier finden Sie ein Beispiel des Unfallversicherungstraegers einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+        </div>
+    </text> 
+
+    <!--   Institutionskennzeichen   -->
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+                <code value="XX" />
+                <display value="Organization identifier" />
+            </coding>
+        </type>
+        <system value="http://fhir.de/sid/arge-ik/iknr" />
+        <value value="120391742" />
+    </identifier>
+
+    <!--Telematik-ID-->
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="PRN"/>
+                <display value="Provider number" />
+             </coding>
+        </type>
+        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+        <value value="8-01-0000000090"/>
+    </identifier>
+
+
+    <!-- Name des Unfallversicherungsträgers-->
+    <name value="Braunschweigischer GUVV" />
+    <telecom>
+		<system value="phone"/>
+		<value value="0531 27374-0"/>
+	</telecom>
+    <address>
+        <type value="both" />
+        <line value="Berliner Platz 1 C (Ring-Center)">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                <valueString value="1 C" />
+            </extension>
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                <valueString value="Berliner Platz" />
+            </extension>
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+                <valueString value="(Ring-Center)" />
+            </extension>
+        </line>
+        <city value="Braunschweig" />
+        <postalCode value="38102" />
+    </address>
+</Organization>
