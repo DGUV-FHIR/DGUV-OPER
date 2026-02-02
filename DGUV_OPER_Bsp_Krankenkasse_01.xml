@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  28.01.2026
+    Datum:  02.02.2026
 
     Die vorliegende Beispiel Datei "DGUV_OPER_PR_Krankenkasse_01" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung einer Krankenkasse (IK-Nr., <ggf. um Telematik-ID ergänzen>, Name, Telefon-Kontakt, Straßenadresse, Postfach)
+    P: Maximalbefüllung einer Krankenkasse (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse, Postfach)
 
 -->
 <Organization xmlns="http://hl7.org/fhir">
@@ -32,8 +32,24 @@
              </coding>
         </type>
         <system value="http://fhir.de/sid/arge-ik/iknr"/>
-        <value value="107202793"/>
+        <value value="260120196"/>
     </identifier>
+
+    <!--Telematik-ID-->
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="PRN"/>
+                <display value="Provider number" />
+             </coding>
+        </type>
+        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+        <value value="8-01-0000000090"/>
+    </identifier>
+
+
+
 
     <!-- Name der Krankenkasse-->
     <name value="AOK Herzogtum Lauenburg"/>

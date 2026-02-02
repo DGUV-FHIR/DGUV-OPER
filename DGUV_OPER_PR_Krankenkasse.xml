@@ -94,6 +94,65 @@
       <short value="Konkrete IKNR" />
       <mustSupport value="true" />
     </element>
+    <element id="Organization.identifier:Telematik-ID">
+      <path value="Organization.identifier" />
+      <sliceName value="Telematik-ID" />
+      <short value="Identifikationsnummer in Telematikinfrastruktur" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Identifikationsnummer in Telematikinfrastruktur" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <display value="Provider number" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="PRN" />
+        <display value="Provider number" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="PRN" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding.display">
+      <path value="Organization.identifier.type.coding.display" />
+      <short value="Bezeichnung für Identifikatortyp" />
+      <patternString value="Provider number" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher Telematik-IDs" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.value">
+      <path value="Organization.identifier.value" />
+      <short value="Konkrete Telematik-ID" />
+      <mustSupport value="true" />
+    </element>
     <element id="Organization.name">
       <path value="Organization.name" />
       <mustSupport value="true" />
