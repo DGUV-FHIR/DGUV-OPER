@@ -6,7 +6,7 @@
     Die vorliegende Beispiel Datei "DGUV_OPER_PR_Unfallversicherungstraeger_01" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse, Postfach)
+    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-/Email-Kontakt, Straßenadresse, Postfach)
 
 -->
 
@@ -52,10 +52,20 @@
 
     <!-- Name des Unfallversicherungsträgers-->
     <name value="Braunschweigischer GUVV" />
+
+    <!-- Telefon-Kontakt zum Unfallversicherungsträger -->
     <telecom>
 		<system value="phone"/>
 		<value value="0531 27374-0"/>
 	</telecom>
+
+    <!-- E-Mail-Kontakt zum Unfallversicherungsträger -->
+    <telecom>
+		<system value="email"/>
+		<value value="info@bs-guv.de"/>
+	</telecom>
+
+    <!-- Strassen-Adresse der Krankenkasse -->
     <address>
         <type value="both" />
         <line value="Berliner Platz 1 C (Ring-Center)">
@@ -72,4 +82,18 @@
         <city value="Braunschweig" />
         <postalCode value="38102" />
     </address>
+
+    <!-- UNFERTIG: Postfach-Adresse der Krankenkasse -->
+    <address>
+        <type value="postal"/>
+        <line value="Postfach 999">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+                <valueString value="Postfach 999"/>
+            </extension>
+        </line>
+        <city value="Mölln"/>
+        <postalCode value="23888"/>
+        <country value="DE"/>
+    </address>
+
 </Organization>
