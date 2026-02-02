@@ -168,6 +168,7 @@
     <element id="Organization.address">
       <path value="Organization.address" />
       <short value="Adresse der Krankenkasse" />
+      <max value="1" />
     </element>
     <element id="Organization.address:Strassenanschrift">
       <path value="Organization.address" />
