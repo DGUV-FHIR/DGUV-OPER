@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  02.02.2026
+    Datum:  03.02.2026
 
     Die vorliegende Beispiel Datei "DGUV_OPER_PR_Krankenkasse_01" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung einer Krankenkasse (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse, Postfach)
+    P: Maximalbefüllung einer Krankenkasse (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse)
 
 -->
 <Organization xmlns="http://hl7.org/fhir">
@@ -70,19 +70,6 @@
         </line>
         <city value="Mölln"/>
         <postalCode value="23879"/>
-        <country value="DE"/>
-    </address>
-
-    <!-- Postfach-Adresse der Krankenkasse -->
-    <address>
-        <type value="postal"/>
-        <line value="Postfach 999">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
-                <valueString value="Postfach 999"/>
-            </extension>
-        </line>
-        <city value="Mölln"/>
-        <postalCode value="23888"/>
         <country value="DE"/>
     </address>
 
