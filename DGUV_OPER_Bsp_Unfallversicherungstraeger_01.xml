@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  02.02.2026
+    Datum:  03.02.2026
 
     Die vorliegende Beispiel Datei "DGUV_OPER_PR_Unfallversicherungstraeger_01" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-/Email-Kontakt, Straßenadresse, Postfach)
+    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-/Email-Kontakt, Straßenadresse)
 
 -->
 
@@ -19,7 +19,7 @@
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-        <h1>Hier finden Sie ein Beispiel des Unfallversicherungstraegers einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+        <h1>Hier finden Sie ein Beispiel für den Unfallversicherungstraeger einer verunfallten Person</h1>
         </div>
     </text> 
 
@@ -65,15 +65,15 @@
 		<value value="info@bs-guv.de"/>
 	</telecom>
 
-    <!-- Strassen-Adresse der Krankenkasse -->
+    <!-- Strassen-Adresse des Unfallversicherungsträgers -->
     <address>
         <type value="both" />
         <line value="Berliner Platz 1 C (Ring-Center)">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-                <valueString value="1 C" />
-            </extension>
             <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
                 <valueString value="Berliner Platz" />
+            </extension>
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                <valueString value="1 C" />
             </extension>
             <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
                 <valueString value="(Ring-Center)" />
@@ -81,18 +81,6 @@
         </line>
         <city value="Braunschweig" />
         <postalCode value="38102" />
-    </address>
-
-    <!-- UNFERTIG: Postfach-Adresse der Krankenkasse -->
-    <address>
-        <type value="postal"/>
-        <line value="Postfach 999">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
-                <valueString value="Postfach 999"/>
-            </extension>
-        </line>
-        <city value="Mölln"/>
-        <postalCode value="23888"/>
         <country value="DE"/>
     </address>
 
