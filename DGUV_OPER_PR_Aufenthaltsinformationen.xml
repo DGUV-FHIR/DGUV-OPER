@@ -72,6 +72,7 @@
     <element id="Encounter.identifier:Fallnummer.type.coding">
       <path value="Encounter.identifier.type.coding" />
       <min value="1" />
+      <max value="1" />
       <patternCoding>
         <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
         <code value="VN" />
