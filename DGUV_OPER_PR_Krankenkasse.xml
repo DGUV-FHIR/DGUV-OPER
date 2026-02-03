@@ -159,7 +159,7 @@
     </element>
     <element id="Organization.telecom">
       <path value="Organization.telecom" />
-      <comment value="Basis-Profil wird beim Typ nicht durch ein ENLA-Profil ersetzt, da es sich hier nur um ein erweitertes Attribut handelt." />
+      <comment value="Basis-Profil wird beim Typ nicht durch ein OPER-Profil ersetzt, da es sich hier nur um ein erweitertes Attribut handelt." />
     </element>
     <element id="Organization.telecom.value">
       <path value="Organization.telecom.value" />
