@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  05.02.2026
+
+    Die vorliegende Beispiel Datei "DGUV_OPER_PR_VersichertenVerhaeltnis_04" dient der Validierung 
+    folgenden Szenarios:
+    
+    N: Ausgehend von Standardfall: Nicht familienversichert, Mitgliedsname vorhanden (Constraintverletzung: dguv-famvers-2)
+
+-->
+<Coverage xmlns="http://hl7.org/fhir">
+<id value="versverhaeltn-03" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+        <h1>Hier finden Sie ein Beispiel für das Versichertenverhältnis einer verunfallten Person</h1>
+        </div>
+    </text>
+
+<!--
+    Familienversicherung: Pflichtangabe !
+
+    Verunfallte Person ist nicht familien(mit)versichert:
+    Das Element <extension url="Mitgliedsname"> existiert und enthält einen String.length > 0 (Constraintverletzung: dguv-famvers-2).
+-->
+    <extension  url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Familienversicherung">
+            <extension url="Familienversichert">
+                <valueBoolean value="false" />
+            </extension>
+            <extension url="Mitgliedsname">  
+                <valueString value="Mutter von Unfallopfer" />
+            </extension>
+    </extension>
+
+<!-- Status -->    
+    <status value="active"/>
+
+<!--
+    Verweis auf Patient / versorgte Person: Pflichtangabe !
+ -->
+    <beneficiary>
+        <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+    </beneficiary>
+
+<!--
+    Verweis auf den Unfallversicherungsträger als Kostenträger: Pflichtangabe !
+-->
+    <payor>
+        <reference value="urn:uuid:180f219f-97a8-486d-99d9-ed631fe4fc60"/>
+    </payor>
+</Coverage>
