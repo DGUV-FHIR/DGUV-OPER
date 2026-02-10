@@ -3,7 +3,7 @@
     Author: Ludger Schröder
     Datum:  15.12.2025
 
-    Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallereignis_01" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV-OPER-PR-Unfallereignis_01" dient der Validierung 
     folgenden Szenarios:
     
     N: Constraint “dguv-pflegeunfall-1” verletzt (Pflegeunfall ohne Pflegekasse)
