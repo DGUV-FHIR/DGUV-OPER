@@ -20,4 +20,8 @@
     <code value="UE" />
     <display value="Unfallereignis" />
   </concept>
+  <concept>
+    <code value="OPBV" />
+    <display value="OPBefundVerlauf" />
+  </concept>
 </CodeSystem>
