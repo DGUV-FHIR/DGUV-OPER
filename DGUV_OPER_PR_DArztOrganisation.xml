@@ -12,6 +12,7 @@
   <differential>
     <element id="Organization.id">
       <path value="Organization.id" />
+      <fixedString value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-DArztOrganisation" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.meta">
