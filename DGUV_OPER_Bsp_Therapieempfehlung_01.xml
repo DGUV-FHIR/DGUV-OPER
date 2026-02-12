@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: Ludger Schröder
+ Datum: 12.02.2026
+
+ Die vorliegende Beispiel Datei "DGUV_OPER_Bsp_Therapieempfehlung_01" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ 
+ P: Maximalbefüllung einer Instanz Therapieempfehlung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung der Therapieempfehlung)
+-->
+
+<Observation xmlns="http://hl7.org/fhir">
+
+  <!--Meta-Daten-->
+  <id value="therapieempfehlung-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Therapieempfehlung"/>
+  </meta>
+
+  <!--Status-->
+  <status value="final"/>
+
+  <!--Teilberichtsinhalt-->
+  <code>
+    <coding>
+      <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+      <code value="THE"/>
+      <display value="Therapieempfehlung"/>
+    </coding>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+
+  <!--Freitextbeschreibung der Therapieempfehlung-->
+  <valueString value="Empfohlen wird eine physiotherapeutische Nachbehandlung über 6 Wochen mit anschließender Verlaufskontrolle."/>
+  
+</Observation>
