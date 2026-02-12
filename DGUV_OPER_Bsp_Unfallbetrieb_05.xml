@@ -3,7 +3,7 @@
     Author: Ludger Schröder
     Datum:  09.12.2025
 
-    Die vorliegende Beispiel-Datei "DGUV-OPER-PR-Unfallbetrieb_05" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallbetrieb_05.xml" dient der Validierung 
     folgenden Szenarios:
     
     N: Anschrift nur als Postfach, nicht aber Line (add-3)
