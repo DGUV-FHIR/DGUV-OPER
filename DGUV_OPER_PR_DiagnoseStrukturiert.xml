@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-DiagnoseStrukturiert" />
+  <url value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert" />
+  <name value="DGUV_OPER_PR_DiagnoseStrukturiert" />
+  <title value="Diagnose - strukturiert" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil enthält diagnostisch relevante Informationen im Zusammenhang mit dem Operationsbericht ausschließlich in strukturierter Form." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Condition/DGUV-Basis-PR-DiagnoseStrukturiert" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.meta">
+      <path value="Condition.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.meta.profile">
+      <path value="Condition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding">
+      <path value="Condition.code.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM">
+      <path value="Condition.code.coding" />
+      <sliceName value="ICD-10-GM" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension">
+      <path value="Condition.code.coding.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Mehrfachcodierungs-Kennzeichen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen.value[x]">
+      <path value="Condition.code.coding.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen.value[x].system">
+      <path value="Condition.code.coding.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Mehrfachcodierungs-Kennzeichen.value[x].code">
+      <path value="Condition.code.coding.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x]">
+      <path value="Condition.code.coding.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x].system">
+      <path value="Condition.code.coding.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Seitenlokalisation.value[x].code">
+      <path value="Condition.code.coding.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit">
+      <path value="Condition.code.coding.extension" />
+      <sliceName value="Diagnosesicherheit" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x]">
+      <path value="Condition.code.coding.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x].system">
+      <path value="Condition.code.coding.extension.value[x].system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.extension:Diagnosesicherheit.value[x].code">
+      <path value="Condition.code.coding.extension.value[x].code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.system">
+      <path value="Condition.code.coding.system" />
+      <short value="Menge möglicher ICD-10-GM-Codes" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.version">
+      <path value="Condition.code.coding.version" />
+      <definition value="Bei Verwendung von ICD-10-GM ist die Angabe der Version zwingend erforderlich.&#xD;&#xA;Hierdurch wird der Tatsache Rechnung getragen, dass jede der jährlich neu erscheinenden Fassung von ICD-10-GM ein neues Codesystem darstellt." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.code">
+      <path value="Condition.code.coding.code" />
+      <short value="Konkreter ICD-10-Code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.coding:ICD-10-GM.display">
+      <path value="Condition.code.coding.display" />
+      <short value="Konkrete ICD-10-Code-Beschreibung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.reference">
+      <path value="Condition.subject.reference" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <max value="0" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

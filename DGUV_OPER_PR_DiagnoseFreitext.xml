@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-DiagnoseFreitext" />
+  <url value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseFreitext" />
+  <name value="DGUV_OPER_PR_DiagnoseFreitext" />
+  <title value="Diagnose - Freitext" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet die vom Arzt formulierte freitextliche Beschreibung der Unfallverletzung(en) im Zusammenhang mit dem Operationsbericht ab." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Condition/DGUV-Basis-PR-DiagnoseFreitext" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition.id">
+      <path value="Condition.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.meta">
+      <path value="Condition.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.meta.profile">
+      <path value="Condition.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseFreitext" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension">
+      <path value="Condition.extension" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation">
+      <path value="Condition.extension" />
+      <sliceName value="Frakturklassifikation" />
+      <min value="1" />
+      <max value="1" />
+      <constraint>
+        <key value="dguv-Fraktur-1" />
+        <severity value="error" />
+        <human value="Wenn Fraktur vorliegt, muss AO-Klassifikation gesetzt sein." />
+        <expression value="(extension.where(url = 'Fraktur').valueBoolean = true) implies (extension.where('AO-Klassifikation').value.exists() and extension.where('AO-Klassifikation').value.as(string).matches('\\S' ))" />
+      </constraint>
+      <constraint>
+        <key value="dguv-Fraktur-2" />
+        <severity value="error" />
+        <human value="Wenn keine Fraktur vorliegt, muss AO-Klassifikation leer sein." />
+        <expression value="(extension.where(url = 'Fraktur').valueBoolean = false) implies (where(url = 'AO-Klassifikation').empty())" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation.extension">
+      <path value="Condition.extension.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation.extension:Fraktur">
+      <path value="Condition.extension.extension" />
+      <sliceName value="Fraktur" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation.extension:Fraktur.value[x]">
+      <path value="Condition.extension.extension.value[x]" />
+      <comment value="Wenn hier &quot;true&quot; eingetragen ist, muss in AO-Klassifikation.value[x] zwingend die AO-Klassifikation angegeben werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation.extension:AO-Klassifikation">
+      <path value="Condition.extension.extension" />
+      <sliceName value="AO-Klassifikation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.extension:Frakturklassifikation.extension:AO-Klassifikation.value[x]">
+      <path value="Condition.extension.extension.value[x]" />
+      <comment value="Nur wenn in Fraktur.value[x] &quot;true&quot; eingetragen ist, muss hier zwingend die AO-Klassifikation angegeben werden (vgl. https://www.aofoundation.org bzw. https://classification.aoeducation.org/files/download/AOOTA_Classification_2018_Classification_brochure_1807031108.pdf)." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <max value="0" />
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.code.text">
+      <path value="Condition.code.text" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.subject.reference">
+      <path value="Condition.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <max value="0" />
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <max value="0" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>
