@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: Ludger Schröder
+ Datum: 12.02.2026
+ Die vorliegende Beispiel Datei "DGUV_OPER_PR_DiagnoseFreitext_01_CoPilot" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ P: Maximalbefüllung einer Instanz Diagnose-Freitext (Meta-Daten, Frakturklassifikation,
+    Freitextdiagnose, Verunfallte Person)
+-->
+<Condition xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="diagnosefreitext-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseFreitext"/>
+  </meta>
+
+  <!--Frakturklassifikation-->
+  <extension>
+    <url value="Frakturklassifikation"/>
+
+    <!--Fraktur vorhanden?-->
+    <extension>
+      <url value="Fraktur"/>
+      <valueBoolean value="true"/>
+    </extension>
+
+    <!--AO-Klassifikation-->
+    <extension>
+      <url value="AO-Klassifikation"/>
+      <valueString value="A1"/>
+    </extension>
+  </extension>
+
+  <!--Freitextdiagnose-->
+  <code>
+    <text value="Geschlossene Fraktur des rechten Unterarms."/>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"/>
+  </subject>
+</Condition>
