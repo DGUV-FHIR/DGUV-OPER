@@ -12,7 +12,7 @@
 <Observation xmlns="http://hl7.org/fhir">
 
   <!--Meta-Daten-->
-  <id value="postoptherapmpf-01"/>
+  <id value="postoptherapempf-01"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung"/>
   </meta>
