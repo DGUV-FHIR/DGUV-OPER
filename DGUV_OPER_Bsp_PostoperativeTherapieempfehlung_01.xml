@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: Ludger Schröder
- Datum: 12.02.2026
+ Datum: 19.02.2026
 
- Die vorliegende Beispiel Datei "DGUV_OPER_Bsp_Therapieempfehlung_01" dient der Validierung
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_PostoperativeTherapieempfehlung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz Therapieempfehlung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung der Therapieempfehlung)
+ P: Maximalbefüllung einer Instanz PostoperativeTherapieempfehlung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung der postoperativen Therapieempfehlung)
 -->
 
 <Observation xmlns="http://hl7.org/fhir">
 
   <!--Meta-Daten-->
-  <id value="therapieempfehlung-01"/>
+  <id value="postoptherapmpf-01"/>
   <meta>
-    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Therapieempfehlung"/>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung"/>
   </meta>
 
   <!--Status-->
@@ -24,8 +24,8 @@
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
-      <code value="THE"/>
-      <display value="Therapieempfehlung"/>
+      <code value="POTHE"/>
+      <display value="PostoperativeTherapieempfehlung"/>
     </coding>
   </code>
 
@@ -34,7 +34,7 @@
     <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
   </subject>
 
-  <!--Freitextbeschreibung der Therapieempfehlung-->
+  <!--Freitextbeschreibung der postoperativen Therapieempfehlung-->
   <valueString value="Empfohlen wird eine physiotherapeutische Nachbehandlung über 6 Wochen mit anschließender Verlaufskontrolle."/>
   
 </Observation>
