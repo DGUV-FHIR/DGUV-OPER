@@ -21,8 +21,8 @@
     <display value="OPBefundVerlauf" />
   </concept>
   <concept>
-    <code value="THE" />
-    <display value="Therapieempfehlung" />
+    <code value="POTHE" />
+    <display value="PostoperativeTherapieempfehlung" />
   </concept>
   <concept>
     <code value="UE" />
