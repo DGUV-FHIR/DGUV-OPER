@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-PR-Therapieempfehlung" />
-  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Therapieempfehlung" />
-  <name value="DGUV_OPER_PR_Therapieempfehlung" />
-  <title value="Therapieempfehlung" />
+  <id value="DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+  <name value="DGUV_OPER_PR_PostoperativeTherapieempfehlung" />
+  <title value="Postoperative Therapieempfehlung" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <description value="Dieses Profil bildet die postoperative Therapieempfehlung im Zusammenhang mit dem Operationsbericht ab." />
@@ -27,7 +27,7 @@
       <path value="Observation.meta.profile" />
       <min value="1" />
       <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Therapieempfehlung" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.status">
@@ -55,16 +55,16 @@
     </element>
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
-      <short value="Kürzel für OPER-Teilberichtsinhalt Therapieempfehlung" />
+      <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieempfehlung" />
       <min value="1" />
-      <fixedCode value="THE" />
+      <fixedCode value="POTHE" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
-      <short value="Bezeichnung für Teilberichtsinhalt Therapieempfehlung" />
+      <short value="Bezeichnung für Teilberichtsinhalt PostoperativeTherapieempfehlung" />
       <min value="1" />
-      <fixedString value="Therapieempfehlung" />
+      <fixedString value="PostoperativeTherapieempfehlung" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.subject">
