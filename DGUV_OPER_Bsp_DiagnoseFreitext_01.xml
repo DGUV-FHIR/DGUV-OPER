@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: Ludger Schröder
- Datum: 12.02.2026
- Die vorliegende Beispiel Datei "DGUV_OPER_PR_DiagnoseFreitext_01_CoPilot" dient der Validierung
+ Datum: 25.02.2026
+
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseFreitext_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
- P: Maximalbefüllung einer Instanz Diagnose-Freitext (Meta-Daten, Frakturklassifikation,
-    Freitextdiagnose, Verunfallte Person)
+ 
+ P: Maximalbefüllung einer Instanz DiagnoseFreitext (Meta-Daten, Fraktur: ja, AO-Klassifikation, Freitextdiagnose, Verunfallte Person)
 -->
+
 <Condition xmlns="http://hl7.org/fhir">
   <!--Meta-Daten-->
   <id value="diagnosefreitext-01"/>
@@ -15,18 +17,14 @@
   </meta>
 
   <!--Frakturklassifikation-->
-  <extension>
-    <url value="Frakturklassifikation"/>
-
+  <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Frakturklassifikation">
     <!--Fraktur vorhanden?-->
-    <extension>
-      <url value="Fraktur"/>
+    <extension url="Fraktur">
       <valueBoolean value="true"/>
     </extension>
 
     <!--AO-Klassifikation-->
-    <extension>
-      <url value="AO-Klassifikation"/>
+    <extension url="AO-Klassifikation">
       <valueString value="A1"/>
     </extension>
   </extension>
@@ -38,6 +36,6 @@
 
   <!--Verunfallte Person-->
   <subject>
-    <reference value="urn:uuid:aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"/>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
   </subject>
 </Condition>
