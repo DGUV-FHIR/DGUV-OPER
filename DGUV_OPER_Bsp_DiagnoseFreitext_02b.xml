@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: Ludger Schröder
+ Datum: 26.02.2026
+
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseFreitext_02b.xml" dient der Validierung
+ folgenden Szenarios:
+ 
+ N: Ausgehend von Standardfall: Fraktur: ja; aber Extension AO-Klassifikation existiert nicht (Constraintverletzung: dguv-Fraktur-1)
+-->
+
+<Condition xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="diagnosefreitext-02b"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseFreitext"/>
+  </meta>
+
+  <!--Frakturklassifikation-->
+  <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Frakturklassifikation">
+    <!--Fraktur vorhanden?-->
+    <extension url="Fraktur">
+      <valueBoolean value="true"/>
+    </extension>
+
+    <!--AO-Klassifikation: existiert nicht-->
+  </extension>
+
+  <!--Freitextdiagnose-->
+  <code>
+    <text value="Geschlossene Fraktur des rechten Unterarms."/>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+</Condition>
