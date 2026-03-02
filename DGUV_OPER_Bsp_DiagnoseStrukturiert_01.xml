@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: Ludger Schröder
- Datum: 26.02.2026
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_01" dient der Validierung
+ Datum: 02.03.2026
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
 
  P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, ICD‑10‑GM‑Codierung mit
