@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-DArztOrganisation" />
+  <name value="DGUV_OPER_PR_DArztOrganisation" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Organization/DGUV-Basis-PR-DArztOrganisation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization.id">
+      <path value="Organization.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.meta">
+      <path value="Organization.meta" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.meta.profile">
+      <path value="Organization.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-DArztOrganisation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <short value="Identifikator für die D-Arzt-Organisation" />
+      <min value="1" />
+      <max value="6" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen">
+      <path value="Organization.identifier" />
+      <sliceName value="Institutionskennzeichen" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Institutionskennzeichen (IKNR)" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="XX" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher IKs" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.value">
+      <path value="Organization.identifier.value" />
+      <short value="Konkrete IK" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer">
+      <path value="Organization.identifier" />
+      <sliceName value="Betriebsstaettennummer" />
+      <short value="Betriebsstättennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Betriebsstättennummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="BSNR" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="BSNR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher Betriebsstättennummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Betriebsstaettennummer.value">
+      <path value="Organization.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR">
+      <path value="Organization.identifier" />
+      <sliceName value="VKNR" />
+      <short value="Vertragskassennummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Vertragskassennummer (VKNR)" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="NIIP" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="NIIP" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher Vertragskassennummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:VKNR.value">
+      <path value="Organization.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer">
+      <path value="Organization.identifier" />
+      <sliceName value="KZV-Abrechnungsnummer" />
+      <short value="Abrechnungsnummer der Kassenzahnärztlichen Vereinigung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Abrechnungsnummer der Kassenzahnärztlichen Vereinigung" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+        <code value="KZVA" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="KZVA" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher KZV-Abrechnungsnummern" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:KZV-Abrechnungsnummer.value">
+      <path value="Organization.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID">
+      <path value="Organization.identifier" />
+      <sliceName value="Telematik-ID" />
+      <short value="Identifikationsnummer in Telematikinfrastruktur" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Identifikationsnummer in Telematikinfrastruktur" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="PRN" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="PRN" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher Telematik-IDs" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Telematik-ID.value">
+      <path value="Organization.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer">
+      <path value="Organization.identifier" />
+      <sliceName value="Standortnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Krankenhausstandortnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.system">
+      <path value="Organization.identifier.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Standortnummer.value">
+      <path value="Organization.identifier.value" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Organization.type.coding">
+      <path value="Organization.type.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:IHE-Code">
+      <path value="Organization.type.coding" />
+      <sliceName value="IHE-Code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe">
+      <path value="Organization.type.coding" />
+      <sliceName value="HL7-Fachschluesselgruppe" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert">
+      <path value="Organization.type.coding" />
+      <sliceName value="HL7-Fachschluesselgruppe-erweitert" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name" />
+      <short value="Name der D-Arzt-Organisation" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom" />
+      <min value="1" />
+    </element>
+    <element id="Organization.telecom.system">
+      <path value="Organization.telecom.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.telecom.value">
+      <path value="Organization.telecom.value" />
+      <short value="Konkrete Kontaktdaten" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address">
+      <path value="Organization.address" />
+      <short value="Adresse der D-Arzt-Organisation" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift">
+      <path value="Organization.address" />
+      <sliceName value="Strassenanschrift" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.extension">
+      <path value="Organization.address.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.extension:Stadtteil">
+      <path value="Organization.address.extension" />
+      <sliceName value="Stadtteil" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.extension:Stadtteil.value[x]">
+      <path value="Organization.address.extension.value[x]" />
+      <short value="Konkreter Name des Stadt- oder Ortsteils" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.type">
+      <path value="Organization.address.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line">
+      <path value="Organization.address.line" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension">
+      <path value="Organization.address.line.extension" />
+      <min value="2" />
+      <max value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Strasse">
+      <path value="Organization.address.line.extension" />
+      <sliceName value="Strasse" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
+      <path value="Organization.address.line.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
+      <path value="Organization.address.line.extension" />
+      <sliceName value="Hausnummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
+      <path value="Organization.address.line.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz">
+      <path value="Organization.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
+      <path value="Organization.address.line.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.city">
+      <path value="Organization.address.city" />
+      <short value="Name der Stadt" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.postalCode">
+      <path value="Organization.address.postalCode" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.country">
+      <path value="Organization.address.country" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Postfach">
+      <path value="Organization.address" />
+      <sliceName value="Postfach" />
+      <max value="0" />
+    </element>
+    <element id="Organization.contact">
+      <path value="Organization.contact" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.extension">
+      <path value="Organization.contact.extension" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt">
+      <path value="Organization.contact.extension" />
+      <sliceName value="NichtAerztlicherKontakt" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension">
+      <path value="Organization.contact.extension.extension" />
+      <min value="1" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:NichtAerztlicherKontakt">
+      <path value="Organization.contact.extension.extension" />
+      <sliceName value="NichtAerztlicherKontakt" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:NichtAerztlicherKontakt.value[x]">
+      <path value="Organization.contact.extension.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:Funktionseinheit">
+      <path value="Organization.contact.extension.extension" />
+      <sliceName value="Funktionseinheit" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:Funktionseinheit.value[x]">
+      <path value="Organization.contact.extension.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.name">
+      <path value="Organization.contact.name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.telecom">
+      <path value="Organization.contact.telecom" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.telecom.system">
+      <path value="Organization.contact.telecom.system" />
+      <fixedCode value="phone" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.contact.telecom.value">
+      <path value="Organization.contact.telecom.value" />
+      <short value="Konkrete Telefonnummer des Ansprechpartners" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
