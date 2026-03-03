@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-PR-Unfallbetrieb" />
-  <url value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
-  <name value="DGUV_OPER_PR_Unfallbetrieb" />
-  <title value="Unfallbetrieb" />
+  <id value="DGUV-OPER-PR-Unfallversicherungstraeger" />
+  <url value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+  <name value="DGUV_OPER_PR_Unfallversicherungstraeger" />
+  <title value="Unfallversicherungsträger" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet den Unfallbetrieb im Zusammenhang mit dem Operationsbericht ab." />
+  <description value="Dieses Profil bildet den Unfallversicherungsträger im Zusammenhang mit dem Operationsbericht ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
   <type value="Organization" />
-  <baseDefinition value="http://fhir.dguv.de/Basis/Organization/DGUV-Basis-PR-Unfallbetrieb" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Organization/DGUV-Basis-PR-Unfallversicherungstraeger" />
   <derivation value="constraint" />
   <differential>
     <element id="Organization.id">
@@ -26,152 +26,170 @@
     <element id="Organization.meta.profile">
       <path value="Organization.meta.profile" />
       <min value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <short value="Identifikator für den Unfallversicherungsträger" />
+      <min value="1" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen">
+      <path value="Organization.identifier" />
+      <sliceName value="Institutionskennzeichen" />
+      <min value="1" />
       <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Institutionskennzeichen (IKNR)" />
+      <min value="1" />
+      <patternCodeableConcept>
+        <coding>
+          <display value="Organization identifier" />
+        </coding>
+      </patternCodeableConcept>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="XX" />
+        <display value="Organization identifier" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="XX" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.display">
+      <path value="Organization.identifier.type.coding.display" />
+      <short value="Bezeichnung für Identifikatortyp" />
+      <patternString value="Organization identifier" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.system">
+      <path value="Organization.identifier.system" />
+      <short value="Menge möglicher IKNRs" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.value">
+      <path value="Organization.identifier.value" />
+      <short value="Konkrete IKNR" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.name">
       <path value="Organization.name" />
-      <short value="Name des Unfallbetriebs" />
-      <definition value="Name des Unfallbetriebs, Arbeitgebers, der Kita, der (Hoch-)Schule, - bei Pflegeunfall - der pflegebedürftigen Person" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.telecom">
-      <path value="Organization.telecom" />
-      <short value="Angaben zu bestehenden Kontaktmöglichkeiten (Telefon, Fax, E-Mail usw.)" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.telecom.system">
-      <path value="Organization.telecom.system" />
+      <short value="Name des Unfallversicherungsträgers" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.telecom.value">
       <path value="Organization.telecom.value" />
       <short value="Konkrete Kontaktdaten" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address">
       <path value="Organization.address" />
-      <short value="Anschrift des Unfallbetriebes zum Unfallzeitpunkt" />
-      <comment value="Mindestens Ort. Straße/Hausnummer, PLZ sind Kann-Angaben" />
-      <max value="2" />
-      <mustSupport value="true" />
+      <short value="Adresse des Unfallversicherungsträgers" />
+      <max value="1" />
     </element>
     <element id="Organization.address:Strassenanschrift">
       <path value="Organization.address" />
       <sliceName value="Strassenanschrift" />
-      <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.type">
-      <path value="Organization.address.type" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line">
       <path value="Organization.address.line" />
-      <short value="Straßenname mit Hausnummer sowie weitere Angaben zur Zustellung" />
+      <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension">
       <path value="Organization.address.line.extension" />
+      <min value="2" />
       <max value="3" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse">
       <path value="Organization.address.line.extension" />
       <sliceName value="Strasse" />
-      <mustSupport value="true" />
+      <min value="1" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
       <short value="Konkreter Strassenname" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
       <path value="Organization.address.line.extension" />
       <sliceName value="Hausnummer" />
-      <mustSupport value="true" />
+      <min value="1" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
       <short value="Konkrete Hausnummer" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz">
       <path value="Organization.address.line.extension" />
       <sliceName value="Adresszusatz" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
       <short value="Konkreter Adresszusatz" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.city">
       <path value="Organization.address.city" />
-      <short value="Ort" />
+      <short value="Name der Stadt" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.postalCode">
       <path value="Organization.address.postalCode" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.country">
-      <path value="Organization.address.country" />
-      <mustSupport value="true" />
+      <min value="1" />
     </element>
     <element id="Organization.address:Postfach">
       <path value="Organization.address" />
       <sliceName value="Postfach" />
       <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.address:Postfach.type">
-      <path value="Organization.address.type" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.line">
       <path value="Organization.address.line" />
-      <short value="Postfach" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.line.extension">
       <path value="Organization.address.line.extension" />
       <min value="1" />
-      <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.line.extension:Postfach">
       <path value="Organization.address.line.extension" />
       <sliceName value="Postfach" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.line.extension:Postfach.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
       <short value="Konkrete Postfachbezeichnung" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.city">
       <path value="Organization.address.city" />
       <short value="Name der Stadt" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Postfach.postalCode">
       <path value="Organization.address.postalCode" />
       <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.address:Postfach.country">
-      <path value="Organization.address.country" />
-      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

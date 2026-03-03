@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  26.01.2026
+
+    Die vorliegende Beispiel Datei "DGUV-OPER-PR-Implantat_01" dient der Validierung 
+    folgenden Szenarios (Standardfall):
+    
+    P: Erster, vorläufiger Wurf für ein Implantat
+
+
+-->
+<Device xmlns="http://hl7.org/fhir">
+    <id value="implant-01" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h1>Hier finden Sie ein Beispiel für ein in einer Operation bei einer verunfallten Person eingesetztes Implantat.</h1>
+        </div>
+    </text> 
+
+    <!-- Extension für Seitigkeit ?-->
+
+    <!-- deviceName für Implantatname ?-->
+
+    <!-- type für Implantatbeschreibung -->
+    <type>
+        <text value="Synthes 4-Loch VA-LCP anterolat. prox. Tibiaplatte Stahl, Synthes LCP 6-Loch prox. posteromediale Tibiaplatte Titan, 2 x KLS Martin Herbertschrauben Midi, 2 x Kortikaliszugschraube 3.5 mm Stahl mit Unterlegscheibe" />
+    </type> 
+
+    <!-- Referenz auf Patient / VersichertePerson -->
+    <patient> 
+        <reference value="482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+    </patient>
+
+</Device>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  12.02.2026
+
+    Die vorliegende Beispiel Datei "DGUV_OPER_Bsp_OpBefundVerlauf_01" dient der Validierung 
+    folgenden Szenarios (Standardfall):
+    
+    P: Maximalbefüllung einer Instanz OP-Befund und -Verlauf (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung von OP-Befund/-verlauf)
+
+-->
+<Observation xmlns="http://hl7.org/fhir">
+
+   <!--Meta-Daten-->
+  <id value="opbefundverlauf-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf"/>
+  </meta>
+
+   <!--Status-->
+  <status value="final"/>
+
+   <!--Teilberichtsinhalt-->
+  <code>
+    <coding>
+      <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+      <code value="OPBV"/>
+      <display value="OPBefundVerlauf"/>
+    </coding>
+  </code>
+
+   <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+
+   <!--Freitextbeschreibung von OP-Befund/-verlauf-->
+  <valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht."/>
+
+</Observation>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-VersichertenVerhaeltnis" />
+  <url value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
+  <name value="DGUV_OPER_PR_VersichertenVerhaeltnis" />
+  <title value="Versichertenverhältnis" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet das Verhältnis des Patienten zur Versicherung ab (direkt- oder familienversichert)." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Coverage" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Coverage/DGUV-Basis-PR-VersichertenVerhaeltnis" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Coverage.id">
+      <path value="Coverage.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.meta">
+      <path value="Coverage.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.meta.profile">
+      <path value="Coverage.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension">
+      <path value="Coverage.extension" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung">
+      <path value="Coverage.extension" />
+      <sliceName value="Familienversicherung" />
+      <short value="Beschreibung des Patientenverhältnisses zur Versicherung" />
+      <min value="1" />
+      <constraint>
+        <key value="dguv-famvers-1" />
+        <severity value="error" />
+        <human value="Wenn eine Familienversicherung vorliegt, muss ein Mitgliedsname eingetragen sein." />
+        <expression value="(extension('Familienversichert').valueBoolean = true)  implies (extension('Mitgliedsname').value.as(string).matches('\\S.'))" />
+      </constraint>
+      <constraint>
+        <key value="dguv-famvers-2" />
+        <severity value="error" />
+        <human value="Wenn keine Familienversicherung vorliegt, darf kein Eintrag in Mitgliedsname stehen." />
+        <expression value="(extension('Familienversichert').valueBoolean = false)  implies (extension('Mitgliedsname').exists()).not()" />
+      </constraint>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung.extension">
+      <path value="Coverage.extension.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung.extension:Familienversichert">
+      <path value="Coverage.extension.extension" />
+      <sliceName value="Familienversichert" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung.extension:Familienversichert.value[x]">
+      <path value="Coverage.extension.extension.value[x]" />
+      <comment value="Wenn hier &quot;true&quot; eingetragen ist, muss in Mitgliedsname.value[x] der Name des eigentlich Versicherten angegeben werden." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung.extension:Mitgliedsname">
+      <path value="Coverage.extension.extension" />
+      <sliceName value="Mitgliedsname" />
+      <short value="Name des Mitglieds bei der Krankenkasse" />
+      <definition value="Auszufüllen, wenn die verunfallte Person selbst nicht die versicherte Person ist." />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.extension:Familienversicherung.extension:Mitgliedsname.value[x]">
+      <path value="Coverage.extension.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.status">
+      <path value="Coverage.status" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary">
+      <path value="Coverage.beneficiary" />
+      <short value="Verweis auf Patient / versorgte Person" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.beneficiary.reference">
+      <path value="Coverage.beneficiary.reference" />
+      <short value="Konkreter Verweis auf Patient / versorgte Person" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor">
+      <path value="Coverage.payor" />
+      <short value="Verweis auf den Unfallversicherungsträger als Kostenträger" />
+      <definition value="Die Kosten der Behandlung werden zum Zeitpunkt der Erstellung des OPER dem jeweiligen Unfallversicherungsträger in Rechnung gestellt." />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Coverage.payor.reference">
+      <path value="Coverage.payor.reference" />
+      <short value="Konkreter Verweis auf den Unfallversicherungsträger als Kostenträger" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>
