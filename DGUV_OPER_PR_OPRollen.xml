@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-OPRollen" />
+  <url value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-OPRollen" />
+  <version value="0.0.1" />
+  <name value="DGUV_OPER_PR_OPRollen" />
+  <title value="Rollen bei der OP" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Profil zur Abbildung der dienstlichen Rollen von im Operationsbereich tätigen Personen pro Operation." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="PractitionerRole" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/PractitionerRole/DGUV-Basis-PR-Leistungserbringerrolle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="PractitionerRole.id">
+      <path value="PractitionerRole.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.meta">
+      <path value="PractitionerRole.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.meta.profile">
+      <path value="PractitionerRole.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-OPRollen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.practitioner">
+      <path value="PractitionerRole.practitioner" />
+      <short value="Die Person, die diese dienstliche Rolle ausübt." />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.practitioner.reference">
+      <path value="PractitionerRole.practitioner.reference" />
+      <min value="1" />
+    </element>
+    <element id="PractitionerRole.code">
+      <path value="PractitionerRole.code" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.code.coding">
+      <path value="PractitionerRole.code.coding" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.code.coding:RolleInDerEinrichtung">
+      <path value="PractitionerRole.code.coding" />
+      <sliceName value="RolleInDerEinrichtung" />
+      <max value="0" />
+    </element>
+    <element id="PractitionerRole.code.coding:OPRollen">
+      <path value="PractitionerRole.code.coding" />
+      <sliceName value="OPRollen" />
+      <short value="Die dienstliche Funktion oder Rolle der Person bei der Operation" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.code.coding:OPRollen.system">
+      <path value="PractitionerRole.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-OPRollen" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.code.coding:OPRollen.code">
+      <path value="PractitionerRole.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.code.coding:OPRollen.display">
+      <path value="PractitionerRole.code.coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty">
+      <path value="PractitionerRole.specialty" />
+      <short value="Das fachliche Spezialgebiet, in dem die Rolle ausgeübt wird" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding">
+      <path value="PractitionerRole.specialty.coding" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:KBV-Fachgruppe">
+      <path value="PractitionerRole.specialty.coding" />
+      <sliceName value="KBV-Fachgruppe" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:KBV-Fachgruppe.system">
+      <path value="PractitionerRole.specialty.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:KBV-Fachgruppe.version">
+      <path value="PractitionerRole.specialty.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:KBV-Fachgruppe.code">
+      <path value="PractitionerRole.specialty.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.specialty.coding:KBV-Fachgruppe.display">
+      <path value="PractitionerRole.specialty.coding.display" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.telecom">
+      <path value="PractitionerRole.telecom" />
+      <short value="Dienstliche Kontaktangaben, die dieser Rolle zugeordnet sind" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.telecom.system">
+      <path value="PractitionerRole.telecom.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="PractitionerRole.telecom.value">
+      <path value="PractitionerRole.telecom.value" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-CS-OPRollen" />
+  <url value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-OPRollen" />
+  <version value="1.0" />
+  <name value="DGUV_OPER_CS_OPRollen" />
+  <title value="Rollen bei der Operation" />
+  <status value="draft" />
+  <experimental value="false" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.dguv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses CodeSystem beschreibt Rollen von Personen in einem Operationssaal" />
+  <content value="complete" />
+  <concept>
+    <code value="OPR" />
+    <display value="Operateur" />
+  </concept>
+  <concept>
+    <code value="ANA" />
+    <display value="Anästhesist" />
+  </concept>
+  <concept>
+    <code value="OPS" />
+    <display value="OP-Schwester/-Pfleger" />
+  </concept>
+  <concept>
+    <code value="ANS" />
+    <display value="Anästhesie-Schwester/-Pfleger" />
+  </concept>
+  <concept>
+    <code value="OPA" />
+    <display value="OP-Assistent  " />
+  </concept>
+  <concept>
+    <code value="DAR" />
+    <display value="D-Arzt" />
+  </concept>
+  <concept>
+    <code value="SPR" />
+    <display value="Springer" />
+  </concept>
+</CodeSystem>
