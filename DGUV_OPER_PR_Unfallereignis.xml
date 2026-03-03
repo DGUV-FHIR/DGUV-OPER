@@ -2,7 +2,10 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
   <name value="DGUV_OPER_PR_Unfallereignis" />
+  <title value="Unfallereignis" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet das Unfallereignis im Zusammenhang mit dem Operationsbericht ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />

@@ -3,7 +3,7 @@
     Author: Ludger Schröder
     Datum:  15.12.2025
 
-    Die vorliegende Beispiel Datei "DGUV-ENLA-PR-Unfallereignis_01" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallereignis_01.xml" dient der Validierung 
     folgenden Szenarios:
     
     P: Maximalbefüllung eines Unfallereignisses (Pflegeunfall,-kasse, Constraints “dguv-pflegeunfall-1/2“ eingehalten, ...) >>>> Standardfall
