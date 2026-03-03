@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  03.02.2026
+
+    Die vorliegende Beispiel Datei "DGUV_OPER_PR_Krankenkasse_01" dient der Validierung 
+    folgenden Szenarios (Standardfall):
+    
+    P: Maximalbefüllung einer Krankenkasse (IK-Nr., Telematik-ID, Name, Telefon-Kontakt, Straßenadresse)
+
+-->
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="krankenkasse-01" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Krankenkasse" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h1>Hier finden Sie ein Beispiel der Krankenkasse einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+        </div>
+    </text>
+
+    <!--IK-Nummer-->
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="XX"/>
+                <display value="Organization identifier" />
+             </coding>
+        </type>
+        <system value="http://fhir.de/sid/arge-ik/iknr"/>
+        <value value="260120196"/>
+    </identifier>
+
+    <!--Telematik-ID-->
+    <identifier>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                <code value="PRN"/>
+                <display value="Provider number" />
+             </coding>
+        </type>
+        <system value="https://gematik.de/fhir/sid/telematik-id"/>
+        <value value="8-01-0000000090"/>
+    </identifier>
+
+    <!-- Name der Krankenkasse-->
+    <name value="AOK Herzogtum Lauenburg"/>
+
+    <!-- Telefon-Kontakt Krankenkasse -->
+    <telecom>
+        <system value="phone"/>
+        <value value="01771234"/>
+    </telecom>
+
+    <!-- Strassen-Adresse der Krankenkasse -->
+    <address>
+        <type value="both"/>
+        <line value="Hauptstr. 91">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                <valueString value="Hauptstraße"/>
+            </extension>
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                <valueString value="91"/>
+            </extension>
+        </line>
+        <city value="Mölln"/>
+        <postalCode value="23879"/>
+        <country value="DE"/>
+    </address>
+
+</Organization>

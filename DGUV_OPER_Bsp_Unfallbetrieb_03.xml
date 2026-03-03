@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Author: Ludger Schröder
+    Datum:  09.12.2025
+
+    Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallbetrieb_03.xml" dient der Validierung 
+    folgenden Szenarios:
+    
+    P: Straßenanschrift nur in Line, nicht aber in Extension (add-1,-2,-5)
+
+
+-->
+<Organization xmlns="http://hl7.org/fhir">
+    <id value="unfbetr-stradr-linenoext-03" />
+    <meta>
+        <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
+    </meta>
+
+    <text>
+        <status value="generated"/>
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <h1>Hier finden Sie ein Beispiel für den Unfallbetrieb einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+        </div>
+    </text> 
+
+
+    <!-- Bezeichnung des Unfallbetriebs-->
+    <name value="Unfallvermeidungsgesellschaft mbH"/>
+
+    <!-- Telefon Kontakt Unfallbetrieb -->
+    <telecom>
+        <system value="phone"/>
+        <value value="+49 89 11 22 33 44"/>
+    </telecom>
+
+    <!-- Strassenanschrift des Unfallbetriebs -->
+    <address>
+        <type value="both"/>
+        <line value="Johann-Lafer-Gasse 2">
+        </line>
+        <city value="Sankt Fridolin"/>
+        <postalCode value="53757"/>
+        <country value="DE"/>
+    </address>
+
+    <!-- Postfachadresse des Unfallbetriebs -->
+    <address>
+        <type value="postal"/>
+        <line value="Postfach 4711">
+            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+                <valueString value="Postfach 4711"/>
+            </extension>
+        </line>
+        <city value="Sankt Augustin"/>
+        <postalCode value="53700"/>
+        <country value="DE"/>
+    </address>
+
+</Organization>
