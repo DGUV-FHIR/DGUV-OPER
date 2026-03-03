@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-Bsp-OPProzeduren" />
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
+  </meta>
+  <text>
+    <status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml"><h1>Hier finden Sie ein Beispiel der OPProzeduren einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1></div></text>
+  <!-- Extension: Lagerung -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Lagerung">
+    <valueString value="Beach-Chair-Lagerung"/>
+  </extension>
+  <!-- Extension: Blutsperre -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Blutsperre">
+    <valueString value="Blutsperre 300 mmHg, Dauer 45 Minuten"/>
+  </extension>
+  <!-- Extension: Narkose -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+        <code value="AA" />
+        <display value="Allgemeinanästhesie" />
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+   <!-- Status -->
+  <status value="completed" />
+  <!-- Code -->
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="80146002" />
+      <display value="Appendectomy" />
+    </coding>
+    <text value="Appendektomie" />
+  </code>
+  <!-- Subject -->
+  <subject>
+    <reference value="Patient/12345" />
+    <display value="Max Mustermann" />
+  </subject>
+  <!-- OPBeginn und OPEnde -->
+  <performedPeriod>
+    <start value="2024-06-12T10:00:00+01:00" />
+    <end value="2024-06-12T11:30:00+01:00" />
+  </performedPeriod>
+  <!-- Indikation -->
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="74400008" />
+      <display value="Appendicitis" />
+    </coding>
+    <text value="Akute Appendizitis" />
+  </reasonCode>
+  <!-- Bodysite -->
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="66754008" />
+      <display value="Appendix structure" />
+    </coding>
+    <text value="Appendix" />
+  </bodySite>
+</Procedure>
