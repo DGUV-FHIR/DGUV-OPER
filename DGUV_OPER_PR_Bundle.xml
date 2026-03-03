@@ -38,7 +38,6 @@
     <element id="Bundle.identifier.system">
       <path value="Bundle.identifier.system" />
       <min value="1" />
-      <fixedUri value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung" />
       <mustSupport value="true" />
     </element>
     <element id="Bundle.identifier.value">
@@ -61,10 +60,24 @@
     </element>
     <element id="Bundle.entry">
       <path value="Bundle.entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="resource.meta.profile" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Bundle.entry.resource">
+    <element id="Bundle.entry:Composition">
+      <path value="Bundle.entry" />
+      <sliceName value="Composition" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Composition.resource">
       <path value="Bundle.entry.resource" />
       <min value="1" />
       <type>
@@ -72,6 +85,34 @@
         <profile value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
       </type>
       <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:VersichertePerson">
+      <path value="Bundle.entry" />
+      <sliceName value="VersichertePerson" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:VersichertePerson.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+    </element>
+    <element id="Bundle.entry:Leistungserbringer">
+      <path value="Bundle.entry" />
+      <sliceName value="Leistungserbringer" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:Leistungserbringer.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+      </type>
     </element>
   </differential>
 </StructureDefinition>
