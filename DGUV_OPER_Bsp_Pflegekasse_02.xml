@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  04.02.2026
+    Datum:  04.03.2026
 
-    Die vorliegende Beispiel Datei "DGUV_OPER_PR_Pflegekasse_02" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Pflegekasse_02.xml" dient der Validierung 
     folgenden Szenarios:
     
     N: Ausgehend von Standardfall zusätzlich zur Postfachadresse auch eine Straßenadresse (wg. 0..1 nur eine Adresse erlaubt)
