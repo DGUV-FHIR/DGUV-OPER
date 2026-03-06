@@ -27,7 +27,7 @@
       <path value="Observation.meta.profile" />
       <min value="1" />
       <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostOpTherapMedikEmpf" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.extension">
@@ -77,16 +77,16 @@
     </element>
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
-      <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieempfehlung" />
+      <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieMedikationsempfehlung" />
       <min value="1" />
-      <fixedCode value="POTHE" />
+      <fixedCode value="POTME" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
-      <short value="Bezeichnung für Teilberichtsinhalt PostoperativeTherapieempfehlung" />
+      <short value="Bezeichnung für Teilberichtsinhalt PostoperativeTherapieMedikationsempfehlung" />
       <min value="1" />
-      <fixedString value="PostoperativeTherapieempfehlung" />
+      <fixedString value="PostoperativeTherapieMedikationsempfehlung" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.subject">
@@ -108,7 +108,6 @@
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
       <short value="Postoperative Therapieempfehlung als Freitext" />
-      <min value="1" />
       <type>
         <code value="string" />
       </type>
