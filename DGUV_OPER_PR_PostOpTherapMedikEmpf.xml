@@ -30,6 +30,28 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
       <mustSupport value="true" />
     </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:PostOpMedikEmpfehlung">
+      <path value="Observation.extension" />
+      <sliceName value="PostOpMedikEmpfehlung" />
+      <short value="Postoperative Medikationsempfehlung" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-MedikEmpf" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.extension:PostOpMedikEmpfehlung.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Observation.status">
       <path value="Observation.status" />
       <fixedCode value="final" />
