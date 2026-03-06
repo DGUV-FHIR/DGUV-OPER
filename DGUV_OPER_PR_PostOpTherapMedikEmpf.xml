@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
-  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
-  <name value="DGUV_OPER_PR_PostoperativeTherapieempfehlung" />
-  <title value="Postoperative Therapieempfehlung" />
+  <id value="DGUV-OPER-PR-PostOpTherapMedikEmpf" />
+  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostOpTherapMedikEmpf" />
+  <name value="DGUV_OPER_PR_PostOpTherapMedikEmpf" />
+  <title value="Postoperative Therapie-/Medikationsempfehlung" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet die postoperative Therapieempfehlung im Zusammenhang mit dem Operationsbericht ab." />
+  <description value="Dieses Profil bildet die postoperative Therapie- und Medikationsempfehlung im Zusammenhang mit dem Operationsbericht ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
