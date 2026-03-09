@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: Ludger Schröder
+ Datum: 09.03.2026
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_02.xml" dient der Validierung
+ folgenden Szenarios:
+
+ N: Ausgehend von Standardfall:
+    clinicalStatus = “unknown“ / verificationStatus = “refuted“ (doppelte Verletzung Constraint icd-5)
+-->
+<Condition xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="diagnosestrukturiert-02"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert"/>
+  </meta>
+
+  <!--clinicalStatus-->
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="unknown"/>
+      <display value="Unknown"/>
+    </coding>
+  </clinicalStatus>
+
+  <!--verificationStatus-->
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="refuted"/>
+      <display value="Refuted"/>
+    </coding>
+  </verificationStatus>
+
+  <!--ICD-10-GM Codierung-->
+  <code>
+    <coding>
+      <!--Mehrfachcodierungs-Kennzeichen-->
+      <extension url="http://fhir.de/StructureDefinition/icd-10-gm-mehrfachcodierungs-kennzeichen">
+        <valueCoding>
+          <system value="http://fhir.de/CodeSystem/icd-10-gm-mehrfachcodierungs-kennzeichen"/>
+          <code value="*"/>
+        </valueCoding>
+      </extension>
+
+      <!--Seitenlokalisation-->
+      <extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+        <valueCoding>
+          <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+          <code value="R"/>
+        </valueCoding>
+      </extension>
+
+      <!--Diagnosesicherheit-->
+      <extension url="http://fhir.de/StructureDefinition/icd-10-gm-diagnosesicherheit">
+        <valueCoding>
+          <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_DIAGNOSESICHERHEIT"/>
+          <code value="G"/>
+        </valueCoding>
+      </extension>
+
+      <!--ICD-10-GM: System + Version-->
+      <system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm"/>
+      <version value="2017"/>
+      <code value="S52.50"/>
+      <display value="Fraktur des Unterarms"/>
+    </coding>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+</Condition>
