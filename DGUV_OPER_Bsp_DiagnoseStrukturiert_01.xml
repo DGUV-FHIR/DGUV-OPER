@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: Ludger Schröder
- Datum: 02.03.2026
+ Datum: 09.03.2026
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
 
- P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, ICD‑10‑GM‑Codierung mit
-    Mehrfachcodierungs‑Kennzeichen, Seitenlokalisation, Diagnosesicherheit sowie Referenz auf
-    Verunfallte Person)
+ P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, clinical/verificationStatus (lt. icd-5),
+    ICD‑10‑GM‑Codierung mit Mehrfachcodierungs‑Kennzeichen, Seitenlokalisation, Diagnosesicherheit
+    sowie Referenz auf Verunfallte Person)
 -->
 <Condition xmlns="http://hl7.org/fhir">
   <!--Meta-Daten-->
@@ -15,6 +15,24 @@
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert"/>
   </meta>
+
+  <!--clinicalStatus-->
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+      <display value="Active"/>
+    </coding>
+  </clinicalStatus>
+
+  <!--verificationStatus-->
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+      <display value="Confirmed"/>
+    </coding>
+  </verificationStatus>
 
   <!--ICD-10-GM Codierung-->
   <code>
