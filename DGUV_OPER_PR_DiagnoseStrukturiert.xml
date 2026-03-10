@@ -56,6 +56,7 @@
     </element>
     <element id="Condition.clinicalStatus.coding.display">
       <path value="Condition.clinicalStatus.coding.display" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.verificationStatus">
@@ -80,6 +81,7 @@
     </element>
     <element id="Condition.verificationStatus.coding.display">
       <path value="Condition.verificationStatus.coding.display" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.category">
