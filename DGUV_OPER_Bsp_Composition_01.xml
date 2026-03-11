@@ -32,30 +32,38 @@
     </author>
 
     <title value="Operationsbericht"/>
-
     <section>
         <code>
             <coding>
                 <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                <code value="UNBT"/>
-                <display value="Unfallbetrieb"/>
+                <code value="UNDA"/>
+                <display value="Unfalldaten"/>
             </coding>
         </code>
-        <entry>
-            <reference value="urn:uuid:bef1dc10-a361-4eba-8fcc-073f771df44b"/>
-        </entry>
-    </section>
+        <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="UNBT"/>
+                    <display value="Unfallbetrieb"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:bef1dc10-a361-4eba-8fcc-073f771df44b"/>
+            </entry>
+        </section>
 
-    <section>
-        <code>
-            <coding>
-                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                <code value="UFER"/>
-                <display value="Unfallereignis"/>
-            </coding>
-        </code>
-        <entry>
-            <reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
-        </entry>
+        <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="UFER"/>
+                    <display value="Unfallereignis"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
+            </entry>
+        </section>
     </section>
 </Composition>

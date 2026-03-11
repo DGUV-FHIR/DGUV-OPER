@@ -120,50 +120,97 @@
         </discriminator>
         <rules value="closed" />
       </slicing>
-      <short value="Auflistung OPER-Profiltypen in OPER" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb">
+    <element id="Composition.section:Unfalldaten">
       <path value="Composition.section" />
-      <sliceName value="Unfallbetrieb" />
+      <sliceName value="Unfalldaten" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.code">
+    <element id="Composition.section:Unfalldaten.code">
       <path value="Composition.section.code" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.code.coding">
+    <element id="Composition.section:Unfalldaten.code.coding">
       <path value="Composition.section.code.coding" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.code.coding.system">
+    <element id="Composition.section:Unfalldaten.code.coding.system">
       <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="UNDA" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Unfalldaten" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="2" />
+      <max value="2" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb">
+      <path value="Composition.section.section" />
+      <sliceName value="Unfallbetrieb" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
       <short value="Werteraum der Section-Typen" />
       <min value="1" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.code.coding.code">
-      <path value="Composition.section.code.coding.code" />
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
       <short value="Kürzel des Section-Typs" />
       <min value="1" />
       <fixedCode value="UNBT" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.code.coding.display">
-      <path value="Composition.section.code.coding.display" />
-      <short value="Bezeichnung des Section-Typs" />
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
       <fixedString value="Unfallbetrieb" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.entry">
-      <path value="Composition.section.entry" />
-      <short value="Verweis auf das OPER-Profil Unfallbetrieb" />
+    <element id="Composition.section:Unfalldaten.section:Unfallbetrieb.entry">
+      <path value="Composition.section.section.entry" />
       <min value="1" />
       <max value="1" />
       <type>
@@ -172,63 +219,49 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallbetrieb.entry.reference">
-      <path value="Composition.section.entry.reference" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Composition.section:Unfallereignis">
-      <path value="Composition.section" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis">
+      <path value="Composition.section.section" />
       <sliceName value="Unfallereignis" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.code">
-      <path value="Composition.section.code" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.code">
+      <path value="Composition.section.section.code" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.code.coding">
-      <path value="Composition.section.code.coding" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.code.coding">
+      <path value="Composition.section.section.code.coding" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.code.coding.system">
-      <path value="Composition.section.code.coding.system" />
-      <short value="Werteraum der Section-Typen" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
       <min value="1" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.code.coding.code">
-      <path value="Composition.section.code.coding.code" />
-      <short value="Kürzel des Section-Typs" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
       <min value="1" />
       <fixedCode value="UFER" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.code.coding.display">
-      <path value="Composition.section.code.coding.display" />
-      <short value="Bezeichnung des Section-Typs" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
       <fixedString value="Unfallereignis" />
       <mustSupport value="true" />
     </element>
-    <element id="Composition.section:Unfallereignis.entry">
-      <path value="Composition.section.entry" />
-      <short value="Verweis auf das OPER-Profil Unfallereignis" />
+    <element id="Composition.section:Unfalldaten.section:Unfallereignis.entry">
+      <path value="Composition.section.section.entry" />
       <min value="1" />
       <max value="1" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
       </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Composition.section:Unfallereignis.entry.reference">
-      <path value="Composition.section.entry.reference" />
-      <min value="1" />
       <mustSupport value="true" />
     </element>
   </differential>

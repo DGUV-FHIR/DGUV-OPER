@@ -40,45 +40,55 @@
 					</coding>
 				</type>
 				
-        <!-- SUBJECT Versicherte Person (PATIENT)-->
-        <subject>
-			<reference value="Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
-		</subject>
-				<date value="2025-11-02T10:15:00+01:00"/>
+				<!-- SUBJECT Versicherte Person (PATIENT)-->
+				<subject>
+					<reference value="Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+				</subject>
+						<date value="2025-11-02T10:15:00+01:00"/>
+						
+				<!-- AUTHOR Leistungserbringer  (PRACTITIONER) -->
+				<author>
+					<reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466"/>
+				</author>
 				
-        <!-- AUTHOR Leistungserbringer  (PRACTITIONER) -->
-        <author>
-			<reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466"/>
-		</author>
-		
-		<title value="Operationsbericht"/>
-				
-        <!-- Composition.section [1] Unfallbetrieb -->
+				<title value="Operationsbericht"/>
+						
+				<!-- Composition.section [1] UnfallDaten -->
 				<section>
 					<code>
 						<coding>
 							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-							<code value="UNBT"/>
-							<display value="Unfallbetrieb"/>
+							<code value="UNDA"/>
+							<display value="Unfalldaten"/>
 						</coding>
 					</code>
-					<entry>
-						<reference value="http://fhir.dguv.de/OPER/Organization/bef1dc10-a361-4eba-8fcc-073f771df44b"/>
-					</entry>
-				</section>
-				
-        <!-- Composition.section [2] Unfallereignis -->
-				<section>
-					<code>
-						<coding>
-							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-							<code value="UFER"/>
-							<display value="Unfallereignis"/>
-						</coding>
-					</code>
-					<entry>
-						<reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
-					</entry>
+					<!-- Composition.section [1.1] Unfallbetrieb -->
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="UNBT"/>
+								<display value="Unfallbetrieb"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Organization/bef1dc10-a361-4eba-8fcc-073f771df44b"/>
+						</entry>
+					</section>
+					
+					<!-- Composition.section [1.2] Unfallereignis -->
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="UFER"/>
+								<display value="Unfallereignis"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
+						</entry>
+					</section>
 				</section>
 			</Composition>
 		</resource>
