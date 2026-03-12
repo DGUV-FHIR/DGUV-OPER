@@ -66,4 +66,78 @@
             </entry>
         </section>
     </section>
+    <!--   Versicherung                 -->
+    <section>
+        <code>
+            <coding>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                <code value="VERS"/>
+                <display value="Versicherung"/>
+            </coding>
+        </code>
+        <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="UVTR"/>
+                    <display value="Unfallversicherungsträger"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:180f219f-97a8-486d-99d9-ed631fe4fc60"/>
+            </entry>
+        </section>
+
+        <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="PFKA"/>
+                    <display value="Pflegekasse"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:0bf64ac16-926b-4082-968a-f7c088364b83"/>
+            </entry>
+        </section>
+
+         <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="KRKA"/>
+                    <display value="Krankenkasse"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:446a540f-7d08-4926-98fe-2abd3094aa92"/>
+            </entry>
+        </section>
+
+         <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="VSVH"/>
+                    <display value="Versichertenverhältnis"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:75c6d854-876e-4b9d-8ea9-327a46c9c50f"/>
+            </entry>
+        </section>
+
+        <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="UNBT_KRKA"/>
+                    <display value="UnfallbetriebKrankenkasse"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="urn:uuid:75c6d854-876e-4b9d-8ea9-327a46c9c577"/>
+            </entry>
+        </section>
+    </section>
 </Composition>

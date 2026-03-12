@@ -90,6 +90,82 @@
 						</entry>
 					</section>
 				</section>
+
+				<!-- Composition.section [1] Versicherung -->
+				<section>
+					<code>
+						<coding>
+							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+							<code value="VERS"/>
+							<display value="Versicherung"/>
+						</coding>
+					</code>
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="UVTR"/>
+								<display value="Unfallversicherungsträger"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60"/>
+						</entry>
+					</section>
+
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="PFKA"/>
+								<display value="Pflegekasse"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Organization/bf64ac16-926b-4082-968a-f7c088364b83"/>
+						</entry>
+					</section>
+
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="KRKA"/>
+								<display value="Krankenkasse"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Organization/446a540f-7d08-4926-98fe-2abd3094aa92"/>
+						</entry>
+					</section>
+
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="VSVH"/>
+								<display value="Versichertenverhältnis"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Coverage/75c6d854-876e-4b9d-8ea9-327a46c9c50f"/>
+						</entry>
+					</section>
+
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+								<code value="UNBT_KRKA"/>
+								<display value="UnfallbetriebKrankenkasse"/>
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/OPER/Organization/75c6d854-876e-4b9d-8ea9-327a46c9c888"/>
+						</entry>
+					</section>
+				</section>
+				
 			</Composition>
 		</resource>
 	</entry>
@@ -351,4 +427,348 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!-- =========================================================
+      ENTRY 6 — Unfallversicherungstraeger (ORGANIZATION) 
+	========================================================== -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60" />
+		<resource>
+			<Organization>
+				<id value="180f219f-97a8-486d-99d9-ed631fe4fc60" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+				</meta>
+
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+					<h1>Hier finden Sie ein Beispiel für den Unfallversicherungstraeger einer verunfallten Person</h1>
+					</div>
+				</text> 
+
+				<!--   Institutionskennzeichen   -->
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+							<code value="XX" />
+							<display value="Organization identifier" />
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/arge-ik/iknr" />
+					<value value="120391742" />
+				</identifier>
+
+				<!--Telematik-ID-->
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+							<code value="PRN"/>
+							<display value="Provider number" />
+						</coding>
+					</type>
+					<system value="https://gematik.de/fhir/sid/telematik-id"/>
+					<value value="8-01-0000000090"/>
+				</identifier>
+
+
+				<!-- Name des Unfallversicherungsträgers-->
+				<name value="Braunschweigischer GUVV" />
+
+				<!-- Telefon-Kontakt zum Unfallversicherungsträger -->
+				<telecom>
+					<system value="phone"/>
+					<value value="0531 27374-0"/>
+				</telecom>
+
+				<!-- E-Mail-Kontakt zum Unfallversicherungsträger -->
+				<telecom>
+					<system value="email"/>
+					<value value="info@bs-guv.de"/>
+				</telecom>
+
+				<!-- Strassen-Adresse des Unfallversicherungsträgers -->
+				<address>
+					<type value="both" />
+					<line value="Berliner Platz 1 C (Ring-Center)">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Berliner Platz" />
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="1 C" />
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="(Ring-Center)" />
+						</extension>
+					</line>
+					<city value="Braunschweig" />
+					<postalCode value="38102" />
+					<country value="DE"/>
+				</address>
+
+			</Organization>
+		</resource>
+	</entry>
+	<!-- =========================================================
+      ENTRY 6X — Pflegekasse (ORGANIZATION) 
+	========================================================== -->
+	<entry>
+	<fullUrl value="http://fhir.dguv.de/OPER/Organization/bf64ac16-926b-4082-968a-f7c088364b83" />
+	<resource>
+		<Organization>
+			<id value="bf64ac16-926b-4082-968a-f7c088364b83" />
+			<meta>
+				<profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Pflegekasse" />
+			</meta>
+
+			<text>
+				<status value="generated"/>
+				<div xmlns="http://www.w3.org/1999/xhtml">
+				<h1>Hier finden Sie ein Beispiel für die Pflegekasse der pflegebedürftigen Person, die von der verunfallten Person gepflegt wurde.</h1>
+				</div>
+			</text> 
+
+			<!--   Institutionskennzeichen   -->
+			<identifier>
+				<type>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+						<code value="XX" />
+						<display value="Organization identifier" />
+					</coding>
+				</type>
+				<system value="http://fhir.de/sid/arge-ik/iknr" />
+				<value value="106918251" />
+			</identifier>
+
+			<!--Telematik-ID-->
+			<identifier>
+				<type>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+						<code value="PRN"/>
+						<display value="Provider number" />
+					</coding>
+				</type>
+				<system value="https://gematik.de/fhir/sid/telematik-id"/>
+				<value value="8-01-0000000090"/>
+			</identifier>
+
+			<!-- Name der Pflegekasse-->
+			<name value="AOK Mittlerer Oberrhein" />
+
+			<!-- Telefon-Kontakt zur Pflegekasse -->
+			<telecom>
+				<system value="phone"/>
+				<value value="07251 7070"/>
+			</telecom>
+
+			<!-- E-Mail-Kontakt zur Pflegekasse -->
+			<telecom>
+				<system value="email"/>
+				<value value="aok.mittlerer-oberrhein@bw.aok.de"/>
+			</telecom>
+
+			<!-- Postfach-Adresse der Pflegekasse -->
+			<address>
+				<type value="postal"/>
+				<line value="Postfach 121212">
+					<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+						<valueString value="Postfach 121212"/>
+					</extension>
+				</line>
+				<city value="Karlsruhe"/>
+				<postalCode value="76130"/>
+				<country value="DE"/>
+			</address>
+		</Organization>
+     </resource>
+</entry>
+	<!-- =========================================================
+      ENTRY XXX — Krankenkasse (ORGANIZATION) 
+	========================================================== -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Organization/446a540f-7d08-4926-98fe-2abd3094aa92" />
+		<resource>
+		<Organization>
+			<id value="446a540f-7d08-4926-98fe-2abd3094aa92" />
+			<meta>
+				<profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Krankenkasse" />
+			</meta>
+
+			<text>
+				<status value="generated"/>
+				<div xmlns="http://www.w3.org/1999/xhtml">
+					<h1>Hier finden Sie ein Beispiel der Krankenkasse einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+				</div>
+			</text>
+
+			<!--IK-Nummer-->
+			<identifier>
+				<type>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+						<code value="XX"/>
+						<display value="Organization identifier" />
+					</coding>
+				</type>
+				<system value="http://fhir.de/sid/arge-ik/iknr"/>
+				<value value="260120196"/>
+			</identifier>
+
+			<!--Telematik-ID-->
+			<identifier>
+				<type>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+						<code value="PRN"/>
+						<display value="Provider number" />
+					</coding>
+				</type>
+				<system value="https://gematik.de/fhir/sid/telematik-id"/>
+				<value value="8-01-0000000090"/>
+			</identifier>
+
+			<!-- Name der Krankenkasse-->
+			<name value="AOK Herzogtum Lauenburg"/>
+
+			<!-- Telefon-Kontakt Krankenkasse -->
+			<telecom>
+				<system value="phone"/>
+				<value value="01771234"/>
+			</telecom>
+
+			<!-- Strassen-Adresse der Krankenkasse -->
+			<address>
+				<type value="both"/>
+				<line value="Hauptstr. 91">
+					<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+						<valueString value="Hauptstraße"/>
+					</extension>
+					<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+						<valueString value="91"/>
+					</extension>
+				</line>
+				<city value="Mölln"/>
+				<postalCode value="23879"/>
+				<country value="DE"/>
+			</address>
+
+		</Organization>
+		</resource>
+	</entry>
+	<!-- =========================================================
+		ENTRY XXX — VersichertenVerhaeltnis (Coverage) 
+	========================================================== -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Coverage/75c6d854-876e-4b9d-8ea9-327a46c9c50f" />
+		<resource>
+			<Coverage>
+				<id value="75c6d854-876e-4b9d-8ea9-327a46c9c50f" />
+					<meta>
+						<profile value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
+					</meta>
+
+					<text>
+						<status value="generated"/>
+						<div xmlns="http://www.w3.org/1999/xhtml">
+						<h1>Hier finden Sie ein Beispiel für das Versichertenverhältnis einer verunfallten Person</h1>
+						</div>
+					</text>
+
+				<!--
+					Familienversicherung: Pflichtangabe !
+
+					Verunfallte Person ist familien(mit)versichert:
+						Das Element <extension url="Mitgliedsname"> muss existieren und 
+						das Element valueString value muss einen String.length > 0 enthalten.
+				-->
+					<extension  url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Familienversicherung">
+							<extension url="Familienversichert">
+								<valueBoolean value="true" />
+							</extension>
+							<extension url="Mitgliedsname">  
+								<valueString value="Mutter von Unfallopfer" />
+							</extension>
+					</extension>
+
+				<!-- Status -->    
+					<status value="active"/>
+
+				<!--
+					Verweis auf Patient / versorgte Person: Pflichtangabe !
+				-->
+					<beneficiary>
+						<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+					</beneficiary>
+
+				<!--
+					Verweis auf den Unfallversicherungsträger als Kostenträger: Pflichtangabe !
+				-->
+					<payor>
+						<reference value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60"/>
+					</payor>
+				</Coverage>
+		</resource>
+	</entry>
+	 <!-- =========================================================
+      ENTRY XXX — TEST (ORGANIZATION) 
+========================================================== -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Organization/75c6d854-876e-4b9d-8ea9-327a46c9c888" />
+		<resource>
+			<Organization>
+				<id value="75c6d854-876e-4b9d-8ea9-327a46c9c888"/>
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb"/>
+				</meta>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<h1>Hier finden Sie ein Beispiel für den Unfallbetrieb einer verunfallten Person entsprechend dem VersichertePerson-Profil der DGUV</h1>
+					</div>
+				</text>
+				<!-- Bezeichnung des Unfallbetriebs-->
+				<name value="Unfallvermeidungsgesellschaft mbH"/>
+				<!-- Telefon Kontakt Unfallbetrieb -->
+				<telecom>
+					<system value="phone"/>
+					<value value="+49 89 11 22 33 44"/>
+				</telecom>
+				<!-- Strassenanschrift des Unfallbetriebs -->
+				<address>
+					<type value="both"/>
+					<line value="Johann-Lafer-Gasse 2">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Johann-Lafer-Gasse"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="2"/>
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+							<valueString value="hinten rum"/>
+						</extension>
+					</line>
+					<city value="Sankt Fridolin"/>
+					<postalCode value="53757"/>
+					<country value="DE"/>
+				</address>
+				<!-- Postfachadresse des Unfallbetriebs -->
+				<address>
+					<type value="postal"/>
+					<line value="Postfach 4711">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+							<valueString value="Postfach 4711"/>
+						</extension>
+					</line>
+					<city value="Sankt Augustin"/>
+					<postalCode value="53700"/>
+					<country value="DE"/>
+				</address>
+			</Organization>
+		</resource>
+	</entry>
+	
+
 </Bundle>

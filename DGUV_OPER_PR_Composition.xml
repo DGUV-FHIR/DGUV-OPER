@@ -264,5 +264,274 @@
       </type>
       <mustSupport value="true" />
     </element>
+    <element id="Composition.section:Versicherung">
+      <path value="Composition.section" />
+      <sliceName value="Versicherung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="VERS" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Versicherung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="3" />
+      <max value="5" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger">
+      <path value="Composition.section.section" />
+      <sliceName value="Unfallversicherungstraeger" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="UVTR" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Unfallversicherungsträger" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallversicherungstraeger.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse">
+      <path value="Composition.section.section" />
+      <sliceName value="Pflegekasse" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="PFKA" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Pflegekasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Pflegekasse.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Pflegekasse" />
+      </type>
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse">
+      <path value="Composition.section.section" />
+      <sliceName value="Krankenkasse" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="KRKA" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Krankenkasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Krankenkasse.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Krankenkasse" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis">
+      <path value="Composition.section.section" />
+      <sliceName value="VersichertenVerhaeltnis" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="VSVH" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Versichertenverhältnis" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:VersichertenVerhaeltnis.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb">
+      <path value="Composition.section.section" />
+      <sliceName value="Unfallbetrieb" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="UNBT_KRKA" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="UnfallbetriebKrankenkasse" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:Versicherung.section:Unfallbetrieb.entry">
+      <path value="Composition.section.section.entry" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallbetrieb" />
+      </type>
+    </element>
   </differential>
 </StructureDefinition>

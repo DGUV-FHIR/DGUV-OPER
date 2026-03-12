@@ -75,10 +75,7 @@
     <code value="KOBF" />
     <display value="Konsiliarbefunde" />
   </concept>
-  <concept>
-    <code value="KRKA" />
-    <display value="Krankenkasse" />
-  </concept>
+ 
   <concept>
     <code value="LEST" />
     <display value="Leistungserbringer" />
@@ -103,10 +100,7 @@
     <code value="MDWS" />
     <display value="Medikation - Wirkstoff" />
   </concept>
-  <concept>
-    <code value="PFKA" />
-    <display value="Pflegekasse" />
-  </concept>
+ 
   <concept>
     <code value="PRWT" />
     <display value="Prognose Wiederaufnahme Tätigkeit" />
@@ -140,15 +134,34 @@
     <code value="UNDA" />
     <display value="Unfalldaten" />
   </concept>
-  <!--
+  
+  <concept>
+    <code value="VERS" />
+    <display value="Versicherung" />
+  </concept>
   <concept>
     <code value="UVTR" />
     <display value="Unfallversicherungsträger" />
   </concept>
+  
   <concept>
     <code value="VSVH" />
     <display value="Versichertenverhältnis" />
   </concept>
+   <concept>
+    <code value="PFKA" />
+    <display value="Pflegekasse" />
+  </concept>
+   <concept>
+    <code value="KRKA" />
+    <display value="Krankenkasse" />
+  </concept>
+
+   <concept>
+    <code value="UNBT_KRKA" />
+    <display value="UnfallbetriebKrankenkasse" />
+  </concept>
+  <!--
   <concept>
     <code value="VSPN" />
     <display value="Versicherte Person" />
