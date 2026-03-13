@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: AFW
+ Datum: 13.03.2026
+ 
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_01.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ 
+ P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung
+-->
+
+<Observation xmlns="http://hl7.org/fhir">
+
+  <!--Meta-Daten-->
+  <id value="histoMibiUntersuchung-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung"/>
+  </meta>
+
+  <!--Status-->
+  <status value="final"/>
+
+  <!--Teilberichtsinhalt-->
+  <code>
+    <coding>
+      <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+      <code value="TODO"/>
+      <display value="TODO"/>
+    </coding>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+
+  <!--Freitextbeschreibung der postoperativen Therapieempfehlung-->
+  <valueString value="XXXX TODO"/>
+  
+</Observation>
