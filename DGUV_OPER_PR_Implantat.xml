@@ -53,33 +53,23 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Device.udiCarrier">
-      <path value="Device.udiCarrier" />
-      <mustSupport value="true" />
-    </element>
     <element id="Device.status">
       <path value="Device.status" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Device.manufacturer">
-      <path value="Device.manufacturer" />
+    <element id="Device.deviceName">
+      <path value="Device.deviceName" />
+      <min value="1" />
+      <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Device.lotNumber">
-      <path value="Device.lotNumber" />
+    <element id="Device.deviceName.name">
+      <path value="Device.deviceName.name" />
       <mustSupport value="true" />
     </element>
-    <element id="Device.serialNumber">
-      <path value="Device.serialNumber" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.modelNumber">
-      <path value="Device.modelNumber" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.type">
-      <path value="Device.type" />
+    <element id="Device.deviceName.type">
+      <path value="Device.deviceName.type" />
       <mustSupport value="true" />
     </element>
     <element id="Device.patient">
@@ -96,10 +86,6 @@
       <path value="Device.patient.reference" />
       <short value="Konkreter Verweis auf versicherte Person, der das Implantat eingesetzt wurde" />
       <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.location">
-      <path value="Device.location" />
       <mustSupport value="true" />
     </element>
   </differential>
