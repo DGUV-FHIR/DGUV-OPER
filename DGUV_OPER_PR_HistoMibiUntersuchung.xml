@@ -15,7 +15,7 @@
   <differential>
     <element id="Observation">
       <path value="Observation" />
-      <short value="Hier werden die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt" />
+      <short value="Hier können die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt werden" />
     </element>
     <element id="Observation.meta">
       <path value="Observation.meta" />
@@ -28,14 +28,6 @@
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
       <mustSupport value="true" />
-    </element>
-    <element id="Observation.identifier">
-      <path value="Observation.identifier" />
-      <max value="0" />
-    </element>
-    <element id="Observation.basedOn">
-      <path value="Observation.basedOn" />
-      <max value="0" />
     </element>
     <element id="Observation.partOf">
       <path value="Observation.partOf" />
@@ -52,9 +44,31 @@
       <fixedCode value="final" />
       <mustSupport value="true" />
     </element>
-    <element id="Observation.category">
-      <path value="Observation.category" />
-      <max value="0" />
+    <element id="Observation.code">
+      <path value="Observation.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding">
+      <path value="Observation.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding.system">
+      <path value="Observation.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.code.coding.code">
+      <path value="Observation.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="HMU" />
+    </element>
+    <element id="Observation.code.coding.display">
+      <path value="Observation.code.coding.display" />
+      <min value="1" />
+      <fixedString value="HistologischeMikrobiologischeUntersuchung" />
     </element>
     <element id="Observation.code.text">
       <path value="Observation.code.text" />
@@ -81,83 +95,15 @@
         <rules value="open" />
       </slicing>
     </element>
-    <element id="Observation.focus">
-      <path value="Observation.focus" />
-      <max value="0" />
-    </element>
-    <element id="Observation.encounter">
-      <path value="Observation.encounter" />
-      <max value="0" />
-    </element>
-    <element id="Observation.effective[x]">
-      <path value="Observation.effective[x]" />
-      <max value="0" />
-    </element>
-    <element id="Observation.issued">
-      <path value="Observation.issued" />
-      <max value="0" />
-    </element>
-    <element id="Observation.performer">
-      <path value="Observation.performer" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
-      </type>
-      <mustSupport value="false" />
-    </element>
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
       <short value="Freitext zu veranlassten histologischen und mikrobiologischen Untersuchungen" />
-      <definition value="Hier werden die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt." />
+      <definition value="Hier können die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt werden." />
       <min value="1" />
       <type>
         <code value="string" />
       </type>
       <mustSupport value="true" />
-    </element>
-    <element id="Observation.dataAbsentReason">
-      <path value="Observation.dataAbsentReason" />
-      <max value="0" />
-    </element>
-    <element id="Observation.interpretation">
-      <path value="Observation.interpretation" />
-      <max value="0" />
-    </element>
-    <element id="Observation.note">
-      <path value="Observation.note" />
-      <max value="0" />
-    </element>
-    <element id="Observation.bodySite">
-      <path value="Observation.bodySite" />
-      <max value="0" />
-    </element>
-    <element id="Observation.method">
-      <path value="Observation.method" />
-      <max value="0" />
-    </element>
-    <element id="Observation.specimen">
-      <path value="Observation.specimen" />
-      <max value="0" />
-    </element>
-    <element id="Observation.device">
-      <path value="Observation.device" />
-      <max value="0" />
-    </element>
-    <element id="Observation.referenceRange">
-      <path value="Observation.referenceRange" />
-      <max value="0" />
-    </element>
-    <element id="Observation.hasMember">
-      <path value="Observation.hasMember" />
-      <max value="0" />
-    </element>
-    <element id="Observation.derivedFrom">
-      <path value="Observation.derivedFrom" />
-      <max value="0" />
-    </element>
-    <element id="Observation.component">
-      <path value="Observation.component" />
-      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>
