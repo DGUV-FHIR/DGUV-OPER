@@ -30,33 +30,42 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
       <mustSupport value="true" />
     </element>
+    <element id="Device.extension">
+      <path value="Device.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.extension:ImplantatFreitext">
+      <path value="Device.extension" />
+      <sliceName value="ImplantatFreitext" />
+      <short value="Implantatbeschreibung als Freitext" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Device.extension:ImplantatFreitext.value[x]">
+      <path value="Device.extension.value[x]" />
+      <short value="Konkreter Freitext zur Implantatbeschreibung" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Device.deviceName">
       <path value="Device.deviceName" />
-      <short value="Implantatbezeichnung" />
-      <comment value="Die konkrete Bezeichnung des Implantats wird im Attribut &quot;deviceName.name&quot; angegeben, die Art bzw. Ebene dieser Bezeichnung im Attribut &quot;deviceName.type&quot;." />
+      <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Device.deviceName.name">
       <path value="Device.deviceName.name" />
-      <short value="Konkrete Bezeichnung des Implantats" />
+      <short value="Konkreter Name des Implantats" />
       <mustSupport value="true" />
     </element>
     <element id="Device.deviceName.type">
       <path value="Device.deviceName.type" />
-      <comment value="Hier wird angegeben, um welche Art Namen es sich handelt." />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.type">
-      <path value="Device.type" />
-      <short value="Beschreibung eines Implantats" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Device.type.text">
-      <path value="Device.type.text" />
-      <short value="Freitextbeschreibung des Implantats" />
-      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Device.patient">

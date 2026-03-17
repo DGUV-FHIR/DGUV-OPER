@@ -33,6 +33,7 @@
     <element id="Condition.extension">
       <path value="Condition.extension" />
       <min value="1" />
+      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.extension:Frakturklassifikation">
@@ -100,10 +101,12 @@
     </element>
     <element id="Condition.code">
       <path value="Condition.code" />
+      <short value="Freitextdiagnose" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.code.text">
       <path value="Condition.code.text" />
+      <short value="Konkrete Formulierung der Freitextdiagnose" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.bodySite">

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  05.02.2026
+    Datum:  04.03.2026
 
-    Die vorliegende Beispiel Datei "DGUV_OPER_PR_VersichertenVerhaeltnis_04" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertenVerhaeltnis_04.xml" dient der Validierung 
     folgenden Szenarios:
     
     N: Ausgehend von Standardfall: Nicht familienversichert, Mitgliedsname vorhanden (Constraintverletzung: dguv-famvers-2)
 
 -->
 <Coverage xmlns="http://hl7.org/fhir">
-<id value="versverhaeltn-03" />
+<id value="versverhaeltn-04" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Coverage/DGUV-OPER-PR-VersichertenVerhaeltnis" />
     </meta>

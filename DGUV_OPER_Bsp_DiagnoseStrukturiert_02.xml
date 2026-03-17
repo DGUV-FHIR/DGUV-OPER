@@ -2,16 +2,15 @@
 <!--
  Author: Ludger Schröder
  Datum: 09.03.2026
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_01.xml" dient der Validierung
- folgenden Szenarios (Standardfall):
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_02.xml" dient der Validierung
+ folgenden Szenarios:
 
- P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, clinical/verificationStatus (lt. icd-5),
-    ICD‑10‑GM‑Codierung mit Mehrfachcodierungs‑Kennzeichen, Seitenlokalisation, Diagnosesicherheit
-    sowie Referenz auf Verunfallte Person)
+ N: Ausgehend von Standardfall:
+    clinicalStatus = “unknown“ / verificationStatus = “refuted“ (doppelte Verletzung Constraint icd-5)
 -->
 <Condition xmlns="http://hl7.org/fhir">
   <!--Meta-Daten-->
-  <id value="diagnosestrukturiert-01"/>
+  <id value="diagnosestrukturiert-02"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert"/>
   </meta>
@@ -20,8 +19,8 @@
   <clinicalStatus>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
-      <code value="active"/>
-      <display value="Active"/>
+      <code value="unknown"/>
+      <display value="Unknown"/>
     </coding>
   </clinicalStatus>
 
@@ -29,8 +28,8 @@
   <verificationStatus>
     <coding>
       <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
-      <code value="confirmed"/>
-      <display value="Confirmed"/>
+      <code value="refuted"/>
+      <display value="Refuted"/>
     </coding>
   </verificationStatus>
 
