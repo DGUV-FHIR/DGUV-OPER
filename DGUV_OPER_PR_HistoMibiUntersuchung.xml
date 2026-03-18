@@ -35,7 +35,7 @@
       <max value="1" />
       <type>
         <code value="Reference" />
-        <targetProfile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
       </type>
       <mustSupport value="true" />
     </element>
@@ -67,12 +67,12 @@
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
       <min value="1" />
-      <fixedCode value="OPBV" />
+      <fixedCode value="HMU" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
       <min value="1" />
-      <fixedString value="OPBefundVerlauf" />
+      <fixedString value="HistologischeMikrobiologischeUntersuchung" />
     </element>
     <element id="Observation.subject">
       <path value="Observation.subject" />

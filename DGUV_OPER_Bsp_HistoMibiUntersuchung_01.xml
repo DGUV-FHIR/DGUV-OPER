@@ -30,10 +30,8 @@
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
-      <!--<code value="HMU"/> 
-      <display value="HistologischeMikrobiologischeUntersuchung"/> -->
-       <code value="OPBV"/> 
-      <display value="OPBefundVerlauf"/> 
+      <code value="HMU"/> 
+      <display value="HistologischeMikrobiologischeUntersuchung"/> 
     </coding>
   </code>
 
