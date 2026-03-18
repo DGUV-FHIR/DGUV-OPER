@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: AFW
+ Datum: 13.03.2026
+ 
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_01.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ 
+ P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung
+-->
+
+<Observation xmlns="http://hl7.org/fhir">
+
+  <!--Meta-Daten-->
+  <id value="histoMibiUntersuchung-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung"/>
+  </meta>
+
+  <!-- Bezug auf übergeordnete OP/Prozedur -->
+    <partOf>
+        <!-- Referenz auf eine Procedure, die dem Profil DGUV-OPER-PR-OPProzeduren entspricht -->
+        <reference value="http://fhir.dguv.de/OPER/Procedure/2913892f-e740-4b0d-9697-48cb8e6e39d6"/>
+    </partOf>
+
+  <!--Status-->
+  <status value="final"/>
+
+  <!--Teilberichtsinhalt-->
+  <code>
+    <coding>
+      <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+      <code value="HMU"/> 
+      <display value="HistologischeMikrobiologischeUntersuchung"/> 
+    </coding>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+
+  
+
+  <!--Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
+  <valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/>
+  
+</Observation>

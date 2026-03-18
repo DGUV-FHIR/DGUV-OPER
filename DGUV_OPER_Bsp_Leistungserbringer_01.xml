@@ -1,15 +1,11 @@
-  <!--
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
     Author: AFW
     Datum:  22.01.26
 
-    Die vorliegende Beispiel Datei .... dient der Validierung 
-    der Datenaufnahme zu dem ......
-    
-    Zu beachten ist dabei ...
-
-    Durchzuführende Massnahmen:
-
-
+    Die Beispieldatei DGUV_OPER_Bsp_Leistungserbringer_01.xml wird zur Verifikation des Szenarios Maximalbefüllung eingesetzt.
+    In diesem Szenario erfolgt eine vollständige Belegung sämtlicher gemäß Spezifikation als must support deklarierter Attribute 
+    des Leistungserbringers.
 -->
 
 <Practitioner xmlns="http://hl7.org/fhir">
