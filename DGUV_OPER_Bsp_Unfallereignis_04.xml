@@ -33,6 +33,12 @@
       </extension>
   </extension>
 
+  <!-- Aktenzeichen als Identifier -->
+  <identifier>
+    <system value="http://fhir.dguv.de/Basis/NamingSystem/DGUV-Basis-NS-Aktenzeichen"/>
+    <value value="BGV-AZ-2025/365" />
+  </identifier>
+
   <!-- Observation status -->
   <status value="final"/>
 
