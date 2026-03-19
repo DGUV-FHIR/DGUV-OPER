@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
-  <name value="DGUV_OPER_EX_OPDatum" />
+  <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDate" />
+  <name value="DGUV_OPER_EX_OPDate" />
   <status value="draft" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Procedure.performed[x]" />
+    <expression value="Procedure" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -20,7 +20,7 @@
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
+      <fixedUri value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDate" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />

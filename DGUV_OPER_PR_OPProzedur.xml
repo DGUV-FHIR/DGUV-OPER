@@ -28,11 +28,12 @@
     </element>
     <element id="Procedure.extension">
       <path value="Procedure.extension" />
-      <min value="2" />
+      <min value="1" />
     </element>
     <element id="Procedure.extension:Dokumentationsdatum">
       <path value="Procedure.extension" />
       <sliceName value="Dokumentationsdatum" />
+      <definition value="Datum, an dem die Prozedur dokumentiert wurde.&#xD;&#xA;Es handelt sich hierbei um das fachliche Dokumentationsdatum, nicht zu verwechseln mit dem Datum der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein." />
       <min value="1" />
       <max value="1" />
       <type>
@@ -59,7 +60,8 @@
     <element id="Procedure.extension:Blutsperre">
       <path value="Procedure.extension" />
       <sliceName value="Blutsperre" />
-      <min value="1" />
+      <short value="Blutsperre" />
+      <definition value="Beschreibung Blutsperre: ja oder nein; wenn ja, wo" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -70,6 +72,7 @@
     </element>
     <element id="Procedure.extension:Blutsperre.value[x]">
       <path value="Procedure.extension.value[x]" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.extension:Narkose">
@@ -82,16 +85,30 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
+    <element id="Procedure.extension:Narkose.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x].coding">
+      <path value="Procedure.extension.value[x].coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Procedure.extension:Narkose.value[x].coding.system">
       <path value="Procedure.extension.value[x].coding.system" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.extension:Narkose.value[x].coding.code">
       <path value="Procedure.extension.value[x].coding.code" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.extension:Narkose.value[x].coding.display">
       <path value="Procedure.extension.value[x].coding.display" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.identifier">
@@ -156,7 +173,6 @@
     <element id="Procedure.code.coding:OPS">
       <path value="Procedure.code.coding" />
       <sliceName value="OPS" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.code.coding:OPS.extension">
@@ -166,6 +182,7 @@
     <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation">
       <path value="Procedure.code.coding.extension" />
       <sliceName value="Seitenlokalisation" />
+      <max value="1" />
       <type>
         <code value="Extension" />
         <profile value="http://fhir.de/StructureDefinition/seitenlokalisation" />
@@ -204,7 +221,6 @@
     <element id="Procedure.code.coding:SNOMED">
       <path value="Procedure.code.coding" />
       <sliceName value="SNOMED" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.code.coding:SNOMED.system">
@@ -221,6 +237,10 @@
     <element id="Procedure.code.coding:SNOMED.display">
       <path value="Procedure.code.coding.display" />
       <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.text">
+      <path value="Procedure.code.text" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.subject">
@@ -305,6 +325,7 @@
     </element>
     <element id="Procedure.performer">
       <path value="Procedure.performer" />
+      <short value="beteiligte Akteure" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.performer.actor">
@@ -347,8 +368,6 @@
     <element id="Procedure.bodySite">
       <path value="Procedure.bodySite" />
       <short value="Körperstelle" />
-      <min value="1" />
-      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.bodySite.coding">
@@ -361,6 +380,10 @@
       <path value="Procedure.bodySite.coding.system" />
       <min value="1" />
       <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://snomed.info/sct" />
+      </binding>
     </element>
     <element id="Procedure.bodySite.coding.code">
       <path value="Procedure.bodySite.coding.code" />
@@ -369,6 +392,55 @@
     </element>
     <element id="Procedure.bodySite.coding.display">
       <path value="Procedure.bodySite.coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference">
+      <path value="Procedure.usedReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension">
+      <path value="Procedure.usedReference.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation">
+      <path value="Procedure.usedReference.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
+      <path value="Procedure.usedReference.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
+      <path value="Procedure.usedReference.extension.value[x].system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
+      <path value="Procedure.usedReference.extension.value[x].code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
+      <path value="Procedure.usedReference.extension.value[x].display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.reference">
+      <path value="Procedure.usedReference.reference" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
