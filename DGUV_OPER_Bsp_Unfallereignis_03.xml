@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: Ludger Schröder
-    Datum:  15.12.2025
+    Datum:  19.03.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallereignis_03.xml" dient der Validierung 
     folgenden Szenarios:
     
-    N: Constraint “dguv-pflegeunfall-1” verletzt (Pflegeunfall ohne Pflegekasse)
+    N: Ausgehend von Standardfall: Constraint “dguv-pflegeunfall-1” verletzt (Pflegeunfall ohne Pflegekasse)
 -->
 <Observation xmlns="http://hl7.org/fhir">
   <id value="unfereign-03"/>
@@ -27,6 +27,12 @@
         <valueBoolean value="true"/>
       </extension>
   </extension>
+
+  <!-- Aktenzeichen als Identifier -->
+  <identifier>
+    <system value="http://fhir.dguv.de/Basis/NamingSystem/DGUV-Basis-NS-Aktenzeichen"/>
+    <value value="BGV-AZ-2025/365" />
+  </identifier>
 
   <!-- Observation status -->
   <status value="final"/>

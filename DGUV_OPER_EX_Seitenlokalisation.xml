@@ -8,7 +8,7 @@
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Procedure.code.coding.extension" />
+    <expression value="Procedure.usedReference" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -25,10 +25,17 @@
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
       <type>
-        <code value="code" />
-        <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+        <code value="Coding" />
       </type>
-      <mustSupport value="true" />
+      <mustSupport value="false" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_SEITENLOKALISATION" />
+      </binding>
+    </element>
+    <element id="Extension.value[x].system">
+      <path value="Extension.value[x].system" />
+      <mustSupport value="false" />
     </element>
   </differential>
 </StructureDefinition>
