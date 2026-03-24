@@ -26,11 +26,12 @@
       <path value="PractitionerRole.meta.profile" />
       <min value="1" />
       <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV_OPER_PR_DArzt" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-DArzt" />
       <mustSupport value="true" />
     </element>
     <element id="PractitionerRole.practitioner">
       <path value="PractitionerRole.practitioner" />
+      <short value="Profiltyp für referenzierten D-Arzt" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
@@ -39,11 +40,13 @@
     </element>
     <element id="PractitionerRole.practitioner.reference">
       <path value="PractitionerRole.practitioner.reference" />
+      <short value="Referenz auf konkreten D-Arzt" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="PractitionerRole.organization">
       <path value="PractitionerRole.organization" />
+      <short value="Profiltyp referenzierter D-Arzt-Organisation" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-DArztOrganisation" />
