@@ -37,10 +37,6 @@
     <display value="OP-Assistent  " />
   </concept>
   <concept>
-    <code value="DAR" />
-    <display value="D-Arzt" />
-  </concept>
-  <concept>
     <code value="SPR" />
     <display value="Springer" />
   </concept>
