@@ -288,7 +288,7 @@
     </element>
     <element id="Organization.type">
       <path value="Organization.type" />
-      <mustSupport value="false" />
+      <mustSupport value="true" />
     </element>
     <element id="Organization.type.coding">
       <path value="Organization.type.coding" />
@@ -299,14 +299,62 @@
       <sliceName value="IHE-Code" />
       <mustSupport value="true" />
     </element>
+    <element id="Organization.type.coding:IHE-Code.system">
+      <path value="Organization.type.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:IHE-Code.version">
+      <path value="Organization.type.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:IHE-Code.code">
+      <path value="Organization.type.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:IHE-Code.display">
+      <path value="Organization.type.coding.display" />
+      <mustSupport value="true" />
+    </element>
     <element id="Organization.type.coding:HL7-Fachschluesselgruppe">
       <path value="Organization.type.coding" />
       <sliceName value="HL7-Fachschluesselgruppe" />
       <mustSupport value="true" />
     </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.system">
+      <path value="Organization.type.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.version">
+      <path value="Organization.type.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.code">
+      <path value="Organization.type.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.display">
+      <path value="Organization.type.coding.display" />
+      <mustSupport value="true" />
+    </element>
     <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert">
       <path value="Organization.type.coding" />
       <sliceName value="HL7-Fachschluesselgruppe-erweitert" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.system">
+      <path value="Organization.type.coding.system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.version">
+      <path value="Organization.type.coding.version" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.code">
+      <path value="Organization.type.coding.code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.display">
+      <path value="Organization.type.coding.display" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.name">
@@ -317,6 +365,7 @@
     <element id="Organization.telecom">
       <path value="Organization.telecom" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Organization.telecom.system">
       <path value="Organization.telecom.system" />
@@ -426,14 +475,12 @@
     </element>
     <element id="Organization.contact.extension">
       <path value="Organization.contact.extension" />
-      <min value="1" />
       <max value="1" />
     </element>
     <element id="Organization.contact.extension:NichtAerztlicherKontakt">
       <path value="Organization.contact.extension" />
       <sliceName value="NichtAerztlicherKontakt" />
-      <min value="1" />
-      <max value="1" />
+      <max value="0" />
     </element>
     <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension">
       <path value="Organization.contact.extension.extension" />
@@ -444,7 +491,6 @@
       <sliceName value="NichtAerztlicherKontakt" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:NichtAerztlicherKontakt.value[x]">
       <path value="Organization.contact.extension.extension.value[x]" />
@@ -455,12 +501,10 @@
       <path value="Organization.contact.extension.extension" />
       <sliceName value="Funktionseinheit" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.extension:NichtAerztlicherKontakt.extension:Funktionseinheit.value[x]">
       <path value="Organization.contact.extension.extension.value[x]" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.name">
       <path value="Organization.contact.name" />
