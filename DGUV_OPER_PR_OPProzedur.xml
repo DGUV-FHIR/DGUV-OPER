@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+  <name value="DGUV_OPER_PR_OPProzedur" />
+  <status value="draft" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Procedure" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Procedure.id">
+      <path value="Procedure.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.meta">
+      <path value="Procedure.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.meta.profile">
+      <path value="Procedure.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension">
+      <path value="Procedure.extension" />
+      <min value="1" />
+    </element>
+    <element id="Procedure.extension:Dokumentationsdatum">
+      <path value="Procedure.extension" />
+      <sliceName value="Dokumentationsdatum" />
+      <definition value="Datum, an dem die Prozedur dokumentiert wurde.&#xD;&#xA;Es handelt sich hierbei um das fachliche Dokumentationsdatum, nicht zu verwechseln mit dem Datum der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein." />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Lagerung">
+      <path value="Procedure.extension" />
+      <sliceName value="Lagerung" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Lagerung" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Lagerung.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Blutsperre">
+      <path value="Procedure.extension" />
+      <sliceName value="Blutsperre" />
+      <short value="Blutsperre" />
+      <definition value="Beschreibung Blutsperre: ja oder nein; wenn ja, wo" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Blutsperre" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Blutsperre.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose">
+      <path value="Procedure.extension" />
+      <sliceName value="Narkose" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x].coding">
+      <path value="Procedure.extension.value[x].coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x].coding.system">
+      <path value="Procedure.extension.value[x].coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x].coding.code">
+      <path value="Procedure.extension.value[x].coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Narkose.value[x].coding.display">
+      <path value="Procedure.extension.value[x].coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.identifier">
+      <path value="Procedure.identifier" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.identifier.system">
+      <path value="Procedure.identifier.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-OPNummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.identifier.value">
+      <path value="Procedure.identifier.value" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.status">
+      <path value="Procedure.status" />
+      <fixedCode value="completed" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.category">
+      <path value="Procedure.category" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Procedure.category.coding">
+      <path value="Procedure.category.coding" />
+      <max value="1" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Procedure.category.coding.system">
+      <path value="Procedure.category.coding.system" />
+      <patternUri value="http://snomed.info/sct" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Procedure.category.coding.code">
+      <path value="Procedure.category.coding.code" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Procedure.category.coding.display">
+      <path value="Procedure.category.coding.display" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Procedure.code">
+      <path value="Procedure.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding">
+      <path value="Procedure.code.coding" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS">
+      <path value="Procedure.code.coding" />
+      <sliceName value="OPS" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.extension">
+      <path value="Procedure.code.coding.extension" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation">
+      <path value="Procedure.code.coding.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.de/StructureDefinition/seitenlokalisation" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation.value[x]">
+      <path value="Procedure.code.coding.extension.value[x]" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation.value[x].system">
+      <path value="Procedure.code.coding.extension.value[x].system" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation.value[x].code">
+      <path value="Procedure.code.coding.extension.value[x].code" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.system">
+      <path value="Procedure.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.de/CodeSystem/bfarm/ops" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:OPS.display">
+      <path value="Procedure.code.coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED">
+      <path value="Procedure.code.coding" />
+      <sliceName value="SNOMED" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED.system">
+      <path value="Procedure.code.coding.system" />
+      <min value="1" />
+      <patternUri value="http://snomed.info/sct" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED.code">
+      <path value="Procedure.code.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.coding:SNOMED.display">
+      <path value="Procedure.code.coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.code.text">
+      <path value="Procedure.code.text" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.subject">
+      <path value="Procedure.subject" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.subject.reference">
+      <path value="Procedure.subject.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.encounter">
+      <path value="Procedure.encounter" />
+      <short value="Fallnummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.encounter.display">
+      <path value="Procedure.encounter.display" />
+      <short value="Fallnummer" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performed[x]">
+      <path value="Procedure.performed[x]" />
+      <slicing>
+        <discriminator>
+          <type value="type" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performed[x]:performedPeriod">
+      <path value="Procedure.performed[x]" />
+      <sliceName value="performedPeriod" />
+      <short value="OPBeginn und OPEnde" />
+      <min value="1" />
+      <type>
+        <code value="Period" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performed[x]:performedPeriod.extension:OPDatum">
+      <path value="Procedure.performed[x].extension" />
+      <sliceName value="OPDatum" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.performed[x]:performedPeriod.extension:Schnittzeit">
+      <path value="Procedure.performed[x].extension" />
+      <sliceName value="Schnittzeit" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.performed[x]:performedPeriod.extension:Nahtzeit">
+      <path value="Procedure.performed[x].extension" />
+      <sliceName value="Nahtzeit" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.performer">
+      <path value="Procedure.performer" />
+      <short value="beteiligte Akteure" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performer.actor">
+      <path value="Procedure.performer.actor" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-OPRollen" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.performer.actor.reference">
+      <path value="Procedure.performer.actor.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.location">
+      <path value="Procedure.location" />
+      <short value="OP-Saal" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.location.display">
+      <path value="Procedure.location.display" />
+      <short value="OP-Saal" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode">
+      <path value="Procedure.reasonCode" />
+      <short value="Indikation (Grund für Operation)" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.reasonCode.text">
+      <path value="Procedure.reasonCode.text" />
+      <short value="OP-Indikation als Freitext" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.bodySite">
+      <path value="Procedure.bodySite" />
+      <short value="Körperstelle" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.bodySite.coding">
+      <path value="Procedure.bodySite.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.bodySite.coding.system">
+      <path value="Procedure.bodySite.coding.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://snomed.info/sct" />
+      </binding>
+    </element>
+    <element id="Procedure.bodySite.coding.code">
+      <path value="Procedure.bodySite.coding.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.bodySite.coding.display">
+      <path value="Procedure.bodySite.coding.display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference">
+      <path value="Procedure.usedReference" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension">
+      <path value="Procedure.usedReference.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation">
+      <path value="Procedure.usedReference.extension" />
+      <sliceName value="Seitenlokalisation" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
+      <path value="Procedure.usedReference.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
+      <path value="Procedure.usedReference.extension.value[x].system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
+      <path value="Procedure.usedReference.extension.value[x].code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
+      <path value="Procedure.usedReference.extension.value[x].display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.reference">
+      <path value="Procedure.usedReference.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

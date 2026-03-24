@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: LSc
+ Datum: 17.03.2026
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Implantat_01.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ 
+ P: Maximalbefüllung einer Instanz Implantat (Meta-Daten, Freitext-Implantatbeschreibung,
+    Gerätename, Verweis auf versicherte Person)
+-->
+<Device xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="implantat-01"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat"/>
+  </meta>
+
+  <!--Freitext-Implantatbeschreibung (Extension: ImplantatFreitext)-->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext">
+    <valueString value="Titanplatte zur Osteosynthese des rechten Radius, 7-Loch"/>
+  </extension>
+
+  <!--Gerätename, Namenstyp-->
+  <deviceName>
+    <name value="Radius-Titanplatte 7-Loch"/>
+    <type value="manufacturer-name"/>
+  </deviceName>
+
+  <!--Verunfallte/versicherte Person (patient)-->
+  <patient>
+    <reference value="urn:uuid:1482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </patient>
+</Device>

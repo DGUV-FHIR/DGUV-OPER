@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-CS-Narkose" />
+  <url value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+  <version value="1.0" />
+  <name value="DGUV_OPER_CS_Narkose" />
+  <title value="Narkose" />
+  <status value="draft" />
+  <experimental value="false" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.dguv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses CodeSystem enthält die Codes und Displays zur Beschreibung der Narkose." />
+  <content value="complete" />
+  <concept>
+    <code value="AA" />
+    <display value="Allgemeinanästhesie" />
+  </concept>
+  <concept>
+    <code value="IA" />
+    <display value="Inhalationsanästhesie" />
+  </concept>
+  <concept>
+    <code value="BA" />
+    <display value="Balancierte Anästhesie" />
+  </concept>
+  <concept>
+    <code value="AS" />
+    <display value="Analgosedierung" />
+  </concept>
+  <concept>
+    <code value="LA" />
+    <display value="Lokalanästhesie" />
+  </concept>
+  <concept>
+    <code value="OA" />
+    <display value="Oberflächenanästhesie" />
+  </concept>
+  <concept>
+    <code value="ILA" />
+    <display value="Infiltrationsanästhesie" />
+  </concept>
+  <concept>
+    <code value="RA" />
+    <display value="Regionalanästhesie" />
+  </concept>
+  <concept>
+    <code value="PLA" />
+    <display value="Periphere Leitungsanästhesie" />
+  </concept>
+  <concept>
+    <code value="IVRA" />
+    <display value="Intravenöse Regionalanästhesie" />
+  </concept>
+  <concept>
+    <code value="RA" />
+    <display value="Rückenmarknahe Leitungsanästhesie" />
+  </concept>
+  <concept>
+    <code value="SPA" />
+    <display value="Spinalanästhesie" />
+  </concept>
+  <concept>
+    <code value="PDA" />
+    <display value="Periduralanästhesie (PDA)" />
+  </concept>
+  <concept>
+    <code value="CSE" />
+    <display value="Kombinierte Spinal-/Epiduralanästhesie" />
+  </concept>
+</CodeSystem>

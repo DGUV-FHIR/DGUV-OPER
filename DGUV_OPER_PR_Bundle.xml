@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-Bundle" />
+  <url value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
+  <name value="DGUV_OPER_PR_Bundle" />
+  <title value="OPER-Bundle" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Das Profil Bundle dient als bündelndes Element für den Operationsbericht (OPER). Es enthält als Klammer alle durch die Composition zusammengefassten Profile und sonstigen Elemente und könnte bei Bedarf auch noch mit einer digitalen Signatur versehen werden." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Bundle" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Bundle" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Bundle.id">
+      <path value="Bundle.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta">
+      <path value="Bundle.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.profile">
+      <path value="Bundle.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier">
+      <path value="Bundle.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.system">
+      <path value="Bundle.identifier.system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.identifier.value">
+      <path value="Bundle.identifier.value" />
+      <short value="Eindeutiger Identifier für den Operationsbericht" />
+      <comment value="Für den Value gibt es eine festgeschriebenes Format, dass im OPER-Implementation-Guide beschrieben wird." />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.type">
+      <path value="Bundle.type" />
+      <fixedCode value="document" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.timestamp">
+      <path value="Bundle.timestamp" />
+      <short value="Zeitpunkt der Erstellung des Bundles" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry">
+      <path value="Bundle.entry" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="resource.meta.profile" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Composition">
+      <path value="Bundle.entry" />
+      <sliceName value="Composition" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:Composition.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.entry:VersichertePerson">
+      <path value="Bundle.entry" />
+      <sliceName value="VersichertePerson" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:VersichertePerson.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+    </element>
+    <element id="Bundle.entry:Leistungserbringer">
+      <path value="Bundle.entry" />
+      <sliceName value="Leistungserbringer" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Bundle.entry:Leistungserbringer.resource">
+      <path value="Bundle.entry.resource" />
+      <min value="1" />
+      <type>
+        <code value="Resource" />
+        <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

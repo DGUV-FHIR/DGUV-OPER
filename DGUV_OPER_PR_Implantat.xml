@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-Implantat" />
+  <url value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+  <name value="DGUV_OPER_PR_Implantat" />
+  <title value="Implantat" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet ein Implantat ab." />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Device" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Device" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Device.id">
+      <path value="Device.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.meta">
+      <path value="Device.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.meta.profile">
+      <path value="Device.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.extension">
+      <path value="Device.extension" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.extension:ImplantatFreitext">
+      <path value="Device.extension" />
+      <sliceName value="ImplantatFreitext" />
+      <short value="Implantatbeschreibung als Freitext" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Device.extension:ImplantatFreitext.value[x]">
+      <path value="Device.extension.value[x]" />
+      <short value="Konkreter Freitext zur Implantatbeschreibung" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName">
+      <path value="Device.deviceName" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.name">
+      <path value="Device.deviceName.name" />
+      <short value="Konkreter Name des Implantats" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.deviceName.type">
+      <path value="Device.deviceName.type" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.patient">
+      <path value="Device.patient" />
+      <short value="Verweis auf versicherte Person, der das Implantat eingesetzt wurde" />
+      <min value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Device.patient.reference">
+      <path value="Device.patient.reference" />
+      <short value="Konkreter Verweis auf versicherte Person, der das Implantat eingesetzt wurde" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+  </differential>
+</StructureDefinition>

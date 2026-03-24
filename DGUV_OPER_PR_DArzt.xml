@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-PR-DArzt" />
-  <url value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-DArzt" />
-  <version value="1.0" />
+  <url value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV_OPER_PR_DArzt" />
+  <version value="0.0.1" />
   <name value="DGUV_OPER_PR_DArzt" />
   <title value="D-Arzt" />
   <status value="draft" />
-  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet den D-Arzt ab." />
+  <description value="Dieses Profil bildet den Durchgangsarzt ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -57,24 +55,8 @@
     </element>
     <element id="PractitionerRole.organization.reference">
       <path value="PractitionerRole.organization.reference" />
-      <short value="Referenz auf konkreten D-Arzt-Organisation" />
       <min value="1" />
       <mustSupport value="true" />
-    </element>
-    <element id="PractitionerRole.code">
-      <path value="PractitionerRole.code" />
-      <short value="Rolle des D-Arztes in der Einrichtung" />
-      <comment value="Die Rolle des D-Arztes in der Einrichtung spielt im ENLA keine Rolle." />
-    </element>
-    <element id="PractitionerRole.specialty">
-      <path value="PractitionerRole.specialty" />
-      <short value="KBV-Fachgruppe des D-Arztes" />
-      <comment value="Die KBV-Fachgruppe des D-Arztes spielt im ENLA keine Rolle." />
-    </element>
-    <element id="PractitionerRole.telecom">
-      <path value="PractitionerRole.telecom" />
-      <comment value="Angaben zu bestehenden Kontaktmöglichkeiten. (Telefon, Fax, E-Mail usw.) sollen nicht in DGUV_ENLA_PR_DArzt, sondern in DGUV_ENLA_PR_DArztOrganisation gemacht werden." />
-      <max value="0" />
     </element>
   </differential>
 </StructureDefinition>
