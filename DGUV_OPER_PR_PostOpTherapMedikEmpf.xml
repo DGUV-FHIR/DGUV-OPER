@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-PR-PostOpTherapMedikEmpf" />
-  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostOpTherapMedikEmpf" />
-  <name value="DGUV_OPER_PR_PostOpTherapMedikEmpf" />
+  <id value="DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+  <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+  <name value="DGUV_OPER_PR_PostoperativeTherapieempfehlung" />
   <title value="Postoperative Therapieempfehlung" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
@@ -55,16 +55,16 @@
     </element>
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
-      <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieMedikationsempfehlung" />
+      <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieempfehlung" />
       <min value="1" />
-      <fixedCode value="POTME" />
+      <fixedCode value="POTHE" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
-      <short value="Bezeichnung für Teilberichtsinhalt PostoperativeTherapieMedikationsempfehlung" />
+      <short value="Bezeichnung für Teilberichtsinhalt PostoperativeTherapieempfehlung" />
       <min value="1" />
-      <fixedString value="PostoperativeTherapieMedikationsempfehlung" />
+      <fixedString value="PostoperativeTherapieempfehlung" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.subject">
