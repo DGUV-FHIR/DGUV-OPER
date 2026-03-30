@@ -27,7 +27,7 @@
       <path value="Observation.meta.profile" />
       <min value="1" />
       <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostOpTherapMedikEmpf" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.status">
