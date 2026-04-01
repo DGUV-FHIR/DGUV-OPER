@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: LSc
-    Datum:  18.03.2026
+    Datum:  01.04.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallereignis_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
     P: Maximalbefüllung eines Unfallereignisses (Pflegeunfall,-kasse, Constraints “dguv-pflegeunfall-1/2“ eingehalten, Aktenzeichen, Status,
-      Teilberichtsinhalt, Referenz auf versicherte Person, Unfallzeitpunkt, Beschäftigung)
+      Teilberichtsinhalt, Referenz auf versicherte Person, Unfallzeitpunkt)
 
 
 -->
@@ -61,36 +61,5 @@
 
   <!-- Unfallzeitpunkt-->
   <effectiveDateTime value="2025-12-12T17:00:00+00:00"/>
-
-  <!-- Behandelnde(-r) Ärtztin/Arzt-->
-  <!--
-  <performer>
-    <reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466"/>
-  </performer>
-  -->
-
-  <!-- Unfallereignis Komponente "Beschäftigt als"-->
-  <component>
-    <code>
-      <coding>
-        <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-UnfallereignisComponents"/>
-        <code value="05"/>
-        <display value="Beschäftigt als"/>
-      </coding>
-    </code>
-    <valueString value="Mädchen für alles"/>
-  </component>
-
-  <!-- Unfallereignis Komponente "Beschäftigungsbeginn"-->
-  <component>
-    <code>
-      <coding>
-        <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-UnfallereignisComponents"/>
-        <code value="06"/>
-        <display value="Beschäftigungsbeginn"/>
-      </coding>
-    </code>
-    <valueDateTime value="2021-04-01"/>
-  </component>
 
 </Observation>
