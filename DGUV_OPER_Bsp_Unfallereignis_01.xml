@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: LSc
-    Datum:  01.04.2026
+    Datum:  20.04.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallereignis_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung eines Unfallereignisses (Pflegeunfall,-kasse, Constraints “dguv-pflegeunfall-1/2“ eingehalten, Aktenzeichen, Status,
+    P: Maximalbefüllung eines Unfallereignisses (Aktenzeichen, Status,
       Teilberichtsinhalt, Referenz auf versicherte Person, Unfallzeitpunkt)
 
 
@@ -23,18 +23,6 @@
       <h1>Hier finden Sie ein Beispiel des Unfallereignisses einer verunfallten Person entsprechend dem Profil DGUV_OPER_PR_Unfallereignis</h1>
     </div>
   </text> 
-
-  <!-- Extension Pflegeunfall mit Pflegekasse -->
-  <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Pflegeunfall">
-      <extension url="Pflegeunfall">
-        <valueBoolean value="true"/>
-      </extension>
-      <extension url="Pflegekasse">
-        <valueReference>
-          <reference value="Pflegekasse/123" />
-        </valueReference>
-      </extension>
-  </extension>
 
   <!-- Aktenzeichen als Identifier -->
   <identifier>
