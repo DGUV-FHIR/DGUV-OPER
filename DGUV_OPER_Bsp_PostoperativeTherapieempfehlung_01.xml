@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 06.03.2026
+ Datum: 30.03.2026
 
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_PostOpTherapMedikEmpf_01.xml" dient der Validierung
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_PostoperativeTherapieempfehlung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz PostOpTherapMedikEmpf (Meta-Daten, Freitextbeschreibung der postoperativen Medikationsempfehlung, Status,
+ P: Maximalbefüllung einer Instanz PostoperativeTherapieempfehlung (Meta-Daten, Status,
  Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung der postoperativen Therapieempfehlung)
 -->
 
 <Observation xmlns="http://hl7.org/fhir">
 
   <!--Meta-Daten-->
-  <id value="postopthermedempf-01"/>
+  <id value="postoptherempf-01"/>
   <meta>
-    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostOpTherapMedikEmpf"/>
+    <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung"/>
   </meta>
-
-  <!--Freitextbeschreibung der postoperativen Medikationsempfehlung-->
-  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-MedikEmpf">
-    <valueString value="Viel Vitamin C und D"/>
-  </extension>
 
   <!--Status-->
   <status value="final"/>
@@ -30,8 +25,8 @@
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
-      <code value="POTME"/>
-      <display value="PostoperativeTherapieMedikationsempfehlung"/>
+      <code value="POTHE"/>
+      <display value="PostoperativeTherapieempfehlung"/>
     </coding>
   </code>
 

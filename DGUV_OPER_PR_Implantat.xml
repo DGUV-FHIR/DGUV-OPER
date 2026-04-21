@@ -32,6 +32,7 @@
     </element>
     <element id="Device.extension">
       <path value="Device.extension" />
+      <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
@@ -39,6 +40,7 @@
       <path value="Device.extension" />
       <sliceName value="ImplantatFreitext" />
       <short value="Implantatbeschreibung als Freitext" />
+      <min value="1" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -55,7 +57,6 @@
     </element>
     <element id="Device.deviceName">
       <path value="Device.deviceName" />
-      <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
