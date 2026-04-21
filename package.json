@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Put a description here",
   "dependencies": {
-    "dguv.basis": "1.4.0"
+    "dguv.basis": "1.5.0"
   },
   "fhirVersions": [
     "4.0.1"
