@@ -96,12 +96,12 @@
       <path value="Patient.identifier" />
       <comment value="Kardinalität 0..3, da - 1. - im OPER kein Identifikator zwingend ist und - 2. - sich VersichertenId_GKV und Versichertennummer_PKV gegenseitig ausschließen und somit max. 3 Identifikatoren angegeben werden können." />
       <max value="3" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.identifier:VersichertenId">
       <path value="Patient.identifier" />
       <sliceName value="VersichertenId" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.identifier:VersichertenId.type">
       <path value="Patient.identifier.type" />
@@ -120,7 +120,6 @@
     <element id="Patient.identifier:VersichertenId_GKV">
       <path value="Patient.identifier" />
       <sliceName value="VersichertenId_GKV" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.identifier:VersichertenId_GKV.type">
       <path value="Patient.identifier.type" />
@@ -140,7 +139,7 @@
     <element id="Patient.identifier:Patientennummer">
       <path value="Patient.identifier" />
       <sliceName value="Patientennummer" />
-      <mustSupport value="true" />
+      <max value="1" />
     </element>
     <element id="Patient.identifier:Patientennummer.type">
       <path value="Patient.identifier.type" />
@@ -159,7 +158,6 @@
     <element id="Patient.identifier:Versichertennummer_PKV">
       <path value="Patient.identifier" />
       <sliceName value="Versichertennummer_PKV" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.identifier:Versichertennummer_PKV.type">
       <path value="Patient.identifier.type" />
