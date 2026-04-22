@@ -42,31 +42,31 @@
     </element>
     <element id="Patient.extension">
       <path value="Patient.extension" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.extension:nationality">
       <path value="Patient.extension" />
       <sliceName value="nationality" />
       <short value="Staatsbürgerschaft der versicherten Person" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.extension:nationality.extension">
       <path value="Patient.extension.extension" />
       <min value="1" />
       <max value="2" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.extension:nationality.extension:code">
       <path value="Patient.extension.extension" />
       <sliceName value="code" />
       <short value="Code der Nationalität" />
       <min value="1" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.extension:nationality.extension:code.value[x]">
       <path value="Patient.extension.extension.value[x]" />
       <short value="Angabe über die Nationalität der versicherten Person" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.extension:nationality.extension:code.value[x].coding">
       <path value="Patient.extension.extension.value[x].coding" />
@@ -273,9 +273,7 @@
     <element id="Patient.telecom">
       <path value="Patient.telecom" />
       <short value="Angaben zu bestehenden Kontaktmöglichkeiten (Telefon) der versicherten Person" />
-      <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.telecom.system">
       <path value="Patient.telecom.system" />
@@ -290,7 +288,7 @@
     </element>
     <element id="Patient.gender">
       <path value="Patient.gender" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.gender.extension">
       <path value="Patient.gender.extension" />
@@ -344,13 +342,12 @@
       <path value="Patient.address" />
       <short value="Adresse der versicherten Person" />
       <max value="2" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.address:Strassenanschrift">
       <path value="Patient.address" />
       <sliceName value="Strassenanschrift" />
-      <min value="1" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.address:Strassenanschrift.extension">
       <path value="Patient.address.extension" />
@@ -437,7 +434,7 @@
       <path value="Patient.address" />
       <sliceName value="Postfach" />
       <short value="Postfachadresse" />
-      <mustSupport value="true" />
+      <mustSupport value="false" />
     </element>
     <element id="Patient.address:Postfach.type">
       <path value="Patient.address.type" />
