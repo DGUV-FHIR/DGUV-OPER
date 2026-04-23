@@ -26,58 +26,11 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.extension">
-      <path value="Procedure.extension" />
-      <min value="1" />
-    </element>
-    <element id="Procedure.extension:Dokumentationsdatum">
-      <path value="Procedure.extension" />
-      <sliceName value="Dokumentationsdatum" />
-      <definition value="Datum, an dem die Prozedur dokumentiert wurde.&#xD;&#xA;Es handelt sich hierbei um das fachliche Dokumentationsdatum, nicht zu verwechseln mit dem Datum der technischen Anlage des Datensatzes im Primärsystem. Diese beiden Daten können jedoch identisch sein." />
-      <min value="1" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.de/StructureDefinition/ProzedurDokumentationsdatum" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.extension:Lagerung">
-      <path value="Procedure.extension" />
-      <sliceName value="Lagerung" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Lagerung" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.extension:Lagerung.value[x]">
-      <path value="Procedure.extension.value[x]" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.extension:Blutsperre">
-      <path value="Procedure.extension" />
-      <sliceName value="Blutsperre" />
-      <short value="Blutsperre" />
-      <definition value="Beschreibung Blutsperre: ja oder nein; wenn ja, wo" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Blutsperre" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.extension:Blutsperre.value[x]">
-      <path value="Procedure.extension.value[x]" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
     <element id="Procedure.extension:Narkose">
       <path value="Procedure.extension" />
       <sliceName value="Narkose" />
+      <short value="Narkoseform/-bezeichnung" />
+      <definition value="Narkoseform/-bezeichnung" />
       <type>
         <code value="Extension" />
         <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose" />
@@ -114,18 +67,14 @@
     <element id="Procedure.identifier">
       <path value="Procedure.identifier" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Procedure.identifier.system">
       <path value="Procedure.identifier.system" />
       <min value="1" />
-      <fixedUri value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-OPNummer" />
-      <mustSupport value="true" />
     </element>
     <element id="Procedure.identifier.value">
       <path value="Procedure.identifier.value" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Procedure.status">
       <path value="Procedure.status" />
@@ -173,6 +122,8 @@
     <element id="Procedure.code.coding:OPS">
       <path value="Procedure.code.coding" />
       <sliceName value="OPS" />
+      <short value="OPS-Code" />
+      <definition value="Operationen- und Prozedurenschlüssel in der aktuellen Version" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.code.coding:OPS.extension">
@@ -221,6 +172,7 @@
     <element id="Procedure.code.coding:SNOMED">
       <path value="Procedure.code.coding" />
       <sliceName value="SNOMED" />
+      <short value="Snomed-Code" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.code.coding:SNOMED.system">
@@ -293,6 +245,7 @@
     <element id="Procedure.performed[x]:performedPeriod.extension:OPDatum">
       <path value="Procedure.performed[x].extension" />
       <sliceName value="OPDatum" />
+      <short value="OP-Datum" />
       <max value="1" />
       <type>
         <code value="Extension" />
@@ -323,35 +276,6 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Procedure.performer">
-      <path value="Procedure.performer" />
-      <short value="beteiligte Akteure" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.performer.actor">
-      <path value="Procedure.performer.actor" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.dguv.de/OPER/PractitionerRole/DGUV-OPER-PR-OPRollen" />
-      </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.performer.actor.reference">
-      <path value="Procedure.performer.actor.reference" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.location">
-      <path value="Procedure.location" />
-      <short value="OP-Saal" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.location.display">
-      <path value="Procedure.location.display" />
-      <short value="OP-Saal" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
     <element id="Procedure.reasonCode">
       <path value="Procedure.reasonCode" />
       <short value="Indikation (Grund für Operation)" />
@@ -362,6 +286,7 @@
     <element id="Procedure.reasonCode.text">
       <path value="Procedure.reasonCode.text" />
       <short value="OP-Indikation als Freitext" />
+      <definition value="Dort sollen im Freitext verkürzt die anlassgebenden Kriterien für die konkrete OP dargestellt werden, die sich aus Vorgeschichte, klinischem und bildgebenden Befund ergeben haben" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
