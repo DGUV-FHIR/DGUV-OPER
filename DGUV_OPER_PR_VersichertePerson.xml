@@ -277,12 +277,10 @@
       <path value="Patient.telecom.system" />
       <comment value="Im OPER soll an dieser Stelle nur die Telefonnummer angegeben werden" />
       <fixedCode value="phone" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.telecom.value">
       <path value="Patient.telecom.value" />
       <short value="Konkrete Erreichbarkeit per Telefon" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.gender">
       <path value="Patient.gender" />
@@ -340,12 +338,10 @@
       <path value="Patient.address" />
       <short value="Adresse der versicherten Person" />
       <max value="2" />
-      <mustSupport value="false" />
     </element>
     <element id="Patient.address:Strassenanschrift">
       <path value="Patient.address" />
       <sliceName value="Strassenanschrift" />
-      <mustSupport value="false" />
     </element>
     <element id="Patient.address:Strassenanschrift.extension">
       <path value="Patient.address.extension" />
@@ -362,30 +358,23 @@
       <short value="Konkreter Name des Stadt- oder Ortsteils" />
       <mustSupport value="true" />
     </element>
-    <element id="Patient.address:Strassenanschrift.type">
-      <path value="Patient.address.type" />
-      <mustSupport value="true" />
-    </element>
     <element id="Patient.address:Strassenanschrift.line">
       <path value="Patient.address.line" />
       <short value="Straßenname mit Hausnummer sowie weitere Angaben zur Zustellung" />
       <definition value="Diese Komponente kann Straßennamen, Hausnummer, Appartmentnummer, c/o sowie weitere Zustellungshinweise enthalten. Die Informationen können in mehrere line-Komponenten aufgeteilt werden.&#xD;&#xA;Bei Verwendung der Extensions, um Straße, Hausnnummer und Postleitzahl strukturiert zu übermitteln, müssen diese Informationen stets vollständig auch in der line-Komponente, die sie erweitern, enthalten sein, um es Systemen, die diese Extensions nicht verwenden zu ermöglichen, auf diese Informationen zugreifen zu können." />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension">
       <path value="Patient.address.line.extension" />
       <min value="2" />
       <max value="3" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Strasse">
       <path value="Patient.address.line.extension" />
       <sliceName value="Strasse" />
       <short value="Straßenname (ohne Hausnummer)" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Strasse.value[x]">
       <path value="Patient.address.line.extension.value[x]" />
@@ -396,7 +385,6 @@
       <path value="Patient.address.line.extension" />
       <sliceName value="Hausnummer" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
       <path value="Patient.address.line.extension.value[x]" />
@@ -406,7 +394,6 @@
     <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz">
       <path value="Patient.address.line.extension" />
       <sliceName value="Adresszusatz" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
       <path value="Patient.address.line.extension.value[x]" />
@@ -417,65 +404,44 @@
       <path value="Patient.address.city" />
       <short value="Name der Stadt" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Strassenanschrift.postalCode">
       <path value="Patient.address.postalCode" />
       <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Patient.address:Strassenanschrift.country">
-      <path value="Patient.address.country" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach">
       <path value="Patient.address" />
       <sliceName value="Postfach" />
       <short value="Postfachadresse" />
-      <mustSupport value="false" />
-    </element>
-    <element id="Patient.address:Postfach.type">
-      <path value="Patient.address.type" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.line">
       <path value="Patient.address.line" />
       <short value="Postfach" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.line.extension">
       <path value="Patient.address.line.extension" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.line.extension:Postfach">
       <path value="Patient.address.line.extension" />
       <sliceName value="Postfach" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.line.extension:Postfach.value[x]">
       <path value="Patient.address.line.extension.value[x]" />
       <short value="Konkrete Postfachnummer" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.city">
       <path value="Patient.address.city" />
       <short value="Name der Stadt" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.address:Postfach.postalCode">
       <path value="Patient.address.postalCode" />
       <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Patient.address:Postfach.country">
-      <path value="Patient.address.country" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.maritalStatus">
       <path value="Patient.maritalStatus" />

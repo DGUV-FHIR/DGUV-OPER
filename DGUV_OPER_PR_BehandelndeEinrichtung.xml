@@ -47,78 +47,15 @@
       <path value="Organization.identifier.value" />
       <mustSupport value="true" />
     </element>
+    <element id="Organization.identifier:Telematik-ID">
+      <path value="Organization.identifier" />
+      <sliceName value="Telematik-ID" />
+      <max value="1" />
+    </element>
     <element id="Organization.type">
       <path value="Organization.type" />
       <short value="Funktionseinheit der behandelnden Einrichtung" />
       <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding">
-      <path value="Organization.type.coding" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:IHE-Code">
-      <path value="Organization.type.coding" />
-      <sliceName value="IHE-Code" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:IHE-Code.system">
-      <path value="Organization.type.coding.system" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:IHE-Code.version">
-      <path value="Organization.type.coding.version" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:IHE-Code.code">
-      <path value="Organization.type.coding.code" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:IHE-Code.display">
-      <path value="Organization.type.coding.display" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe">
-      <path value="Organization.type.coding" />
-      <sliceName value="HL7-Fachschluesselgruppe" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.system">
-      <path value="Organization.type.coding.system" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.version">
-      <path value="Organization.type.coding.version" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.code">
-      <path value="Organization.type.coding.code" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe.display">
-      <path value="Organization.type.coding.display" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert">
-      <path value="Organization.type.coding" />
-      <sliceName value="HL7-Fachschluesselgruppe-erweitert" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.system">
-      <path value="Organization.type.coding.system" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.version">
-      <path value="Organization.type.coding.version" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.code">
-      <path value="Organization.type.coding.code" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.type.coding:HL7-Fachschluesselgruppe-erweitert.display">
-      <path value="Organization.type.coding.display" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.name">
       <path value="Organization.name" />
@@ -207,38 +144,28 @@
       <path value="Organization.contact" />
       <short value="Ansprechpartner für Rückfragen" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.name">
       <path value="Organization.contact.name" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.name.family">
       <path value="Organization.contact.name.family" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.name.given">
       <path value="Organization.contact.name.given" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.telecom">
       <path value="Organization.contact.telecom" />
       <min value="1" />
       <max value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Organization.contact.telecom.system">
       <path value="Organization.contact.telecom.system" />
       <fixedCode value="phone" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.contact.telecom.value">
-      <path value="Organization.contact.telecom.value" />
-      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>
