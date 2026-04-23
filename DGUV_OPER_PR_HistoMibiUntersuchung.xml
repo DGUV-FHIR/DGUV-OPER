@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
   <name value="DGUV_OPER_PR_HistoMibiUntersuchung" />
-  <title value="HistoMibiUntersuchung" />
+  <title value="Histo -/mikrobiologische Untersuchung" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <description value="Hier werden die histologischen bzw. mikrobiologischen Untersuchungen angegeben" />
