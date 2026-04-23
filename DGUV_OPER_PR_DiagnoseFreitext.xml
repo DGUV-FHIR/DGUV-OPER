@@ -106,7 +106,7 @@
     </element>
     <element id="Condition.code.text">
       <path value="Condition.code.text" />
-      <short value="Konkrete Formulierung der Freitextdiagnose" />
+      <short value="Konkrete Formulierung der Freitextdiagnose (Jargondiagnose)" />
       <mustSupport value="true" />
     </element>
     <element id="Condition.bodySite">

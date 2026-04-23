@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+  <version value="0.1" />
   <name value="DGUV_OPER_PR_Leistungserbringer" />
+  <title value="Leistungserbringer" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil beschreibt eine Person, die formell für die Erbringung gesundheitsbezogener oder verwandter Dienstleistungen verantwortlich ist." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
