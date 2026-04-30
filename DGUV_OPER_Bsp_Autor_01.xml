@@ -17,13 +17,14 @@
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>TODO</h1>
+            <h1>Operateur</h1>
+            <p>Diese Ressource beschreibt den Autor bzw. Operateur, der formell für die Durchführung des operativen Eingriffs verantwortlich ist.</p>
         </div>
     </text>
 
 
 
-    <!-- Name Operatuer 
+    <!-- Name Operatuer -->
     <name>
         <use value="official"/>
         <family value="Musteraerztin14">
@@ -38,5 +39,5 @@
             </extension>
         </prefix>
     </name>
--->
+
 </Practitioner>
