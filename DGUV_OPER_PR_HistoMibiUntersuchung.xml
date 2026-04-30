@@ -30,6 +30,10 @@
         <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = false implies valueString.empty()" />
       </constraint>
     </element>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <mustSupport value="true" />
+    </element>
     <element id="Observation.meta">
       <path value="Observation.meta" />
       <min value="1" />
