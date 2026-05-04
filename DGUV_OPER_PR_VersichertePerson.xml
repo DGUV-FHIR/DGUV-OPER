@@ -139,7 +139,6 @@
     <element id="Patient.identifier:Patientennummer">
       <path value="Patient.identifier" />
       <sliceName value="Patientennummer" />
-      <max value="1" />
     </element>
     <element id="Patient.identifier:Patientennummer.type">
       <path value="Patient.identifier.type" />
