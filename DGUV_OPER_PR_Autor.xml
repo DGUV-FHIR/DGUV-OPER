@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
+  <version value="0.1" />
+  <name value="DGUV_OPER_PR_Autor" />
+  <title value="Autor (Operatur)" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil beschreibt eine Person, die formell für die Erbringung gesundheitsbezogener oder verwandter Dienstleistungen verantwortlich ist. In diesem Kontext ist dies der Operateur" />
+  <fhirVersion value="4.0.1" />
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://fhir.dguv.de/Basis/Practitioner/DGUV-Basis-PR-Leistungserbringer" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner">
+      <path value="Practitioner" />
+      <short value="Dieses Profil beschreibt eine Person, die formell für die Erbringung gesundheitsbezogener oder verwandter Dienstleistungen verantwortlich ist. In diesem Kontext ist dies der Operateur." />
+    </element>
+    <element id="Practitioner.id">
+      <path value="Practitioner.id" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta">
+      <path value="Practitioner.meta" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.profile">
+      <path value="Practitioner.meta.profile" />
+      <min value="1" />
+      <max value="1" />
+      <fixedCanonical value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <mustSupport value="false" />
+    </element>
+    <element id="Practitioner.identifier:ANR">
+      <path value="Practitioner.identifier" />
+      <sliceName value="ANR" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier:EFN">
+      <path value="Practitioner.identifier" />
+      <sliceName value="EFN" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier:ZANR">
+      <path value="Practitioner.identifier" />
+      <sliceName value="ZANR" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.identifier:Telematik-ID">
+      <path value="Practitioner.identifier" />
+      <sliceName value="Telematik-ID" />
+      <max value="0" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name">
+      <path value="Practitioner.name" />
+      <sliceName value="Name" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.use">
+      <path value="Practitioner.name.use" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.family">
+      <path value="Practitioner.name.family" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Name.given">
+      <path value="Practitioner.name.given" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.name:Geburtsname">
+      <path value="Practitioner.name" />
+      <sliceName value="Geburtsname" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

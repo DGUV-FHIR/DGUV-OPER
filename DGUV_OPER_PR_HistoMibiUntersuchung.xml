@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
+  <version value="0.1" />
   <name value="DGUV_OPER_PR_HistoMibiUntersuchung" />
   <title value="Histo -/mikrobiologische Untersuchung" />
   <status value="draft" />
@@ -16,6 +17,22 @@
     <element id="Observation">
       <path value="Observation" />
       <short value="Hier können die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt werden" />
+      <constraint>
+        <key value="dguv-HistoMibi-1" />
+        <severity value="error" />
+        <human value="Wenn Histo -/Mibi-Untersuchung veranlasst boolean=true muss Observation.value befuellt sein" />
+        <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = true implies valueString.exists()" />
+      </constraint>
+      <constraint>
+        <key value="dguv-HistoMibi-2" />
+        <severity value="error" />
+        <human value="Wenn Histo-/Mibi-Untersuchung veranlasst = false ist darf Observation.value nicht befuellt sein" />
+        <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = false implies valueString.empty()" />
+      </constraint>
+    </element>
+    <element id="Observation.id">
+      <path value="Observation.id" />
+      <mustSupport value="true" />
     </element>
     <element id="Observation.meta">
       <path value="Observation.meta" />
@@ -27,6 +44,28 @@
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension">
+      <path value="Observation.extension" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.extension:HistoMibiUntersuchungVeranlasst">
+      <path value="Observation.extension" />
+      <sliceName value="HistoMibiUntersuchungVeranlasst" />
+      <min value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Observation.extension:HistoMibiUntersuchungVeranlasst.value[x]">
+      <path value="Observation.extension.value[x]" />
+      <comment value="Wenn „true“ eingetragen ist, muss in Observation.value[x] zwingend eine Beschreibung der veranlassten histologischen oder mikrobiologischen Untersuchungen angegeben werden." />
       <mustSupport value="true" />
     </element>
     <element id="Observation.partOf">
@@ -91,8 +130,7 @@
     <element id="Observation.value[x]">
       <path value="Observation.value[x]" />
       <short value="Freitext zu veranlassten histologischen und mikrobiologischen Untersuchungen" />
-      <definition value="Hier können die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt werden." />
-      <min value="1" />
+      <definition value="Hier können die Informationen zur veranlassten histologischen und mikrobiologischen Untersuchung hinterlegt werden. Die Beschreibung muss insbesondere auch die Art des Untersuchungsmaterials (histologisch und/oder mikrobiologisch) enthalten." />
       <type>
         <code value="string" />
       </type>
