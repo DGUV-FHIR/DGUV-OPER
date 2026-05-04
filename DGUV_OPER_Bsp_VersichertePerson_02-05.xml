@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Author: 
-    Datum:  
+    Author: AFW
+    Datum:  13.01.26
 
-    Die vorliegende Beispiel Datei .... dient der Validierung 
+    Die vorliegende Beispiel Datei dient der Validierung von den folgenden Testfall/-szenarios: 
+    - Fehlererkennung bei der Verwendung eines ‚retired‘ Codes im Identifier (Code: PKV)
+    - Mehrere telecom-Angaben (Kardinalitätsverletzung)
+    - Die gleichzeitige Verwendung von VersichertenId_GKV und Versichertennummer_PKV ist verboten (Constraint "dguv-pat-identifier-exclude-gkv-pkv")
     der Datenaufnahme zu dem ......
     
-    Zu beachten ist dabei ...
-
-    Durchzuführende Massnahmen:
-
-
 -->
 <Patient xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-Bsp-VersichertePerson-02"/>
