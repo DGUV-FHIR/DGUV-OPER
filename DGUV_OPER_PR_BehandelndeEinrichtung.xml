@@ -31,6 +31,10 @@
     </element>
     <element id="Organization.identifier">
       <path value="Organization.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+      <short value="Identifikator für die behandelnde Einrichtung" />
       <max value="6" />
       <mustSupport value="true" />
     </element>
@@ -39,12 +43,44 @@
       <sliceName value="Institutionskennzeichen" />
       <mustSupport value="true" />
     </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type">
+      <path value="Organization.identifier.type" />
+      <short value="Kennzeichnung Identifikator als Institutionskennzeichen (IKNR)" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding">
+      <path value="Organization.identifier.type.coding" />
+      <min value="1" />
+      <max value="1" />
+      <patternCoding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+        <code value="XX" />
+      </patternCoding>
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.system">
+      <path value="Organization.identifier.type.coding.system" />
+      <short value="Genutztes Terminologiesystem" />
+      <min value="1" />
+      <patternUri value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.identifier:Institutionskennzeichen.type.coding.code">
+      <path value="Organization.identifier.type.coding.code" />
+      <short value="Code für Identifikatortyp" />
+      <min value="1" />
+      <patternCode value="XX" />
+      <mustSupport value="true" />
+    </element>
     <element id="Organization.identifier:Institutionskennzeichen.system">
       <path value="Organization.identifier.system" />
+      <short value="Menge möglicher IKNRs" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.identifier:Institutionskennzeichen.value">
       <path value="Organization.identifier.value" />
+      <short value="Konkrete IKNR" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.identifier:Telematik-ID">
@@ -59,10 +95,15 @@
     </element>
     <element id="Organization.name">
       <path value="Organization.name" />
+      <short value="Name der behandelnden Einrichtung" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address">
       <path value="Organization.address" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
+      <short value="Adresse der behandelnden Einrichtung" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -85,6 +126,7 @@
     </element>
     <element id="Organization.address:Strassenanschrift.extension:Stadtteil.value[x]">
       <path value="Organization.address.extension.value[x]" />
+      <short value="Konkreter Name des Stadt- oder Ortsteils" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.type">
@@ -101,15 +143,18 @@
       <path value="Organization.address.line.extension" />
       <min value="2" />
       <max value="3" />
+      <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse">
       <path value="Organization.address.line.extension" />
       <sliceName value="Strasse" />
+      <short value="Straßenname (ohne Hausnummer)" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
+      <short value="Konkreter Straßenname" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
@@ -120,10 +165,23 @@
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
       <path value="Organization.address.line.extension.value[x]" />
+      <short value="Konkrete Hausnummer" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz">
+      <path value="Organization.address.line.extension" />
+      <sliceName value="Adresszusatz" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
+      <path value="Organization.address.line.extension.value[x]" />
+      <short value="Konkreter Adresszusatz" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.city">
       <path value="Organization.address.city" />
+      <short value="Name der Stadt" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.postalCode">
@@ -139,33 +197,6 @@
       <path value="Organization.address" />
       <sliceName value="Postfach" />
       <max value="0" />
-    </element>
-    <element id="Organization.contact">
-      <path value="Organization.contact" />
-      <short value="Ansprechpartner für Rückfragen" />
-      <max value="1" />
-    </element>
-    <element id="Organization.contact.name">
-      <path value="Organization.contact.name" />
-      <min value="1" />
-    </element>
-    <element id="Organization.contact.name.family">
-      <path value="Organization.contact.name.family" />
-      <min value="1" />
-    </element>
-    <element id="Organization.contact.name.given">
-      <path value="Organization.contact.name.given" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Organization.contact.telecom">
-      <path value="Organization.contact.telecom" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Organization.contact.telecom.system">
-      <path value="Organization.contact.telecom.system" />
-      <fixedCode value="phone" />
     </element>
   </differential>
 </StructureDefinition>
