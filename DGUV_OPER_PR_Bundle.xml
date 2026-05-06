@@ -100,18 +100,18 @@
         <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
       </type>
     </element>
-    <element id="Bundle.entry:Leistungserbringer">
+    <element id="Bundle.entry:Autor">
       <path value="Bundle.entry" />
-      <sliceName value="Leistungserbringer" />
+      <sliceName value="Autor" />
       <min value="1" />
       <max value="1" />
     </element>
-    <element id="Bundle.entry:Leistungserbringer.resource">
+    <element id="Bundle.entry:Autor.resource">
       <path value="Bundle.entry.resource" />
       <min value="1" />
       <type>
         <code value="Resource" />
-        <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Leistungserbringer" />
+        <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
       </type>
     </element>
   </differential>
