@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: LSc
+ Datum: 06.05.2026
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_BehandelndeEinrichtung_00_CoPilot.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ P: Maximalbefüllung einer Instanz BehandelndeEinrichtung (Meta-Daten, Institutionskennzeichen (IKNR),
+    Name der Einrichtung, Straßenanschrift inkl. Stadtteil, Straße, Hausnummer, optionaler Adresszusatz, PLZ, Ort, Land)
+-->
+<Organization xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="behandelnde-einrichtung-00"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung"/>
+  </meta>
+
+  <!--Identifikatoren der behandelnden Einrichtung-->
+  <!--Institutionskennzeichen (IKNR) - Slice "Institutionskennzeichen"-->
+  <identifier>
+    <type>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+        <code value="XX"/>
+        <display value="Organization identifier"/>
+      </coding>
+    </type>
+    <system value="http://fhir.de/sid/arge-ik/iknr"/>
+    <value value="260123456"/>
+  </identifier>
+
+  <!--Name der behandelnden Einrichtung-->
+  <name value="BG Klinik Musterstadt"/>
+
+  <!--Adresse der behandelnden Einrichtung (Straßenanschrift) -->
+  <address>
+    <!--Stadt-/Ortsteil (Erweiterung an Address) -->
+    <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct">
+      <valueString value="Oberstadt"/>
+    </extension>
+
+    <type value="both"/>
+
+    <!--Adresszeile mit strukturierten Erweiterungen (Straße, Hausnummer, optionaler Zusatz) -->
+    <line value="Musterstraße 12A // Haus B">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+        <valueString value="Musterstraße"/>
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+        <valueString value="12A"/>
+      </extension>
+      <!--Adresszusatz (optional) -->
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+        <valueString value="Haus B"/>
+      </extension>
+    </line>
+    <line value="Oberstadt"/>
+
+    <city value="Musterstadt"/>
+    <postalCode value="12345"/>
+    <country value="DE"/>
+  </address>
+</Organization>
