@@ -13,7 +13,7 @@
 	<!-- Zeitpunkt -->
 	<timestamp value="2025-06-10T12:00:00+01:00" />
 
-	<!-- ========================================================= ENTRY 1 — COMPOSITION ========================================================== -->
+	<!-- ======= ENTRY 0 — COMPOSITION ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Composition/c00f7826-5a3e-49aa-b499-3f8c6599bd2b" />
 		<resource>
@@ -190,10 +190,36 @@
 						</entry>
 					</section>
 				</section>
+				<!-- SECTION: PostoperativeTherapieempfehlung -->
+				<section>
+					<code>
+						<coding>
+							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+							<code value="POTE" />
+							<display value="Postoperative Therapieempfehlung" />
+						</coding>
+					</code>
+					<entry>
+						<reference value="http://fhir.dguv.de/OPER/Observation/fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
+					</entry>
+				</section>
+				<!-- SECTION: BehandelndeEinrichtung -->
+				<section>
+					<code>
+						<coding>
+							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+							<code value="BNEN" />
+							<display value="Behandelnde Einrichtung" />
+						</coding>
+					</code>
+					<entry>
+						<reference value="http://fhir.dguv.de/OPER/Organisation/8c2b5a27-9d82-45a6-8167-9858707656e6" />
+					</entry>
+				</section>
 			</Composition>
 		</resource>
 	</entry>
-	<!-- ========================================================= ENTRY 2 — Versicherte Person (PATIENT) ========================================================== -->
+	<!-- ======= ENTRY 1 — Versicherte Person (PATIENT) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 		<resource>
@@ -271,7 +297,7 @@
 			</Patient>
 		</resource>
 	</entry>
-	<!-- ========================================================= ENTRY 3 — Autor (PRACTITIONER) ========================================================== -->
+	<!-- ======= ENTRY 2 — Autor (PRACTITIONER) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
 		<resource>
@@ -311,7 +337,7 @@
 		</resource>
 	</entry>
 
-	<!-- ========================================================= ENTRY 5 — Unfallereignis (OBSERVATION) ========================================================== -->
+	<!-- ======= ENTRY 3 — Unfallereignis (OBSERVATION) ========================================================== -->
 	<entry>
 		<fullUrl
 			value="http://fhir.dguv.de/OPER/Practitioner/Observation/08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
@@ -323,13 +349,17 @@
 						value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
 				</meta>
 
+
 				<text>
 					<status value="generated" />
 					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h1>Hier finden Sie ein Beispiel des Unfallereignisses einer verunfallten
-							Person entsprechend dem Profil DGUV_OPER_PR_Unfallereignis</h1>
+						<p>
+							Unfallereignis der versicherten Person am 12.12.2025
+							mit medizinischer Relevanz für die nachfolgende Behandlung.
+						</p>
 					</div>
 				</text>
+
 
 				<!-- Aktenzeichen als Identifier -->
 				<identifier>
@@ -362,7 +392,7 @@
 			</Observation>
 		</resource>
 	</entry>
-	<!-- ========================================================= ENTRY 6 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
+	<!-- ======= ENTRY 4 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60" />
 		<resource>
@@ -448,7 +478,7 @@
 			</Organization>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 7 — Diagnose Freitext (CONDITION) ========================================================== -->
+	<!-- ======= ENTRY 5 — Diagnose Freitext (CONDITION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/84507618-4ff5-46d9-9e61-8ab15c9ce2a4" />
 		<resource>
@@ -498,7 +528,7 @@
 			</Condition>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 8 — Diagnose Strukturiert (CONDITION) A ==================================================== -->
+	<!-- ======= ENTRY 6 — Diagnose Strukturiert (CONDITION) A ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab" />
 		<resource>
@@ -587,7 +617,7 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 9 — Diagnose Strukturiert (CONDITION) B ==================================================== -->
+	<!-- ======= ENTRY 7 — Diagnose Strukturiert (CONDITION) B ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab-2" />
 		<resource>
@@ -677,7 +707,7 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 8 —OpBefundVerlauf (OBSERVATION) ========================================================= -->
+	<!-- ======= ENTRY 8 — OpBefundVerlauf (OBSERVATION) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
 		<resource>
@@ -688,6 +718,16 @@
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
 				</meta>
+
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							OP-Befund und -Verlauf: Intraoperativer Befund unauffällig,
+							keine Komplikationen. Der operative Verlauf war regelrecht.
+						</p>
+					</div>
+				</text>
 
 				<!--Status-->
 				<status value="final" />
@@ -724,6 +764,17 @@
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
 				</meta>
+
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							Histologische und mikrobiologische Untersuchung wurde veranlasst.
+							Entnommenes Gewebematerial wurde zur histologischen Beurteilung sowie
+							mikrobiologischen Diagnostik eingesandt.
+						</p>
+					</div>
+				</text>
 
 
 				<!-- Pflicht-Extension: Untersuchung veranlasst -->
@@ -778,6 +829,16 @@
 					<profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
 				</meta>
 
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>
+							Implantat: Titanplatte zur Osteosynthese des rechten Radius,
+							sieben Loch, implantiert im Rahmen des operativen Eingriffs.
+						</p>
+					</div>
+				</text>
+
 				<!--Freitext-Implantatbeschreibung (Extension: ImplantatFreitext)-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext">
 					<valueString value="Titanplatte zur Osteosynthese des rechten Radius, 7-Loch" />
@@ -794,6 +855,99 @@
 					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				</patient>
 			</Device>
+		</resource>
+	</entry>
+	<!-- ======= ENTRY 12 PostoperativeTherapieempfehlung (OBSERVATION) ========================================================= -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Observation/fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+
+				<!--Meta-Daten-->
+				<id value="fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+				</meta>
+
+
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<p>Postoperative Therapieempfehlung: physiotherapeutische Nachbehandlung über 6 Wochen.</p>
+					</div>
+				</text>
+
+				<!--Status-->
+				<status value="final" />
+
+				<!--Teilberichtsinhalt-->
+				<code>
+					<coding>
+						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+						<code value="POTHE" />
+						<display value="PostoperativeTherapieempfehlung" />
+					</coding>
+				</code>
+
+				<!--Verunfallte Person-->
+				<subject>
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+				</subject>
+
+				<!--Freitextbeschreibung der postoperativen Therapieempfehlung-->
+				<valueString value="Empfohlen wird eine physiotherapeutische Nachbehandlung über 6 Wochen mit anschließender Verlaufskontrolle." />
+
+			</Observation>
+		</resource>
+	</entry>
+	<!-- ======= ENTRY 12 Behandelnde Einrichtung (ORGANIZATION) ========================================================= -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Organisation/8c2b5a27-9d82-45a6-8167-9858707656e6" />
+		<resource>
+			<Organization xmlns="http://hl7.org/fhir">
+				<id value="8c2b5a27-9d82-45a6-8167-9858707656e6" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung" />
+				</meta>
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<h1>Hier finden Sie ein Beispiel der BehandelndeEinrichtung einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+					</div>
+				</text>
+				<!-- Identifizierung der behandelnde Einrichtung-->
+				<identifier>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+							<code value="XX" />
+							<display value="Organization identifier" />
+						</coding>
+					</type>
+					<system value="http://fhir.de/sid/arge-ik/iknr" />
+					<value value="260530784" />
+				</identifier>
+				<!-- Name der Einrichtung -->
+				<name value="Unfallkrankenhaus Frechen" />
+
+
+				<!-- Vollständige Adresse -->
+				<address>
+					<type value="both" />
+					<line value="Genesungsweg 4">
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+							<valueString value="Genesungsweg" />
+						</extension>
+						<extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+							<valueString value="4" />
+						</extension>
+					</line>
+					<city value="Frechen" />
+					<postalCode value="50226" />
+					<country value="DE" />
+				</address>
+			</Organization>
+
 		</resource>
 	</entry>
 
