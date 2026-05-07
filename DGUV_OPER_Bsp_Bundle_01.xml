@@ -4,8 +4,7 @@
 		<profile value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
 	</meta>
 	<identifier>
-		<!--  <system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/>
-        	<value value="12345" /> -->
+		<!-- <system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/> <value value="12345" /> -->
 		<system value="urn:ietf:rfc:3936" />
 		<value value="1255d75b64f-a8a1-49b8-8d33-bd16423b3e6e345" />
 	</identifier>
@@ -14,9 +13,7 @@
 	<!-- Zeitpunkt -->
 	<timestamp value="2025-06-10T12:00:00+01:00" />
 
-	<!-- =========================================================
-       ENTRY 1 — COMPOSITION
-  ========================================================== -->
+	<!-- ========================================================= ENTRY 1 — COMPOSITION ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Composition/c00f7826-5a3e-49aa-b499-3f8c6599bd2b" />
 		<resource>
@@ -137,12 +134,66 @@
 					</section>
 
 				</section>
+				<!-- SECTION: OP-Daten { [OP-Befund und -Verlauf] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
+				<section>
+					<code>
+						<coding>
+							<system
+								value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+							<code value="OPDT" />
+							<display value="OP-Daten" />
+						</coding>
+					</code>
+					<!-- OP-Daten [OP-Befund und -Verlauf] -->
+					<section>
+						<code>
+							<coding>
+								<system
+									value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+								<code value="OPBV" />
+								<display value="OP-Befund und -Verlauf" />
+							</coding>
+						</code>
+						<entry>
+							<reference
+								value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
+						</entry>
+					</section>
+					<!-- OP-Daten [Histo -/mikrobiologische Untersuchung] -->
+					<section>
+						<code>
+							<coding>
+								<system
+									value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+								<code value="HIMU" />
+								<display value="Histo -/mikrobiologische Untersuchung" />
+							</coding>
+						</code>
+						<entry>
+							<reference
+								value="http://fhir.dguv.de/OPER/Observation/591d73fb-8d4a-4c92-ac1a-afa009b1cfc2" />
+						</entry>
+					</section>
+					<!-- OP-Daten [Implantat] -->
+					<section>
+						<code>
+							<coding>
+								<system
+									value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+								<code value="IMPT" />
+								<display value="Implantat" />
+							</coding>
+						</code>
+						<entry>
+							<reference
+								value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c" />
+						</entry>
+					</section>
+				</section>
 			</Composition>
 		</resource>
 	</entry>
-	<!-- =========================================================
-       ENTRY 2 — Versicherte Person (PATIENT) 
-  ========================================================== -->
+	<!-- ========================================================= ENTRY 2 — Versicherte Person (PATIENT) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 		<resource>
@@ -220,9 +271,7 @@
 			</Patient>
 		</resource>
 	</entry>
-	<!-- =========================================================
-       ENTRY 3 — Autor  (PRACTITIONER)
-  ========================================================== -->
+	<!-- ========================================================= ENTRY 3 — Autor (PRACTITIONER) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
 		<resource>
@@ -262,9 +311,7 @@
 		</resource>
 	</entry>
 
-	<!-- =========================================================
-      ENTRY 5 — Unfallereignis (OBSERVATION) 
-  ========================================================== -->
+	<!-- ========================================================= ENTRY 5 — Unfallereignis (OBSERVATION) ========================================================== -->
 	<entry>
 		<fullUrl
 			value="http://fhir.dguv.de/OPER/Practitioner/Observation/08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
@@ -294,7 +341,7 @@
 				<!-- Observation status -->
 				<status value="final" />
 
-				<!-- Teilberichtsinhalt Unfallereignis  -->
+				<!-- Teilberichtsinhalt Unfallereignis -->
 				<code>
 					<coding>
 						<system
@@ -315,9 +362,7 @@
 			</Observation>
 		</resource>
 	</entry>
-	<!-- =========================================================
-      ENTRY 6 — Unfallversicherungstraeger (ORGANIZATION) 
-	========================================================== -->
+	<!-- ========================================================= ENTRY 6 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60" />
 		<resource>
@@ -336,7 +381,7 @@
 					</div>
 				</text>
 
-				<!--   Institutionskennzeichen   -->
+				<!-- Institutionskennzeichen -->
 				<identifier>
 					<type>
 						<coding>
@@ -403,9 +448,7 @@
 			</Organization>
 		</resource>
 	</entry>
-	<!-- =========================================================
-      ENTRY 7 — Diagnose Freitext (CONDITION) 
-	========================================================== -->
+	<!-- ======= ENTRY 7 — Diagnose Freitext (CONDITION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/84507618-4ff5-46d9-9e61-8ab15c9ce2a4" />
 		<resource>
@@ -431,8 +474,7 @@
 				<!--Frakturklassifikation-->
 				<extension
 					url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Frakturklassifikation">
-					<!--Fraktur
-					vorhanden?-->
+					<!--Fraktur vorhanden?-->
 					<extension url="Fraktur">
 						<valueBoolean value="true" />
 					</extension>
@@ -448,8 +490,7 @@
 					<text value="Geschlossene Fraktur des rechten Unterarms." />
 				</code>
 
-				<!--Versicherte
-				Person-->
+				<!--Versicherte Person-->
 				<subject>
 					<reference
 						value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
@@ -457,9 +498,7 @@
 			</Condition>
 		</resource>
 	</entry>
-	<!-- =========================================================
-      ENTRY 8 — Diagnose Strukturiert (CONDITION)  A
-	========================================================== -->
+	<!-- ======= ENTRY 8 — Diagnose Strukturiert (CONDITION) A ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab" />
 		<resource>
@@ -499,8 +538,7 @@
 					</coding>
 				</verificationStatus>
 
-				<!--ICD-10-GM
-				Codierung-->
+				<!--ICD-10-GM Codierung-->
 				<code>
 					<coding>
 						<!--Mehrfachcodierungs-Kennzeichen-->
@@ -532,8 +570,7 @@
 							</valueCoding>
 						</extension>
 
-						<!--ICD-10-GM:
-						System + Version-->
+						<!--ICD-10-GM: System + Version-->
 						<system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm" />
 						<version value="2017" />
 						<code value="S52.50" />
@@ -541,8 +578,7 @@
 					</coding>
 				</code>
 
-				<!--Versicherte
-				Person: -->
+				<!--Versicherte Person: -->
 				<subject>
 					<reference
 						value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
@@ -551,9 +587,7 @@
 		</resource>
 
 	</entry>
-	<!-- =========================================================
-      ENTRY 9 — Diagnose Strukturiert (CONDITION)  B
-	========================================================== -->
+	<!-- ======= ENTRY 9 — Diagnose Strukturiert (CONDITION) B ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab-2" />
 		<resource>
@@ -594,8 +628,7 @@
 					</coding>
 				</verificationStatus>
 
-				<!--ICD-10-GM
-				Codierung-->
+				<!--ICD-10-GM Codierung-->
 				<code>
 					<coding>
 						<!--Mehrfachcodierungs-Kennzeichen-->
@@ -627,8 +660,7 @@
 							</valueCoding>
 						</extension>
 
-						<!--ICD-10-GM:
-						System + Version-->
+						<!--ICD-10-GM: System + Version-->
 						<system value="http://fhir.de/CodeSystem/bfarm/icd-10-gm" />
 						<version value="2017" />
 						<code value="S52.51" />
@@ -636,8 +668,7 @@
 					</coding>
 				</code>
 
-				<!--Versicherte
-				Person: -->
+				<!--Versicherte Person: -->
 				<subject>
 					<reference
 						value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
@@ -646,4 +677,124 @@
 		</resource>
 
 	</entry>
+	<!-- ======= ENTRY 8 —OpBefundVerlauf (OBSERVATION) ========================================================= -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+
+				<!--Meta-Daten-->
+				<id value="ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
+				</meta>
+
+				<!--Status-->
+				<status value="final" />
+
+				<!--Teilberichtsinhalt-->
+				<code>
+					<coding>
+						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+						<code value="OPBV" />
+						<display value="OPBefundVerlauf" />
+					</coding>
+				</code>
+
+				<!--Versicherte Person-->
+				<subject>
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+				</subject>
+
+				<!--Freitextbeschreibung von OP-Befund/-verlauf-->
+				<valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht." />
+
+			</Observation>
+		</resource>
+
+	</entry>
+	<!-- ======= ENTRY 9 —HistoMibi (OBSERVATION) ========================================================= -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Observation/591d73fb-8d4a-4c92-ac1a-afa009b1cfc2" />
+		<resource>
+			<Observation xmlns="http://hl7.org/fhir">
+
+				<!--Meta-Daten-->
+				<id value="591d73fb-8d4a-4c92-ac1a-afa009b1cfc2" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
+				</meta>
+
+
+				<!-- Pflicht-Extension: Untersuchung veranlasst -->
+
+				<!-- Extension: Untersuchung veranlasst -->
+				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst">
+					<valueBoolean value="true" />
+				</extension>
+
+
+				<partOf>
+					<reference value="Procedure/OP-67890" />
+				</partOf>
+
+				<!--Status-->
+				<status value="final" />
+
+				<!-- Kodierung laut Profil -->
+				<code>
+					<coding>
+						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
+						<code value="HMU" />
+						<display value="HistologischeMikrobiologischeUntersuchung" />
+					</coding>
+				</code>
+
+
+				<!-- Referenz auf die versicherte Person-->
+				<subject>
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+				</subject>
+
+
+				<!-- Bezug zur OP-Prozedur -->
+
+
+				<!--Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
+				<valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt" />
+
+			</Observation>
+		</resource>
+
+	</entry>
+	<!-- ======= ENTRY 11 Implantat (DEVICE) ========================================================= -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c" />
+		<resource>
+			<Device xmlns="http://hl7.org/fhir">
+				<!--Meta-Daten-->
+				<id value="6e6b2663-0339-46e5-9625-65537195ba5c" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+				</meta>
+
+				<!--Freitext-Implantatbeschreibung (Extension: ImplantatFreitext)-->
+				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext">
+					<valueString value="Titanplatte zur Osteosynthese des rechten Radius, 7-Loch" />
+				</extension>
+
+				<!--Gerätename, Namenstyp-->
+				<deviceName>
+					<name value="Radius-Titanplatte 7-Loch" />
+					<type value="manufacturer-name" />
+				</deviceName>
+
+				<!-- Versicherte Person (patient)-->
+				<patient>
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+				</patient>
+			</Device>
+		</resource>
+	</entry>
+
 </Bundle>

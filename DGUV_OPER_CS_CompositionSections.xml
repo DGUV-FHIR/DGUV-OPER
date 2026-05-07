@@ -60,8 +60,35 @@
     <code value="DGNS" />
     <display value="Diagnosen" />
   </concept>
-
-  <!--
+  <concept>
+    <code value="OPDT" />
+    <display value="OP-Daten" />
+  </concept>
+  <concept>
+    <code value="OPBV" />
+    <display value="OP-Befund und -Verlauf" />
+  </concept>
+   <concept>
+    <code value="OPPD" />
+    <display value="OP Prozedur" />
+  </concept>
+   <concept>
+    <code value="HIMU" />
+    <display value="Histo -/mikrobiologische Untersuchung" />
+  </concept>
+   <concept>
+    <code value="IMPT" />
+    <display value="Implantat" />
+  </concept>
+  <concept>
+    <code value="POTE" />
+    <display value="Postoperative Therapieempfehlung" />
+  </concept>
+  <concept>
+    <code value="BNEN" />
+    <display value="Behandelnde Einrichtung" />
+  </concept>
+  <!-- 
   <concept>
     <code value="DORE" />
     <display value="Dokumentenreferenz" />

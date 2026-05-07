@@ -373,5 +373,304 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Composition.section:OP-Daten">
+      <path value="Composition.section" />
+      <sliceName value="OP-Daten" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="OPDT" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="OP-Daten" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section">
+      <path value="Composition.section.section" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="code.coding.code" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="3" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf">
+      <path value="Composition.section.section" />
+      <sliceName value="OpBefundVerlauf" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="OPBV" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="OP-Befund und -Verlauf" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.entry.reference">
+      <path value="Composition.section.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung">
+      <path value="Composition.section.section" />
+      <sliceName value="HistoMibiUntersuchung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="HIMU" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Histo -/mikrobiologische Untersuchung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.entry.reference">
+      <path value="Composition.section.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat">
+      <path value="Composition.section.section" />
+      <sliceName value="Implantat" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.code">
+      <path value="Composition.section.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.code.coding">
+      <path value="Composition.section.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.code.coding.system">
+      <path value="Composition.section.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.code.coding.code">
+      <path value="Composition.section.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="IMPT" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.code.coding.display">
+      <path value="Composition.section.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Implantat" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.entry">
+      <path value="Composition.section.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
+      </type>
+    </element>
+    <element id="Composition.section:OP-Daten.section:Implantat.entry.reference">
+      <path value="Composition.section.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung">
+      <path value="Composition.section" />
+      <sliceName value="PostoperativeTherapieempfehlung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="POTE" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Postoperative Therapieempfehlung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:PostoperativeTherapieempfehlung.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung">
+      <path value="Composition.section" />
+      <sliceName value="BehandelndeEinrichtung" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.code">
+      <path value="Composition.section.code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.code.coding">
+      <path value="Composition.section.code.coding" />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.code.coding.system">
+      <path value="Composition.section.code.coding.system" />
+      <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.code.coding.code">
+      <path value="Composition.section.code.coding.code" />
+      <min value="1" />
+      <fixedCode value="BNEN" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.code.coding.display">
+      <path value="Composition.section.code.coding.display" />
+      <min value="1" />
+      <fixedString value="Behandelnde Einrichtung" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.entry">
+      <path value="Composition.section.entry" />
+      <min value="1" />
+      <max value="1" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung" />
+      </type>
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.section:BehandelndeEinrichtung.entry.reference">
+      <path value="Composition.section.entry.reference" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
   </differential>
 </StructureDefinition>
