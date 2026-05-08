@@ -5,6 +5,7 @@
   <title value="Schnittzeit" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Diese Extension ermöglicht die Beschreibung der Schnittzeit als dateTime." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />

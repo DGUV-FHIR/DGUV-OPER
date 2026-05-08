@@ -5,6 +5,7 @@
   <title value="OPProzedur" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Dieses Profil bildet die OP-Prozeduren inkl. OP-Indikation, Narkose, Schnitt- und Nahtzeit ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
