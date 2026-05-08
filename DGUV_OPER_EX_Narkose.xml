@@ -2,7 +2,9 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose" />
   <name value="DGUV_OPER_EX_Narkose" />
+  <title value="Narkose" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
