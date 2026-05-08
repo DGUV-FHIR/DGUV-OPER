@@ -5,7 +5,7 @@
   <version value="1.0" />
   <name value="DGUV_OPER_CS_Narkose" />
   <title value="Narkose" />
-  <status value="draft" />
+  <status value="active" />
   <experimental value="false" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <contact>
@@ -57,7 +57,7 @@
     <display value="Intravenöse Regionalanästhesie" />
   </concept>
   <concept>
-    <code value="RA" />
+    <code value="RLA" />
     <display value="Rückenmarknahe Leitungsanästhesie" />
   </concept>
   <concept>

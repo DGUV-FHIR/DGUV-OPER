@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
  Author: AFW
- Datum: 13.03.2026
+  Datum: 30.04.2026
  
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_01.xml" dient der Validierung
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_02.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung
+ N: Verletzung der Constraints: Wenn Histo-/Mibi-Untersuchung veranlasst = false“ ist, darf Observation.value nicht befüllt sein.
 -->
 <Observation xmlns="http://hl7.org/fhir">
 
@@ -21,7 +21,7 @@
   
 	<!-- Extension: Untersuchung veranlasst -->
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst">
-    <valueBoolean value="true"/>
+    <valueBoolean value="false"/>
   </extension>
 
    
@@ -49,14 +49,7 @@
   </subject> 
 
 
-	
-
-
- 
-  <!-- Bezug zur OP-Prozedur -->
- 
- 
-  <!--Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
-  <valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/>
+  <!-- Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
+  <!-- <valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/> -->
   
 </Observation>

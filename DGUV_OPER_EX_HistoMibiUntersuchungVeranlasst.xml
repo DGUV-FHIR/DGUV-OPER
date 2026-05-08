@@ -1,31 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
-  <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
-  <name value="DGUV_OPER_EX_OPDatum" />
+  <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
+  <version value="0.1" />
+  <name value="DGUV_OPER_EX_HistoMibiUntersuchungVeranlasst" />
+  <title value="Histo -/mikrobiologische Untersuchung Veranlasst (Erweiterung)" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Procedure.performed[x]" />
+    <expression value="Observation" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
   <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Kennzeichnung, ob eine histologische bzw. mikrobiologische Untersuchung veranlasst wurde" />
+      <max value="1" />
+    </element>
     <element id="Extension.extension">
       <path value="Extension.extension" />
       <max value="0" />
     </element>
     <element id="Extension.url">
       <path value="Extension.url" />
-      <fixedUri value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
+      <fixedUri value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
     </element>
     <element id="Extension.value[x]">
       <path value="Extension.value[x]" />
+      <min value="1" />
       <type>
-        <code value="date" />
+        <code value="boolean" />
       </type>
     </element>
   </differential>

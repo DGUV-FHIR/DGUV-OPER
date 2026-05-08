@@ -4,16 +4,13 @@
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
   </meta>
+  <!--Status-->
   <text>
-    <status value="generated" /><div xmlns="http://www.w3.org/1999/xhtml"><h1>Hier finden Sie ein Beispiel der OPProzeduren einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1></div></text>
-  <!-- Extension: Lagerung -->
-  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Lagerung">
-    <valueString value="Beach-Chair-Lagerung"/>
-  </extension>
-  <!-- Extension: Blutsperre -->
-  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Blutsperre">
-    <valueString value="Blutsperre 300 mmHg, Dauer 45 Minuten"/>
-  </extension>
+    <status value="generated" />
+      <div xmlns="http://www.w3.org/1999/xhtml">
+      <h1>Hier finden Sie ein Beispiel der OPProzeduren einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+      </div>
+  </text>
   <!-- Extension: Narkose -->
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
     <valueCodeableConcept>
@@ -24,9 +21,15 @@
       </coding>
     </valueCodeableConcept>
   </extension>
-   <!-- Status -->
+  <!-- Extension: Schnittzeit -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
+    <valueDateTime value="2024-03-12T08:15:00+01:00" />
+  </extension>
+  <!-- Extension: Nahtzeit -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
+    <valueDateTime value="2024-03-12" />
+  </extension>
   <status value="completed" />
-  <!-- Code -->
   <code>
     <coding>
       <system value="http://snomed.info/sct" />
@@ -35,17 +38,15 @@
     </coding>
     <text value="Appendektomie" />
   </code>
-  <!-- Subject -->
   <subject>
-    <reference value="Patient/12345" />
+    <reference value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
     <display value="Max Mustermann" />
   </subject>
-  <!-- OPBeginn und OPEnde -->
-  <performedPeriod>
-    <start value="2024-06-12T10:00:00+01:00" />
-    <end value="2024-06-12T11:30:00+01:00" />
-  </performedPeriod>
-  <!-- Indikation -->
+  <encounter>
+    <reference value="Encounter/fall1" />
+    <display value="Fallnummer 2026-000987" />
+  </encounter>
+  <performedDateTime value="2024-03-12T08:00:00+01:00" />
   <reasonCode>
     <coding>
       <system value="http://snomed.info/sct" />
@@ -54,7 +55,6 @@
     </coding>
     <text value="Akute Appendizitis" />
   </reasonCode>
-  <!-- Bodysite -->
   <bodySite>
     <coding>
       <system value="http://snomed.info/sct" />
