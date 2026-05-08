@@ -109,20 +109,10 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Organization.address:Strassenanschrift.extension">
-      <path value="Organization.address.extension" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
     <element id="Organization.address:Strassenanschrift.extension:Stadtteil">
       <path value="Organization.address.extension" />
       <sliceName value="Stadtteil" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.extension:Stadtteil.value[x]">
-      <path value="Organization.address.extension.value[x]" />
-      <short value="Konkreter Name des Stadt- oder Ortsteils" />
-      <mustSupport value="true" />
+      <max value="0" />
     </element>
     <element id="Organization.address:Strassenanschrift.type">
       <path value="Organization.address.type" />
@@ -131,11 +121,12 @@
     <element id="Organization.address:Strassenanschrift.line">
       <path value="Organization.address.line" />
       <min value="1" />
-      <max value="2" />
+      <max value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension">
       <path value="Organization.address.line.extension" />
+      <min value="2" />
       <max value="3" />
       <mustSupport value="true" />
     </element>
@@ -143,6 +134,7 @@
       <path value="Organization.address.line.extension" />
       <sliceName value="Strasse" />
       <short value="Straßenname (ohne Hausnummer)" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
@@ -153,6 +145,7 @@
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
       <path value="Organization.address.line.extension" />
       <sliceName value="Hausnummer" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">

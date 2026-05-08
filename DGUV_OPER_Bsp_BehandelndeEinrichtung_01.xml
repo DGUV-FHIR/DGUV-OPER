@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 06.05.2026
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_BehandelndeEinrichtung_00_CoPilot.xml" dient der Validierung
+ Datum: 08.05.2026
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_BehandelndeEinrichtung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  P: Maximalbefüllung einer Instanz BehandelndeEinrichtung (Meta-Daten, Institutionskennzeichen (IKNR),
-    Name der Einrichtung, Straßenanschrift inkl. Stadtteil, Straße, Hausnummer, optionaler Adresszusatz, PLZ, Ort, Land)
+    Name der Einrichtung, Straßenanschrift, Straße, Hausnummer, optionaler Adresszusatz, PLZ, Ort, Land)
 -->
 <Organization xmlns="http://hl7.org/fhir">
   <!--Meta-Daten-->
-  <id value="behandelnde-einrichtung-00"/>
+  <id value="behandeinricht-01"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung"/>
   </meta>
@@ -33,15 +33,10 @@
 
   <!--Adresse der behandelnden Einrichtung (Straßenanschrift) -->
   <address>
-    <!--Stadt-/Ortsteil (Erweiterung an Address) -->
-    <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-precinct">
-      <valueString value="Oberstadt"/>
-    </extension>
-
     <type value="both"/>
 
     <!--Adresszeile mit strukturierten Erweiterungen (Straße, Hausnummer, optionaler Zusatz) -->
-    <line value="Musterstraße 12A // Haus B">
+    <line value="Musterstraße 12A, Haus B">
       <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
         <valueString value="Musterstraße"/>
       </extension>
@@ -53,7 +48,6 @@
         <valueString value="Haus B"/>
       </extension>
     </line>
-    <line value="Oberstadt"/>
 
     <city value="Musterstadt"/>
     <postalCode value="12345"/>
