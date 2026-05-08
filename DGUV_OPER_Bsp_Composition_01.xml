@@ -1,143 +1,173 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Composition xmlns="http://hl7.org/fhir">
-    <id value="c00f7826-5a3e-49aa-b499-3f8c6599bd2b"/>
+    <id value="c00f7826-5a3e-49aa-b499-3f8c6599bd2b" />
 
     <meta>
-        <profile value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition"/>
+        <profile value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
     </meta>
     <text>
-        <status value="generated"/>
+        <status value="generated" />
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>Hier finden Sie ein Beispiel der Composition für einen DGUV-Operationsbericht.</h1>
+            <h1>Hier finden Sie ein Beispiel der Composition für einen stationären
+                DGUV-stationären-Operationsbericht.</h1>
         </div>
     </text>
-    <status value="final"/>
+    <status value="final" />
 
     <type>
         <coding>
-            <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-Formtexte"/>
-            <code value="OPER"/>
-            <display value="Operationsbericht"/>
+            <system value="http://fhir.dguv.de/Basis/CodeSystem/DGUV-Basis-CS-Formtexte" />
+            <code value="OPER" />
+            <display value="Operationsbericht" />
         </coding>
     </type>
 
     <subject>
-        <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+        <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
     </subject>
 
-    <date value="2025-11-02T10:15:00+01:00"/>
+    <date value="2025-11-02T10:15:00+01:00" />
 
     <author>
-        <reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466"/>
+        <reference value="urn:uuid:53192032-6365-4659-8cc2-f9a7df67a466" />
     </author>
 
-    <title value="Operationsbericht"/>
+    <title value="stationärer Operationsbericht" />
+     <!-- SECTION: Unfallereignis -->
     <section>
         <code>
             <coding>
-                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                <code value="UNDA"/>
-                <display value="Unfalldaten"/>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+                <code value="UFER" />
+                <display value="Unfallereignis" />
             </coding>
         </code>
+        <entry>
+            <reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
+        </entry>
+    </section>
+     <!-- SECTION: Unfallversicherungsträger --> 
+    <section>
+        <code>
+            <coding>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+                <code value="UVTR" />
+                <display value="Unfallversicherungsträger" />
+            </coding>
+        </code>
+        <entry>
+            <reference value="urn:uuid:180f219f-97a8-486d-99d9-ed631fe4fc60" />
+        </entry>
+    </section>
+     <!-- SECTION: Diagnosen  { [Diagnose - Freitext] + [Diagnose - strukturiert] } -->
+    <section>
+         <code>
+            <coding>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+                <code value="DGNS" />
+                <display value="Diagnosen" />
+            </coding>
+        </code>
+        <!-- Diagnosen [Diagnose - Freitext] -->
         <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="UNBT"/>
-                    <display value="Unfallbetrieb"/>
+                    <code value="DGFT"/>
+                    <display value="Diagnose - Freitext"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:bef1dc10-a361-4eba-8fcc-073f771df44b"/>
+                <reference value="http://fhir.dguv.de/OPER/Condition/84507618-4ff5-46d9-9e61-8ab15c9ce2a4"/>
             </entry>
         </section>
-
+        <!-- Diagnosen [Diagnose - strukturiert]-->
         <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="UFER"/>
-                    <display value="Unfallereignis"/>
+                    <code value="DGST"/>
+                    <display value="Diagnose - strukturiert"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
+                <reference value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab"/>
             </entry>
         </section>
     </section>
-    <!--   Versicherung                 -->
+    <!-- SECTION: OP-Daten  {  [OP-Befund und -Verlauf] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
     <section>
-        <code>
+         <code>
             <coding>
-                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                <code value="VERS"/>
-                <display value="Versicherung"/>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+                <code value="OPDT" />
+                <display value="OP-Daten" />
             </coding>
         </code>
+       <!--  OP-Daten [OP-Befund und -Verlauf] -->
         <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="UVTR"/>
-                    <display value="Unfallversicherungsträger"/>
+                    <code value="OPBV"/>
+                    <display value="OP-Befund und -Verlauf"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:180f219f-97a8-486d-99d9-ed631fe4fc60"/>
+                <reference value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b"/>
             </entry>
         </section>
-
+        <!--  OP-Daten [Histo -/mikrobiologische Untersuchung] -->
         <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="PFKA"/>
-                    <display value="Pflegekasse"/>
+                    <code value="HIMU"/>
+                    <display value="Histo -/mikrobiologische Untersuchung"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:0bf64ac16-926b-4082-968a-f7c088364b83"/>
+                <reference value="http://fhir.dguv.de/OPER/Observation/591d73fb-8d4a-4c92-ac1a-afa009b1cfc2"/>
             </entry>
         </section>
-
-         <section>
+        <!-- OP-Daten  [Implantat] -->
+          <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="KRKA"/>
-                    <display value="Krankenkasse"/>
+                    <code value="IMPT"/>
+                    <display value="Implantat"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:446a540f-7d08-4926-98fe-2abd3094aa92"/>
+                <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c"/>
             </entry>
         </section>
-
-         <section>
-            <code>
+    </section>
+    <!-- SECTION: PostoperativeTherapieempfehlung --> 
+    <section>
+        <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="VSVH"/>
-                    <display value="Versichertenverhältnis"/>
+                    <code value="POTE"/>
+                    <display value="Postoperative Therapieempfehlung"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:75c6d854-876e-4b9d-8ea9-327a46c9c50f"/>
+                <reference value="http://fhir.dguv.de/OPER/Observation/fce850fc-45cb-4c04-8cf2-69bbfe602fb9"/>
             </entry>
-        </section>
-
-        <section>
-            <code>
+    </section>
+     <!-- SECTION: BehandelndeEinrichtung --> 
+    <section>
+        <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="UNBT_KRKA"/>
-                    <display value="UnfallbetriebKrankenkasse"/>
+                    <code value="BNEN"/>
+                    <display value="Behandelnde Einrichtung"/>
                 </coding>
             </code>
             <entry>
-                <reference value="urn:uuid:75c6d854-876e-4b9d-8ea9-327a46c9c577"/>
+                <reference value="http://fhir.dguv.de/OPER/Organisation/8c2b5a27-9d82-45a6-8167-9858707656e6"/>
             </entry>
-        </section>
     </section>
 </Composition>
