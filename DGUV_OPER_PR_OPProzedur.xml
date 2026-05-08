@@ -2,7 +2,9 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
   <name value="DGUV_OPER_PR_OPProzedur" />
+  <title value="OPProzedur" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -10,6 +12,10 @@
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Procedure" />
   <derivation value="constraint" />
   <differential>
+    <element id="Procedure">
+      <path value="Procedure" />
+      <short value="Prozedur" />
+    </element>
     <element id="Procedure.id">
       <path value="Procedure.id" />
       <mustSupport value="true" />
@@ -64,17 +70,41 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Procedure.extension:Schnittzeit">
+      <path value="Procedure.extension" />
+      <sliceName value="Schnittzeit" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Schnittzeit.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension:Nahtzeit">
+      <path value="Procedure.extension" />
+      <sliceName value="Nahtzeit" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:Nahtzeit.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Procedure.identifier">
       <path value="Procedure.identifier" />
       <max value="1" />
-    </element>
-    <element id="Procedure.identifier.system">
-      <path value="Procedure.identifier.system" />
-      <min value="1" />
-    </element>
-    <element id="Procedure.identifier.value">
-      <path value="Procedure.identifier.value" />
-      <min value="1" />
     </element>
     <element id="Procedure.status">
       <path value="Procedure.status" />
@@ -232,49 +262,15 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.performed[x]:performedPeriod">
+    <element id="Procedure.performed[x]:performedDateTime">
       <path value="Procedure.performed[x]" />
-      <sliceName value="performedPeriod" />
-      <short value="OPBeginn und OPEnde" />
+      <sliceName value="performedDateTime" />
+      <short value="OPDatum" />
       <min value="1" />
       <type>
-        <code value="Period" />
+        <code value="dateTime" />
       </type>
       <mustSupport value="true" />
-    </element>
-    <element id="Procedure.performed[x]:performedPeriod.extension:OPDatum">
-      <path value="Procedure.performed[x].extension" />
-      <sliceName value="OPDatum" />
-      <short value="OP-Datum" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPDatum" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.performed[x]:performedPeriod.extension:Schnittzeit">
-      <path value="Procedure.performed[x].extension" />
-      <sliceName value="Schnittzeit" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.performed[x]:performedPeriod.extension:Nahtzeit">
-      <path value="Procedure.performed[x].extension" />
-      <sliceName value="Nahtzeit" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
     </element>
     <element id="Procedure.reasonCode">
       <path value="Procedure.reasonCode" />
@@ -343,26 +339,6 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
-      <path value="Procedure.usedReference.extension.value[x]" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
-      <path value="Procedure.usedReference.extension.value[x].system" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
-      <path value="Procedure.usedReference.extension.value[x].code" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
-      <path value="Procedure.usedReference.extension.value[x].display" />
-      <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Procedure.usedReference.reference">
       <path value="Procedure.usedReference.reference" />
