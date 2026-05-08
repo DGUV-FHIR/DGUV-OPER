@@ -2,13 +2,15 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit" />
   <name value="DGUV_OPER_EX_Nahtzeit" />
+  <title value="Nahtzeit" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Procedure.performed[x]" />
+    <expression value="Procedure" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
