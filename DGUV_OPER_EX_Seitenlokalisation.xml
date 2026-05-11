@@ -30,15 +30,10 @@
       <type>
         <code value="Coding" />
       </type>
-      <mustSupport value="false" />
       <binding>
         <strength value="required" />
         <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_SEITENLOKALISATION" />
       </binding>
-    </element>
-    <element id="Extension.value[x].system">
-      <path value="Extension.value[x].system" />
-      <mustSupport value="false" />
     </element>
   </differential>
 </StructureDefinition>
