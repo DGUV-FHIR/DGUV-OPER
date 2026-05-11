@@ -106,7 +106,7 @@
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
       <min value="1" />
-      <fixedCode value="HMU" />
+      <fixedCode value="HMUN" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />

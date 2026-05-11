@@ -57,7 +57,7 @@
       <path value="Observation.code.coding.code" />
       <short value="Kürzel für OPER-Teilberichtsinhalt PostoperativeTherapieempfehlung" />
       <min value="1" />
-      <fixedCode value="POTHE" />
+      <fixedCode value="POTE" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">

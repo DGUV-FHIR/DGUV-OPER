@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 30.03.2026
+ Datum: 11.05.2026
 
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_PostoperativeTherapieempfehlung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
@@ -25,7 +25,7 @@
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
-      <code value="POTHE"/>
+      <code value="POTE"/>
       <display value="PostoperativeTherapieempfehlung"/>
     </coding>
   </code>

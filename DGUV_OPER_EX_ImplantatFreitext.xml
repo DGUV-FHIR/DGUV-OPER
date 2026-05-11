@@ -3,7 +3,7 @@
   <id value="DGUV-OPER-EX-ImplantatFreitext" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext" />
   <name value="DGUV_OPER_EX_ImplantatFreitext" />
-  <title value="Implantatbeschreibung als Freitext (Erweiterung)" />
+  <title value="Implantatbeschreibung als Freitext" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <description value="Diese Extension ermöglicht die Beschreibung eines Implantats als Freitext." />
