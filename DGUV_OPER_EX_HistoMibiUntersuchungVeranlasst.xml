@@ -3,7 +3,7 @@
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
   <version value="0.1" />
   <name value="DGUV_OPER_EX_HistoMibiUntersuchungVeranlasst" />
-  <title value="Histo -/mikrobiologische Untersuchung Veranlasst (Erweiterung)" />
+  <title value="Histo -/mikrobiologische Untersuchung veranlasst" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <fhirVersion value="4.0.1" />
