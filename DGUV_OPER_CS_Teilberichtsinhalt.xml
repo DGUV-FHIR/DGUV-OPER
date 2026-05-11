@@ -17,7 +17,7 @@
   <description value="Dieses CodeSystem enthält die Codes und Displays zur differenzierteren Kennzeichnung von Profilen auf der Grundlage der Ressource Observation." />
   <content value="complete" />
   <concept>
-    <code value="HMU" />
+    <code value="HMUN" />
     <display value="HistologischeMikrobiologischeUntersuchung" />
   </concept>
   <concept>
@@ -25,11 +25,11 @@
     <display value="OPBefundVerlauf" />
   </concept>
   <concept>
-    <code value="POTHE" />
+    <code value="POTE" />
     <display value="PostoperativeTherapieempfehlung" />
   </concept>
   <concept>
-    <code value="UE" />
+    <code value="UFER" />
     <display value="Unfallereignis" />
   </concept>
 </CodeSystem>

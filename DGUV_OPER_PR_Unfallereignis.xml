@@ -94,7 +94,7 @@
       <path value="Observation.code.coding.code" />
       <short value="Kürzel für konkreten OPER-Teilberichtsinhalt" />
       <min value="1" />
-      <fixedCode value="UE" />
+      <fixedCode value="UFER" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.display">

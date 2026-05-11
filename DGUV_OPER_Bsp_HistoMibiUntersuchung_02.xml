@@ -36,7 +36,7 @@ Datum: 30.04.2026
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
-      <code value="HMU"/>
+      <code value="HMUN"/>
       <display value="HistologischeMikrobiologischeUntersuchung"/>
     </coding>
   </code>
