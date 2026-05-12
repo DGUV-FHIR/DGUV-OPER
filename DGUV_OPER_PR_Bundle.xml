@@ -86,6 +86,11 @@
       </type>
       <mustSupport value="true" />
     </element>
+    <element id="Bundle.entry:Composition.resource.section">
+      <path value="Bundle.entry.resource.section" />
+      <min value="6" />
+      <max value="6" />
+    </element>
     <element id="Bundle.entry:VersichertePerson">
       <path value="Bundle.entry" />
       <sliceName value="VersichertePerson" />
