@@ -134,7 +134,7 @@
 					</section>
 
 				</section>
-				<!-- SECTION: OP-Daten { [OP-Befund und -Verlauf] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
+				<!-- SECTION: OP-Daten { [OP-Befund und -Verlauf] + [] [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
 				<section>
 					<code>
 						<coding>
@@ -157,6 +157,19 @@
 						<entry>
 							<reference
 								value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
+						</entry>
+					</section>
+					<!-- OP-Daten [OPProzedur] -->
+					<section>
+						<code>
+							<coding>
+								<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+								<code value="OPPD" />
+								<display value="OP Prozedur" />
+							</coding>
+						</code>
+						<entry>
+							<reference value="http://fhir.dguv.de/Procedure/76310f12-f67c-4f49-8bda-7ffc98b17058" />
 						</entry>
 					</section>
 					<!-- OP-Daten [Histo -/mikrobiologische Untersuchung] -->
@@ -376,7 +389,7 @@
 					<coding>
 						<system
 							value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="UE" />
+						<code value="UFER" />
 						<display value="Unfallereignis" />
 					</coding>
 				</code>
@@ -753,7 +766,66 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 9 —HistoMibi (OBSERVATION) ========================================================= -->
+	<!-- ======= ENTRY 9 — OPProzedur (PROCEDURE ) ========================================================== -->
+	<entry>
+		<fullUrl value="http://fhir.dguv.de/Procedure/76310f12-f67c-4f49-8bda-7ffc98b17058" />
+		<resource>
+			<Procedure xmlns="http://hl7.org/fhir">
+				<id value="76310f12-f67c-4f49-8bda-7ffc98b17058" />
+				<meta>
+					<profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+				</meta>
+				<text>
+					<status value="generated" />
+					<div xmlns="http://www.w3.org/1999/xhtml">
+						<h1>Hier finden Sie ein Beispiel der OPProzeduren einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+					</div>
+				</text>
+				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
+					<valueCodeableConcept>
+						<coding>
+							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+							<code value="AA" />
+							<display value="Allgemeinanästhesie" />
+						</coding>
+					</valueCodeableConcept>
+				</extension>
+				<status value="completed" />
+				<code>
+					<coding>
+						<system value="http://snomed.info/sct" />
+						<code value="80146002" />
+						<display value="Appendectomy" />
+					</coding>
+					<text value="Appendektomie" />
+				</code>
+				<subject>
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+				</subject>
+				<performedPeriod>
+					<start value="2024-06-12T10:00:00+01:00" />
+					<end value="2024-06-12T11:30:00+01:00" />
+				</performedPeriod>
+				<reasonCode>
+					<coding>
+						<system value="http://snomed.info/sct" />
+						<code value="74400008" />
+						<display value="Appendicitis" />
+					</coding>
+					<text value="Akute Appendizitis" />
+				</reasonCode>
+				<bodySite>
+					<coding>
+						<system value="http://snomed.info/sct" />
+						<code value="66754008" />
+						<display value="Appendix structure" />
+					</coding>
+					<text value="Appendix" />
+				</bodySite>
+			</Procedure>
+		</resource>
+	</entry>
+	<!-- ======= ENTRY 10 —HistoMibi (OBSERVATION) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Observation/591d73fb-8d4a-4c92-ac1a-afa009b1cfc2" />
 		<resource>
@@ -796,7 +868,7 @@
 				<code>
 					<coding>
 						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="HMU" />
+						<code value="HMUN" />
 						<display value="HistologischeMikrobiologischeUntersuchung" />
 					</coding>
 				</code>
@@ -884,7 +956,7 @@
 				<code>
 					<coding>
 						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="POTHE" />
+						<code value="POTE" />
 						<display value="PostoperativeTherapieempfehlung" />
 					</coding>
 				</code>
@@ -900,7 +972,7 @@
 			</Observation>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 12 Behandelnde Einrichtung (ORGANIZATION) ========================================================= -->
+	<!-- ======= ENTRY 13 Behandelnde Einrichtung (ORGANIZATION) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organisation/8c2b5a27-9d82-45a6-8167-9858707656e6" />
 		<resource>

@@ -117,6 +117,19 @@
                 <reference value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b"/>
             </entry>
         </section>
+         <!-- OP-Daten  [OPProzedur] -->
+          <section>
+            <code>
+                <coding>
+                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
+                    <code value="OPPD"/>
+                    <display value="OP Prozedur"/>
+                </coding>
+            </code>
+            <entry>
+                <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c"/>
+            </entry>
+        </section>
         <!--  OP-Daten [Histo -/mikrobiologische Untersuchung] -->
         <section>
             <code>
