@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Procedure xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-Bsp-OPProzeduren" />
+  <id value="DGUV-OPER-Bsp-OPProzedur" />
   <meta>
-    <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzeduren" />
+    <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
   </meta>
   <!--Status-->
   <text>
     <status value="generated" />
       <div xmlns="http://www.w3.org/1999/xhtml">
-      <h1>Hier finden Sie ein Beispiel der OPProzeduren einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+      <h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
       </div>
   </text>
   <!-- Extension: Narkose -->
@@ -43,7 +43,6 @@
     <display value="Max Mustermann" />
   </subject>
   <encounter>
-    <reference value="Encounter/fall1" />
     <display value="Fallnummer 2026-000987" />
   </encounter>
   <performedDateTime value="2024-03-12T08:00:00+01:00" />
