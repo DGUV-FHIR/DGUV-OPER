@@ -6,7 +6,7 @@
   <title value="Unfallversicherungsträger" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet den Unfallversicherungsträger im Zusammenhang mit dem Operationsbericht ab." />
+  <description value="Dieses Profil bildet den Unfallversicherungsträger im Zusammenhang mit dem stationären Operationsbericht ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -31,6 +31,9 @@
     </element>
     <element id="Organization.identifier">
       <path value="Organization.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <short value="Identifikator für den Unfallversicherungsträger" />
       <min value="1" />
       <max value="2" />
@@ -106,6 +109,9 @@
     </element>
     <element id="Organization.address">
       <path value="Organization.address" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <short value="Adresse des Unfallversicherungsträgers" />
       <max value="1" />
     </element>
@@ -113,6 +119,11 @@
       <path value="Organization.address" />
       <sliceName value="Strassenanschrift" />
       <max value="1" />
+    </element>
+    <element id="Organization.address:Strassenanschrift.extension:Stadtteil">
+      <path value="Organization.address.extension" />
+      <sliceName value="Stadtteil" />
+      <max value="0" />
     </element>
     <element id="Organization.address:Strassenanschrift.line">
       <path value="Organization.address.line" />
@@ -163,6 +174,11 @@
       <path value="Organization.address" />
       <sliceName value="Postfach" />
       <max value="1" />
+    </element>
+    <element id="Organization.address:Postfach.extension:Stadtteil">
+      <path value="Organization.address.extension" />
+      <sliceName value="Stadtteil" />
+      <max value="0" />
     </element>
     <element id="Organization.address:Postfach.line">
       <path value="Organization.address.line" />
