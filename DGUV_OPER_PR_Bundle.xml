@@ -3,10 +3,10 @@
   <id value="DGUV-OPER-PR-Bundle" />
   <url value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
   <name value="DGUV_OPER_PR_Bundle" />
-  <title value="OPER-Bundle" />
+  <title value="Stationärer DGUV Operationsbericht - Bundle" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Das Profil Bundle dient als bündelndes Element für den Operationsbericht (OPER). Es enthält als Klammer alle durch die Composition zusammengefassten Profile und sonstigen Elemente und könnte bei Bedarf auch noch mit einer digitalen Signatur versehen werden." />
+  <description value="Dieses Profil spezifiziert den strukturierten Aufbau des stationären DGUV‑Operationsberichts" />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />

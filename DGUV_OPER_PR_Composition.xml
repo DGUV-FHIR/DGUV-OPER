@@ -3,10 +3,10 @@
   <id value="DGUV-OPER-PR-Composition" />
   <url value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
   <name value="DGUV_OPER_PR_Composition" />
-  <title value="OPER-Composition" />
+  <title value="Stationärer DGUV Operationsbericht - Composition" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses “Profil” stellt ein Inhaltsverzeichnis aller Profile und profillosen Teilberichte für den Operationsbericht OPER dar." />
+  <description value="Dieses Profil spezifiziert die DGUV-spezifischen Festlegungen für den stationären Operationsbericht als FHIR Composition. Es definiert die verpflichtende Abschnittsstruktur, einschließlich Unfallereignis, Unfallversicherungsträger, Diagnosen und OP-Daten mit ihren jeweiligen Unterabschnitten." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
