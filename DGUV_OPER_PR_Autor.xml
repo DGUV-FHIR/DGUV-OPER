@@ -3,10 +3,10 @@
   <url value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
   <version value="0.1" />
   <name value="DGUV_OPER_PR_Autor" />
-  <title value="Autor (Operatur)" />
+  <title value="Autor (Operateur)" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil beschreibt eine Person, die formell für die Erbringung gesundheitsbezogener oder verwandter Dienstleistungen verantwortlich ist. In diesem Kontext ist dies der Operateur" />
+  <description value="Dieses Profil beschreibt eine Person, die formell für die Erbringung gesundheitsbezogener oder verwandter Dienstleistungen verantwortlich ist. In diesem Kontext ist dies der Operateur." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -36,6 +36,9 @@
     </element>
     <element id="Practitioner.identifier">
       <path value="Practitioner.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <mustSupport value="false" />
     </element>
     <element id="Practitioner.identifier:ANR">
@@ -60,6 +63,9 @@
     </element>
     <element id="Practitioner.name">
       <path value="Practitioner.name" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <max value="1" />
       <mustSupport value="true" />
     </element>
