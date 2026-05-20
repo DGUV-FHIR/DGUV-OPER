@@ -2,6 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Unfallversicherungstraeger" />
   <url value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_Unfallversicherungstraeger" />
   <title value="Unfallversicherungsträger" />
   <status value="draft" />
@@ -26,6 +27,7 @@
     <element id="Organization.meta.profile">
       <path value="Organization.meta.profile" />
       <min value="1" />
+      <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
       <mustSupport value="true" />
     </element>
