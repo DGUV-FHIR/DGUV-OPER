@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-HistoMibiUntersuchung" />
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
   <version value="0.1" />
   <name value="DGUV_OPER_PR_HistoMibiUntersuchung" />
@@ -81,6 +82,7 @@
     <element id="Observation.partOf.reference">
       <path value="Observation.partOf.reference" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Observation.status">
       <path value="Observation.status" />
@@ -107,11 +109,13 @@
       <path value="Observation.code.coding.code" />
       <min value="1" />
       <fixedCode value="HMUN" />
+      <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
       <min value="1" />
       <fixedString value="HistologischeMikrobiologischeUntersuchung" />
+      <mustSupport value="true" />
     </element>
     <element id="Observation.subject">
       <path value="Observation.subject" />

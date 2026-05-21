@@ -5,13 +5,12 @@
 
     Die vorliegende Beispiel Datei dient der Validierung von den folgenden Testfall/-szenarios: 
     - Fehlererkennung bei der Verwendung eines ‚retired‘ Codes im Identifier (Code: PKV)
-    - Mehrere telecom-Angaben (Kardinalitätsverletzung)
     - Die gleichzeitige Verwendung von VersichertenId_GKV und Versichertennummer_PKV ist verboten (Constraint "dguv-pat-identifier-exclude-gkv-pkv")
     der Datenaufnahme zu dem ......
     
 -->
 <Patient xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-Bsp-VersichertePerson-02"/>
+  <id value="DGUV-OPER-Bsp-VersichertePerson"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson"/>
   </meta>   
@@ -77,15 +76,6 @@
     <given value="Lionel" />
   </name>
   
-  <!-- Validierung: Validator wirft einen Fehler, da nur ein telecom Attribut erlaubt ist -->
-  <telecom>
-    <system value="phone"/>
-    <value value="0049177/00000000"/>
-  </telecom>
-  <telecom>
-    <system value="phone"/>
-    <value value="0049177/00000000"/>
-  </telecom>
   <gender value="male"/>
   <birthDate value="2004-11-12"/>
   <address>

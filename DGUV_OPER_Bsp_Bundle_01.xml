@@ -4,8 +4,7 @@
 		<profile value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
 	</meta>
 	<identifier>
-		<!-- <system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/> <value value="12345" /> -->
-		<system value="urn:ietf:rfc:3936" />
+		<system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/>
 		<value value="1255d75b64f-a8a1-49b8-8d33-bd16423b3e6e345" />
 	</identifier>
 	<!-- Dokumenten Art -->
