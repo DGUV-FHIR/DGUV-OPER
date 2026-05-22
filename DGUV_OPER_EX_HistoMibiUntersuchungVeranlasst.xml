@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
   <version value="0.1" />
   <name value="DGUV_OPER_EX_HistoMibiUntersuchungVeranlasst" />
   <title value="Histo -/mikrobiologische Untersuchung veranlasst" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Diese Extension gibt als Boolean-Wert an, ob eine histologische bzw. mikrobiologische Untersuchung veranlasst wurde." />
   <fhirVersion value="4.0.1" />
   <kind value="complex-type" />
   <abstract value="false" />
