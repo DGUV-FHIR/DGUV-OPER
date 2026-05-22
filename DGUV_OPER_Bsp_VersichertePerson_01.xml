@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-    Author: AFW
-    Datum:  09.12.2025
-
-    Die vorliegende Beispiel Datei .... dient der Validierung 
-    der Datenaufnahme zu dem ......
-    
-    Zu beachten ist dabei ...
-
-    Durchzuführende Massnahmen:
-
-
--->
+<!-- 
+  Author: AFW 
+  Datum: 09.12.2025 
+  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertePerson_01.xml" dient der Validierung des folgenden Szenarios (Basis-/Minimalfall): 
+ 
+ P: Minimale Befüllung einer Instanz des Profils VersichertePerson unter Verwendung der erforderlichen Pflichtangaben. 
+ Dazu gehören insbesondere: 
+ - Meta-Daten gemäß Profilvorgabe 
+ - Name der versicherten Person 
+ - Geburtsdatum Die Datei stellt somit eine reduzierte, aber valide Beispielinstanz dar, die zur Prüfung der grundlegenden Anforderungen des Profils verwendet wird. 
+ 
+ -->
 <Patient xmlns="http://hl7.org/fhir">
-  <id value="DGUV-OPER-Bsp-VersichertePerson-01"/>
+   <id value="DGUV-OPER-Bsp-VersichertePerson"/> 
   <meta>
-	<!--<profile value="http://fhir.dguv.de/ENLA/Patient/DGUV-ENLA-PR-VersichertePerson"/>-->
-   <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson"/>
+    <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
   </meta>
 
   <text>
-    <status value="generated"/>
+    <status value="generated" />
     <div xmlns="http://www.w3.org/1999/xhtml">
       <h1>Hier finden Sie ein Beispiel einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
     </div>
@@ -29,13 +27,13 @@
   <name>
     <use value="official" />
     <family value="Mustermann">
-        <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
-            <valueString value="Mustermann" />
-        </extension>
-    </family> 
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+        <valueString value="Mustermann" />
+      </extension>
+    </family>
     <given value="Lionel" />
   </name>
 
-  <birthDate value="2004-11-12"/>
+  <birthDate value="2004-11-12" />
 
 </Patient>

@@ -38,6 +38,7 @@
     <element id="Bundle.identifier.system">
       <path value="Bundle.identifier.system" />
       <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung" />
       <mustSupport value="true" />
     </element>
     <element id="Bundle.identifier.value">
