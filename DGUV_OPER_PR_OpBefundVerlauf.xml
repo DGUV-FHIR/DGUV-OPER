@@ -2,11 +2,12 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-OpBefundVerlauf" />
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_OpBefundVerlauf" />
   <title value="OP-Befund und -Verlauf" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet des operative Vorgehen, bei der Operation aufgetretene besondere Ereignisse und auch den intraoperativen Befund ab." />
+  <description value="Dieses Profil bildet im Zusammenhang mit dem stationären Operationsbericht das operative Vorgehen, bei der Operation aufgetretene besondere Ereignisse und den intraoperativen Befund ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
