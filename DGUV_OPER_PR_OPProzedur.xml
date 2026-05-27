@@ -136,6 +136,7 @@
     </element>
     <element id="Procedure.code">
       <path value="Procedure.code" />
+      <short value="Angabe des OPS und Snomed Codes" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -184,6 +185,11 @@
       <path value="Procedure.code.coding.extension.value[x].code" />
       <mustSupport value="true" />
     </element>
+    <element id="Procedure.code.coding:OPS.extension:Seitenlokalisation.value[x].display">
+      <path value="Procedure.code.coding.extension.value[x].display" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
     <element id="Procedure.code.coding:OPS.system">
       <path value="Procedure.code.coding.system" />
       <min value="1" />
@@ -224,6 +230,7 @@
     </element>
     <element id="Procedure.code.text">
       <path value="Procedure.code.text" />
+      <short value="Angabe der Prozedur als Freitext" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.subject">
@@ -283,7 +290,7 @@
     <element id="Procedure.reasonCode.text">
       <path value="Procedure.reasonCode.text" />
       <short value="OP-Indikation als Freitext" />
-      <definition value="Dort sollen im Freitext verkürzt die anlassgebenden Kriterien für die konkrete OP dargestellt werden, die sich aus Vorgeschichte, klinischem und bildgebenden Befund ergeben haben" />
+      <definition value="Dort sollen im Freitext verkürzt die anlassgebenden Kriterien für die konkrete OP dargestellt werden, die sich aus Vorgeschichte, klinischem und bildgebenden Befund ergeben haben." />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -337,6 +344,26 @@
       </type>
       <mustSupport value="true" />
       <isModifier value="false" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
+      <path value="Procedure.usedReference.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
+      <path value="Procedure.usedReference.extension.value[x].system" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
+      <path value="Procedure.usedReference.extension.value[x].code" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
+      <path value="Procedure.usedReference.extension.value[x].display" />
+      <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Procedure.usedReference.reference">
       <path value="Procedure.usedReference.reference" />
