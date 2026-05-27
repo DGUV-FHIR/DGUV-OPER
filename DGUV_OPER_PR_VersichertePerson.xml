@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-VersichertePerson" />
   <url value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
-  <version value="0.1" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_VersichertePerson" />
   <title value="Versicherte Person" />
   <status value="draft" />
@@ -94,6 +94,9 @@
     </element>
     <element id="Patient.identifier">
       <path value="Patient.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <comment value="Kardinalität 0..3, da - 1. - im OPER kein Identifikator zwingend ist und - 2. - sich VersichertenId_GKV und Versichertennummer_PKV gegenseitig ausschließen und somit max. 3 Identifikatoren angegeben werden können." />
       <max value="3" />
       <mustSupport value="false" />
@@ -181,6 +184,9 @@
     </element>
     <element id="Patient.name">
       <path value="Patient.name" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <short value="Name der versicherten Person" />
       <max value="1" />
       <mustSupport value="true" />
@@ -321,6 +327,9 @@
     </element>
     <element id="Patient.address">
       <path value="Patient.address" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <short value="Adresse der versicherten Person" />
       <max value="2" />
     </element>

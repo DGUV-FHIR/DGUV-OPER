@@ -2,6 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Composition" />
   <url value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_Composition" />
   <title value="Stationärer Operationsbericht - Composition" />
   <status value="draft" />
