@@ -2,6 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-DiagnoseStrukturiert" />
   <url value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_DiagnoseStrukturiert" />
   <title value="Diagnose - strukturiert" />
   <status value="draft" />

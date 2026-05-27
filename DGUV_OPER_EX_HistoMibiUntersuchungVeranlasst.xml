@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst" />
-  <version value="0.1" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_EX_HistoMibiUntersuchungVeranlasst" />
   <title value="Histo -/mikrobiologische Untersuchung veranlasst" />
   <status value="draft" />

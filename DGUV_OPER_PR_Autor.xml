@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Autor" />
   <url value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
-  <version value="0.1" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_Autor" />
   <title value="Autor (Operateur)" />
   <status value="draft" />
@@ -37,6 +37,9 @@
     </element>
     <element id="Practitioner.identifier">
       <path value="Practitioner.identifier" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <mustSupport value="false" />
     </element>
     <element id="Practitioner.identifier:ANR">
@@ -61,6 +64,9 @@
     </element>
     <element id="Practitioner.name">
       <path value="Practitioner.name" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <max value="1" />
       <mustSupport value="true" />
     </element>
