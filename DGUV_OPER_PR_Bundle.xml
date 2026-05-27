@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Bundle" />
   <url value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
-  <version value="0.0.2" />
+  <version value="0.1" />
   <name value="DGUV_OPER_PR_Bundle" />
   <title value="Stationärer Operationsbericht - Bundle" />
   <status value="draft" />

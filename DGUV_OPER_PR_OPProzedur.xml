@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+  <version value="0.1" />
   <name value="DGUV_OPER_PR_OPProzedur" />
   <title value="OPProzedur" />
   <status value="draft" />

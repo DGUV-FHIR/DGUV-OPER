@@ -2,7 +2,7 @@
 <CodeSystem xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-CS-Narkose" />
   <url value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
-  <version value="1.0" />
+  <version value="0.1" />
   <name value="DGUV_OPER_CS_Narkose" />
   <title value="Narkose" />
   <status value="active" />

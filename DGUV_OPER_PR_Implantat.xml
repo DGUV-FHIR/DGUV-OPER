@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Implantat" />
   <url value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
-  <version value="0.0.2" />
+  <version value="0.1" />
   <name value="DGUV_OPER_PR_Implantat" />
   <title value="Implantat" />
   <status value="draft" />
