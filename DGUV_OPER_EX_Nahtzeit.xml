@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit" />
-  <version value="0.0.2" />
+  <version value="0.1" />
   <name value="DGUV_OPER_EX_Nahtzeit" />
   <title value="Nahtzeit" />
   <status value="draft" />
