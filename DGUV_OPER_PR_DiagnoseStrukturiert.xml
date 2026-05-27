@@ -6,7 +6,7 @@
   <title value="Diagnose - strukturiert" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil enthält diagnostisch relevante Informationen im Zusammenhang mit dem Operationsbericht ausschließlich in strukturierter Form." />
+  <description value="Dieses Profil enthält diagnostisch relevante Informationen im Zusammenhang mit dem stationären Operationsbericht ausschließlich in strukturierter Form." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -98,6 +98,9 @@
     </element>
     <element id="Condition.code.coding">
       <path value="Condition.code.coding" />
+      <slicing>
+        <rules value="open" />
+      </slicing>
       <mustSupport value="true" />
     </element>
     <element id="Condition.code.coding:ICD-10-GM">
