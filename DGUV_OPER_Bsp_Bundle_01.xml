@@ -4,8 +4,7 @@
 		<profile value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
 	</meta>
 	<identifier>
-		<!-- <system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/> <value value="12345" /> -->
-		<system value="urn:ietf:rfc:3936" />
+		<system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/>
 		<value value="1255d75b64f-a8a1-49b8-8d33-bd16423b3e6e345" />
 	</identifier>
 	<!-- Dokumenten Art -->
@@ -40,8 +39,7 @@
 				</type>
 
 				<subject>
-					<reference
-						value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				</subject>
 
 				<date value="2025-11-02T10:15:00+01:00" />
@@ -51,7 +49,7 @@
 						value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
 				</author>
 
-				<title value="stationärer Operationsbericht" />
+				<title value="Stationärer Operationsbericht" />
 
 				<section>
 					<code>

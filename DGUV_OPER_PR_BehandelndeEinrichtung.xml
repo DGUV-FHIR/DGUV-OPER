@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <url value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung" />
-  <version value="0.0.1" />
+  <version value="0.0.2" />
   <name value="DGUV_OPER_PR_BehandelndeEinrichtung" />
   <title value="Behandelnde Einrichtung" />
   <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <description value="Im Zusammenhang mit dem stationären Operationsbericht bildet dieses Profil mit Namen und Anschrift die Einrichtung ab, in der die Operation durchgeführt wurde." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />

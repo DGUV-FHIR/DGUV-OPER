@@ -109,7 +109,7 @@
     <element id="Composition.title">
       <path value="Composition.title" />
       <short value="Menschenlesbarer Name/Titel des Berichts" />
-      <fixedString value="stationärer Operationsbericht" />
+      <fixedString value="Stationärer Operationsbericht" />
       <mustSupport value="true" />
     </element>
     <element id="Composition.section">
