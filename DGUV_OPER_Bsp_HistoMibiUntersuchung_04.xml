@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- Author: AFW
- Datum: 30.04.2026
+ Author: LSc
+ Datum: 16.07.2026
  
- Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_02.xml" dient der Validierung
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_04.xml" dient der Validierung
  folgenden Szenarios:
  
- N: Ausgehend von Standardfall: Verletzung des Constraints "dguv-HistoMibi-1":
-    Obwohl angegeben wurde, dass eine histologische und/oder mikrobiologische Untersuchung veranlasst wurde, fehlt eine freitextliche Beschreibung.
+ N: Ausgehend von Standardfall: Verletzung des Constraints "dguv-HistoMibi-2":
+    Histo-/Mibi-Untersuchung veranlasst = "false“ UND TROTZDEM existiert Observation.value (freitextliche Untersuchungsbeschreibung).
 -->
 <Observation xmlns="http://hl7.org/fhir">
 
   <!--Meta-Daten-->
-  <id value="histoMibiUntersuchung-02"/>
+  <id value="histoMibiUntersuchung-04"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung"/>
   </meta>
   
-  <!-- Pflicht-Extension: Untersuchung veranlasst -->
+  <!-- Pflicht-Extension: Untersuchung NICHT veranlasst -->
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst">
-    <valueBoolean value="true"/>
+    <valueBoolean value="false"/>
   </extension>
 
   <!-- Bezug zur OP-Prozedur -->
-  <partOf>
+   <partOf>
     <reference value="Procedure/OP-67890"/>
   </partOf>
   
@@ -45,7 +45,6 @@
   </subject> 
 
   <!-- Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
-  <!--<valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/>
-  -->
+  <valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/>
   
 </Observation>
