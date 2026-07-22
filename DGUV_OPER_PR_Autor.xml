@@ -40,7 +40,7 @@
       <slicing>
         <rules value="open" />
       </slicing>
-      <mustSupport value="false" />
+      <max value="0" />
     </element>
     <element id="Practitioner.identifier:ANR">
       <path value="Practitioner.identifier" />
