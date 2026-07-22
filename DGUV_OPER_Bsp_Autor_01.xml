@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Author: AFW
-    Datum:  30.04.26
+ Author: AFW
+ Datum:  30.04.26
 
-    Die Beispieldatei DGUV_OPER_Bsp_Autor_01.xml wird zur Verifikation des Szenarios Maximalbefüllung eingesetzt.
-    In diesem Szenario erfolgt eine vollständige Belegung sämtlicher gemäß Spezifikation als must support deklarierter Attribute 
-    des Autors.
-
-    Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Autor_01.xml" dient der Validierung
-    folgenden Szenarios (Standardfall):
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Autor_01.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
  
  P: Maximalbefüllung einer Instanz Autor (Meta-Daten, Name unter Einhaltung der Constraints hum-2, hum-4)
 -->
