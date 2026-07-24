@@ -84,11 +84,6 @@
       <short value="Konkrete IKNR" />
       <mustSupport value="true" />
     </element>
-    <element id="Organization.identifier:Telematik-ID">
-      <path value="Organization.identifier" />
-      <sliceName value="Telematik-ID" />
-      <max value="1" />
-    </element>
     <element id="Organization.name">
       <path value="Organization.name" />
       <short value="Name der behandelnden Einrichtung" />

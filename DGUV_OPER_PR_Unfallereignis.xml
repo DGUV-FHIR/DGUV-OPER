@@ -30,10 +30,6 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
       <mustSupport value="true" />
     </element>
-    <element id="Observation.extension">
-      <path value="Observation.extension" />
-      <max value="1" />
-    </element>
     <element id="Observation.extension:Pflegeunfall">
       <path value="Observation.extension" />
       <sliceName value="Pflegeunfall" />
