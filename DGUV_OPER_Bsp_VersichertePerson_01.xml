@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
-  Author: AFW 
-  Datum: 09.12.2025 
-  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertePerson_01.xml" dient der Validierung des folgenden Szenarios (Basis-/Minimalfall): 
+  Author: AFW / LSc
+  Datum: 10.08.2026
+
+  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertePerson_01.xml" dient der Validierung des folgenden Szenarios (Standardfall): 
  
- P: Minimale Befüllung einer Instanz des Profils VersichertePerson unter Verwendung der erforderlichen Pflichtangaben. 
- Dazu gehören insbesondere: 
- - Meta-Daten gemäß Profilvorgabe 
- - Name der versicherten Person 
- - Geburtsdatum Die Datei stellt somit eine reduzierte, aber valide Beispielinstanz dar, die zur Prüfung der grundlegenden Anforderungen des Profils verwendet wird. 
+  P: Maximalbefüllung einer Instanz des Profils VersichertePerson unter Verwendung mdst. der mit MustSupport gekennzeichneten Attribute
+  (Meta-Daten, Narrativ, Vor-/Nachname der versicherten Person, Geburtsdatum der versicherten Person)
  
  -->
 <Patient xmlns="http://hl7.org/fhir">
+
+  <!--Meta-Daten-->
    <id value="DGUV-OPER-Bsp-VersichertePerson"/> 
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
   </meta>
 
+  <!--Narrativ-->
   <text>
     <status value="generated" />
     <div xmlns="http://www.w3.org/1999/xhtml">
@@ -24,6 +25,7 @@
     </div>
   </text>
 
+  <!--Name, Vorname der versicherten Person-->
   <name>
     <use value="official" />
     <family value="Mustermann">
@@ -34,6 +36,7 @@
     <given value="Lionel" />
   </name>
 
+  <!--Geburtsdatum der versicherten Person-->
   <birthDate value="2004-11-12" />
 
 </Patient>
