@@ -7,8 +7,9 @@
  P: Minimale Befüllung einer Instanz des Profils VersichertePerson unter Verwendung der erforderlichen Pflichtangaben. 
  Dazu gehören insbesondere: 
  - Meta-Daten gemäß Profilvorgabe 
- - Name der versicherten Person 
- - Geburtsdatum Die Datei stellt somit eine reduzierte, aber valide Beispielinstanz dar, die zur Prüfung der grundlegenden Anforderungen des Profils verwendet wird. 
+ - Name und Vorname der versicherten Person 
+ - Geburtsdatum 
+ Die Datei stellt somit eine reduzierte, aber valide Beispielinstanz dar, die zur Prüfung der grundlegenden Anforderungen des Profils verwendet wird. 
  
  -->
 <Patient xmlns="http://hl7.org/fhir">

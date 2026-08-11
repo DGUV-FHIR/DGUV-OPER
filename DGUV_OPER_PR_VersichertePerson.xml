@@ -31,12 +31,28 @@
     <element id="Patient.meta">
       <path value="Patient.meta" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Patient.meta.profile">
       <path value="Patient.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Patient.meta.profile:operProfile">
+      <path value="Patient.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
+    </element>
+    <element id="Patient.meta.profile:operProfile.value">
+      <path value="Patient.meta.profile.value" />
+      <min value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
       <mustSupport value="true" />
     </element>

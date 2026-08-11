@@ -26,8 +26,26 @@
     </element>
     <element id="Composition.meta.profile">
       <path value="Composition.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta.profile:operProfile">
+      <path value="Composition.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Composition.meta.profile:operProfile.value">
+      <path value="Composition.meta.profile.value" />
+      <min value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Composition/DGUV-OPER-PR-Composition" />
       <mustSupport value="true" />
     </element>
@@ -278,6 +296,9 @@
       <sliceName value="DiagnoseFreitext" />
       <min value="1" />
       <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:Diagnosen.section:DiagnoseFreitext.code">
@@ -328,6 +349,9 @@
       <path value="Composition.section.section" />
       <sliceName value="DiagnoseStrukturiert" />
       <min value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:Diagnosen.section:DiagnoseStrukturiert.code">
@@ -427,6 +451,9 @@
       <sliceName value="OpBefundVerlauf" />
       <min value="1" />
       <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:OP-Daten.section:OpBefundVerlauf.code">
@@ -478,6 +505,9 @@
       <sliceName value="OPProzedur" />
       <min value="1" />
       <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:OP-Daten.section:OPProzedur.code">
@@ -529,6 +559,9 @@
       <sliceName value="HistoMibiUntersuchung" />
       <min value="1" />
       <max value="1" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:OP-Daten.section:HistoMibiUntersuchung.code">
@@ -578,6 +611,9 @@
     <element id="Composition.section:OP-Daten.section:Implantat">
       <path value="Composition.section.section" />
       <sliceName value="Implantat" />
+      <type>
+        <code value="BackboneElement" />
+      </type>
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:OP-Daten.section:Implantat.code">

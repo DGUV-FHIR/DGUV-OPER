@@ -26,8 +26,26 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile:operProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile:operProfile.value">
+      <path value="Observation.meta.profile.value" />
+      <min value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
       <mustSupport value="true" />
     </element>

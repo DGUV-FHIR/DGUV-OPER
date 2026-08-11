@@ -26,12 +26,29 @@
     <element id="Practitioner.meta">
       <path value="Practitioner.meta" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Practitioner.meta.profile">
       <path value="Practitioner.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.profile:sliceProfile">
+      <path value="Practitioner.meta.profile" />
+      <sliceName value="sliceProfile" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Practitioner.meta.profile:sliceProfile.value">
+      <path value="Practitioner.meta.profile.value" />
+      <min value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
       <mustSupport value="true" />
     </element>

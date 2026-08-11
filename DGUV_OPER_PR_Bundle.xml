@@ -19,18 +19,6 @@
       <path value="Bundle.id" />
       <mustSupport value="true" />
     </element>
-    <element id="Bundle.meta">
-      <path value="Bundle.meta" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Bundle.meta.profile">
-      <path value="Bundle.meta.profile" />
-      <min value="1" />
-      <max value="1" />
-      <fixedCanonical value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
-      <mustSupport value="true" />
-    </element>
     <element id="Bundle.identifier">
       <path value="Bundle.identifier" />
       <min value="1" />
