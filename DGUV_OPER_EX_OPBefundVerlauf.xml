@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf" />
+  <version value="0.1" />
+  <name value="DGUV_OPER_EX_OPBefundVerlauf" />
+  <status value="draft" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <description value="Diese Extension ermöglicht die Beschreibung des operativen Vorgehens, bei der Operation aufgetretene besondere Ereignisse und den intraoperativen Befund." />
+  <fhirVersion value="4.0.1" />
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Procedure" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="Operatives Vorgehen, bei der Operation aufgetretene besondere Ereignisse und intraoperativer Befund" />
+      <comment value="Dieses Profil bildet im Zusammenhang mit dem stationären Operationsbericht das operative Vorgehen, bei der Operation aufgetretene besondere Ereignisse und den intraoperativen Befund ab." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <max value="0" />
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
