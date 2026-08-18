@@ -805,6 +805,11 @@
 						<code value="80146002" />
 						<display value="Appendectomy" />
 					</coding>
+                    <coding>
+                      <system value="http://fhir.de/CodeSystem/bfarm/ops" />
+                      <code value="5-470" />
+                      <display value="Appendektomie" />
+                    </coding>
 					<text value="Appendektomie" />
 				</code>
 				<subject>
@@ -820,13 +825,13 @@
 						<code value="74400008" />
 						<display value="Appendicitis" />
 					</coding>
-					<text value="Akute Appendizitis" />
+					<text value="Blinddarmentzündung" />
 				</reasonCode>
 				<bodySite>
 					<coding>
 						<system value="http://snomed.info/sct" />
 						<code value="66754008" />
-						<display value="Appendix structure" />
+						<display value="Appendix structure (body structure)" />
 					</coding>
 					<text value="Appendix" />
 				</bodySite>
