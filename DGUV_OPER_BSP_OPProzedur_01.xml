@@ -39,7 +39,7 @@
     <text value="Appendektomie" />
   </code>
   <subject>
-    <reference value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
     <display value="Max Mustermann" />
   </subject>
   <encounter>
