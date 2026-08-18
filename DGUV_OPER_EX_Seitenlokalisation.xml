@@ -12,7 +12,7 @@
   <abstract value="false" />
   <context>
     <type value="element" />
-    <expression value="Procedure.usedReference" />
+    <expression value="Procedure.focalDevice.manipulated" />
   </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
@@ -33,7 +33,7 @@
       </type>
       <binding>
         <strength value="required" />
-        <valueSet value="https://fhir.kbv.de/ValueSet/KBV_VS_SFHIR_ICD_SEITENLOKALISATION" />
+        <valueSet value="http://hl7.org/fhir/ValueSet/bodysite-laterality" />
       </binding>
     </element>
   </differential>
