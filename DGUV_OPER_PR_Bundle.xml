@@ -26,6 +26,19 @@
     </element>
     <element id="Bundle.meta.profile">
       <path value="Bundle.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.profile:operProfile">
+      <path value="Bundle.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />

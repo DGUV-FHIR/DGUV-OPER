@@ -29,6 +29,19 @@
     </element>
     <element id="Procedure.meta.profile">
       <path value="Procedure.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.meta.profile:operProfile">
+      <path value="Procedure.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
