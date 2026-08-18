@@ -29,6 +29,11 @@
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
     <valueDateTime value="2024-03-12" />
   </extension>
+  <!-- Extension: OPBefundVerlauf (neu) -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
+    <valueString value="Laparoskopische Appendektomie durchgeführt. Intraoperativ zeigte sich eine akut entzündete Appendix ohne Perforationszeichen. Keine besonderen Vorkommnisse während des Eingriffs." />
+  </extension>
+  <!-- status -->
   <status value="completed" />
   <code>
     <coding>
@@ -42,9 +47,13 @@
     <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
     <display value="Max Mustermann" />
   </subject>
+  <!-- Fallnummer: anders verortet (neu) -->
   <encounter>
-    <display value="Fallnummer 2026-000987" />
+    <identifier>
+      <value value="2026-000987" />
+    </identifier>
   </encounter>
+<!-- performed: keine slices mehr, nur Angabe von date.Time möglich (neu) -->
   <performedDateTime value="2024-03-12T08:00:00+01:00" />
   <reasonCode>
     <coding>
@@ -62,4 +71,26 @@
     </coding>
     <text value="Appendix" />
   </bodySite>
+  <!-- PostoperativeTherapieempfehlung: hinzugefügt (neu) -->
+  <followUp>
+    <text value="Körperliche Schonung für zwei Wochen. Klinische Wundkontrolle in 7 Tagen empfohlen." />
+  </followUp>
+  <!-- Implantat (Referenz) inkl. Extension: hinzugefügt (neu) -->
+  <focalDevice>
+    <manipulated>
+      <reference value="urn:uuid:implantat-001" />
+        <display value="Titanclip" />
+<!-- Extension Seitenlokalisation nun unter manipulated.extension -->
+    <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+      <valueCodeableConcept>
+       <coding>
+         <system value="http://snomed.info/sct" />
+         <code value="7771000" />
+         <display value="Left" />
+        </coding>
+     </valueCodeableConcept>
+    </extension>
+  </manipulated>
+  <action value="implanted" />
+</focalDevice>
 </Procedure>
