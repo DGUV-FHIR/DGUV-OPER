@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-Bsp-OPProzedur" />
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+  </meta>
+  <!--Status-->
+  <text>
+    <status value="generated" />
+      <div xmlns="http://www.w3.org/1999/xhtml">
+      <h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+      </div>
+  </text>
+  <!-- Extension: Narkose -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+        <code value="AA" />
+        <display value="Allgemeinanästhesie" />
+      </coding>
+    </valueCodeableConcept>
+  </extension>
+  <!-- Extension: Schnittzeit -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
+    <valueDateTime value="2024-03-12T08:15:00+01:00" />
+  </extension>
+  <!-- Extension: Nahtzeit -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
+    <valueDateTime value="2024-03-12" />
+  </extension>
+  <!-- Extension: OPBefundVerlauf (neu) -->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
+    <valueString value="Laparoskopische Appendektomie durchgeführt. Intraoperativ zeigte sich eine akut entzündete Appendix ohne Perforationszeichen. Keine besonderen Vorkommnisse während des Eingriffs." />
+  </extension>
+  <!-- status -->
+  <status value="completed" />
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="80146002" />
+      <display value="Appendectomy" />
+    </coding>
+    <text value="Appendektomie" />
+  </code>
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+    <display value="Max Mustermann" />
+  </subject>
+  <!-- Fallnummer: anders verortet (neu) -->
+  <encounter>
+    <identifier>
+      <value value="2026-000987" />
+    </identifier>
+  </encounter>
+<!-- performed: keine slices mehr, nur Angabe von date.Time möglich (neu) -->
+  <performedDateTime value="2024-03-12T08:00:00+01:00" />
+  <reasonCode>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="74400008" />
+      <display value="Appendicitis" />
+    </coding>
+    <text value="Akute Appendizitis" />
+  </reasonCode>
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct" />
+      <code value="66754008" />
+      <display value="Appendix structure" />
+    </coding>
+    <text value="Appendix" />
+  </bodySite>
+  <!-- PostoperativeTherapieempfehlung: hinzugefügt (neu) -->
+  <followUp>
+    <text value="Körperliche Schonung für zwei Wochen. Klinische Wundkontrolle in 7 Tagen empfohlen." />
+  </followUp>
+  <!-- Implantat (Referenz) inkl. Extension: hinzugefügt (neu) -->
+  <focalDevice>
+    <manipulated>
+      <reference value="urn:uuid:implantat-001" />
+        <display value="Titanclip" />
+<!-- Extension Seitenlokalisation nun unter manipulated.extension -->
+    <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+      <valueCodeableConcept>
+       <coding>
+         <system value="http://snomed.info/sct" />
+         <code value="7771000" />
+         <display value="Left" />
+        </coding>
+     </valueCodeableConcept>
+    </extension>
+  </manipulated>
+  <action value="implanted" />
+</focalDevice>
+</Procedure>

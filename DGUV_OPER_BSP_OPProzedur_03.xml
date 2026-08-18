@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+<id value="DGUV-OPER-Bsp-OPProzedur" />
+<meta>
+<profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+</meta>
+<!--Status-->
+<text>
+<status value="generated" />
+<div xmlns="http://www.w3.org/1999/xhtml">
+<h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+</div>
+</text>
+<!-- Extension: Narkose -->
+<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
+<valueCodeableConcept>
+<coding>
+<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+<code value="AA" />
+<display value="Allgemeinanästhesie" />
+</coding>
+</valueCodeableConcept>
+</extension>
+<!-- Extension: Schnittzeit -->
+<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
+<valueDateTime value="2024-03-12T08:15:00+01:00" />
+</extension>
+<!-- Extension: Nahtzeit -->
+<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
+<valueDateTime value="2024-03-12" />
+</extension>
+<!-- Extension: OPBefundVerlauf
+Short: Operatives Vorgehen, bei der Operation aufgetretene besondere Ereignisse
+und intraoperativer Befund -->
+<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
+<valueString value="Zugang über einen ca. 5 cm langen Wechselschnitt im rechten Unterbauch. Aufsuchen und Darstellen der Appendix, diese zeigt sich phlegmonös entzündet ohne Perforation. Unauffälliger intraoperativer Situs im Übrigen. Appendektomie in üblicher Technik, Stumpfversorgung, Blutstillung, schichtweiser Wundverschluss. Kein intraoperativer Zwischenfall." />
+</extension>
+<status value="completed" />
+<code>
+<coding>
+<system value="http://snomed.info/sct" />
+<code value="80146002" />
+<display value="Appendectomy" />
+</coding>
+<text value="Appendektomie" />
+</code>
+<subject>
+<reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+<display value="Max Mustermann" />
+</subject>
+<!-- encounter: Fallnummer nun in encounter.identifier.value als String -->
+<encounter>
+<identifier>
+<value value="2026-000987" />
+</identifier>
+</encounter>
+<!-- performed: nicht mehr gesliced, ausschließlich dateTime -->
+<performedDateTime value="2024-03-12T08:00:00+01:00" />
+<reasonCode>
+<coding>
+<system value="http://snomed.info/sct" />
+<code value="74400008" />
+<display value="Appendicitis" />
+</coding>
+<text value="Akute Appendizitis" />
+</reasonCode>
+<bodySite>
+<coding>
+<system value="http://snomed.info/sct" />
+<code value="66754008" />
+<display value="Appendix structure" />
+</coding>
+<text value="Appendix" />
+</bodySite>
+<!-- followUp.text: Freitextliche Hinweise des Operateurs zur Nachbehandlung -->
+<followUp>
+<text value="Fadenzug am 10. postoperativen Tag beim Hausarzt. Körperliche Schonung für 2 Wochen, keine schwere körperliche Arbeit. Wiedervorstellung bei Fieber, zunehmenden Schmerzen oder Wundheilungsstörung." />
+</followUp>
+<!-- focalDevice: Profil "Implantat" zurückgebaut auf focalDevice.manipulated,
+inkl. Extension EX_Seitenlokalisation unter focalDevice.manipulated.extension -->
+<focalDevice>
+<manipulated>
+<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+<!-- ValueSet (SNOMED CT): http://org./fhir/ValueSet/bodysite-laterality -->
+<valueCoding>
+<system value="http://snomed.info/sct" />
+<code value="7771000" />
+<display value="Left" />
+</valueCoding>
+</extension>
+<reference value="urn:uuid:9c1e7c1a-3b2f-4e5a-8b0d-1a2b3c4d5e6f" />
+<display value="Implantat: Titanclip" />
+</manipulated>
+</focalDevice>
+</Procedure>
+
+
+ 
