@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
   Author: AFW / LSc
-  Datum: 10.08.2026
+  Datum: 18.08.2026
 
   Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertePerson_01.xml" dient der Validierung des folgenden Szenarios (Standardfall): 
  
   P: Maximalbefüllung einer Instanz des Profils VersichertePerson unter Verwendung mdst. der mit MustSupport gekennzeichneten Attribute
-  (Meta-Daten, Narrativ, Vor-/Nachname der versicherten Person, Geburtsdatum der versicherten Person)
+  (Meta-Daten, Narrativ, Vor-/Nachname der versicherten Person, Geburtsdatum der versicherten Person sowie Nationalität)
  
  -->
 <Patient xmlns="http://hl7.org/fhir">
@@ -24,6 +24,26 @@
       <h1>Hier finden Sie ein Beispiel einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
     </div>
   </text>
+
+  <!-- Nationalität -->
+  <extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
+  <!--extension url="http://hl7.org/fhir/ValueSet/iso3166-1-2|4.0.1" -->      
+    <extension url="code" >
+        <valueCodeableConcept>
+          <coding>
+            <system value="urn:iso:std:iso:3166" />
+            <code value="DE" />
+            <display value="Germany" />
+          </coding>
+        </valueCodeableConcept>
+    </extension>
+     <extension url="period" >
+      <valuePeriod>
+        <start value="2004-11-12"/>
+        <end value="2024-01-01"/>
+      </valuePeriod>
+    </extension>
+  </extension>
 
   <!--Name, Vorname der versicherten Person-->
   <name>
