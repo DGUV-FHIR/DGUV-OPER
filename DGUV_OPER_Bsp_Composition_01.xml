@@ -123,7 +123,7 @@
         </section>
     </section>
 
-    <!-- SECTION: OP-Daten  {  mit [OP-Befund und -Verlauf] + [OPProzedur] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
+    <!-- SECTION: OP-Daten  {  mit [OPProzedur] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
     <section>
          <code>
             <coding>
