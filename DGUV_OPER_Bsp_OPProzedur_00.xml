@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ Author: LSc, Copilot
+ Datum: 20.08.2026
+
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_OPProzedur_00.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+
+ P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz OPProzedur (Meta-Daten, Narkose, Schnitt-,Nahtzeit, OP-Befund/-verlauf,
+    OP-Status, OPS-Code mit KBV-Seitigkeit, Snomed-Code, OP-Freitext, verunfallte Person, Fallnummer, OP-Zeitpunkt, OP-Grund, Körperstelle,
+    Nachbehandlung, Implantat mit SNOMED-Seitigkeit).
+-->
+
+<Procedure xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
+  <id value="opProzedur-00"/>
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur"/>
+  </meta>
+
+  <!--Narrativ-->
+  <text>
+    <status value="generated" />
+      <div xmlns="http://www.w3.org/1999/xhtml">
+      <h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person.</h1>
+      </div>
+  </text>
+
+  <!--Narkoseform/-bezeichnung-->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose"/>
+        <code value="LA"/>
+        <display value="Lokalanästhesie"/>
+      </coding>
+      <text value="Drei Tropfen auf die Haut"/>
+    </valueCodeableConcept>
+  </extension>
+
+  <!--Schnittzeit-->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
+    <valueDateTime value="2026-02-25T09:15:00+01:00"/>
+  </extension>
+
+  <!--Nahtzeit-->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
+    <valueDateTime value="2026-02-25T10:05:00+01:00"/>
+  </extension>
+
+  <!--OP-Befund und Verlauf-->
+  <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
+    <valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht."/>
+  </extension>
+
+  <!--Status der Prozedur-->
+  <status value="completed"/>
+
+  <!--OP-Prozedur (OPS, SNOMED und Freitext)-->
+  <code>
+    <coding>
+      <extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+        <valueCoding>
+          <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+          <code value="R"/>
+          <display value="rechts"/>
+        </valueCoding>
+      </extension>
+      <system value="http://fhir.de/CodeSystem/bfarm/ops"/>
+      <code value="5-470"/>
+      <display value="Appendektomie"/>
+    </coding>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="80146002"/>
+      <display value="Appendectomy"/>
+    </coding>
+    <text value="Exzision des Wurmfortsatzes"/>
+  </code>
+
+  <!--Verunfallte Person-->
+  <subject>
+    <reference value="urn:uuid:482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+  </subject>
+
+  <!--Fallnummer-->
+  <encounter>
+    <identifier>
+      <value value="FALL-2026-000123"/>
+    </identifier>
+  </encounter>
+
+  <!--OP-Datum-->
+  <performedDateTime value="2026-02-25"/>
+
+  <!--OP-Indikation-->
+  <reasonCode>
+    <text value="Starke Schmerzen im rechten Unterbauch. Wurmfortsatz stark entzündet."/>
+  </reasonCode>
+
+  <!--Körperstelle-->
+  <bodySite>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="66754008"/>
+      <display value="Appendix structure (body structure)"/>
+    </coding>
+    <text value="Appendix" />
+  </bodySite>
+
+  <!--Hinweise zur Nachbehandlung-->
+  <followUp>
+    <text value="Teilbelastung für 6 Wochen, anschließend schrittweiser Belastungsaufbau."/>
+  </followUp>
+
+  <!--Referenz auf Implantat-->
+  <focalDevice>
+    <manipulated>
+      <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+        <valueCoding>
+          <system value="http://snomed.info/sct"/>
+          <code value="419465000"/>
+          <display value="Unilateral right"/>
+        </valueCoding>
+      </extension>
+      <reference value="urn:uuid:implantat-001"/>
+    </manipulated>
+  </focalDevice>
+</Procedure>
