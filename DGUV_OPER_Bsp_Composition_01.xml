@@ -32,7 +32,7 @@
         <reference value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
     </author>
 
-    <title value="stationärer Operationsbericht" />
+    <title value="Stationärer Operationsbericht" />
      <!-- SECTION: Unfallereignis -->
     <section>
         <code>
