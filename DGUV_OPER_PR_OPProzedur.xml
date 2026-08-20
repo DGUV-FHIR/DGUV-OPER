@@ -49,7 +49,6 @@
     </element>
     <element id="Procedure.extension">
       <path value="Procedure.extension" />
-      <short value="Diese Extension ermöglicht die Beschreibung der Narkose als Code und Freitext." />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -138,6 +137,7 @@
     <element id="Procedure.extension:OPBefundVerlauf.value[x]">
       <path value="Procedure.extension.value[x]" />
       <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Procedure.status">
       <path value="Procedure.status" />
@@ -272,10 +272,6 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.encounter.display">
-      <path value="Procedure.encounter.display" />
-      <short value="Fallnummer" />
-    </element>
     <element id="Procedure.performed[x]">
       <path value="Procedure.performed[x]" />
       <min value="1" />
@@ -383,56 +379,6 @@
     </element>
     <element id="Procedure.focalDevice.manipulated.reference">
       <path value="Procedure.focalDevice.manipulated.reference" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference">
-      <path value="Procedure.usedReference" />
-      <short value="Referenz auf Implantat" />
-      <type>
-        <code value="Reference" />
-        <targetProfile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
-      </type>
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension">
-      <path value="Procedure.usedReference.extension" />
-      <max value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation">
-      <path value="Procedure.usedReference.extension" />
-      <sliceName value="Seitenlokalisation" />
-      <max value="1" />
-      <type>
-        <code value="Extension" />
-        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation" />
-      </type>
-      <mustSupport value="true" />
-      <isModifier value="false" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
-      <path value="Procedure.usedReference.extension.value[x]" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
-      <path value="Procedure.usedReference.extension.value[x].system" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
-      <path value="Procedure.usedReference.extension.value[x].code" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
-      <path value="Procedure.usedReference.extension.value[x].display" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.reference">
-      <path value="Procedure.usedReference.reference" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
