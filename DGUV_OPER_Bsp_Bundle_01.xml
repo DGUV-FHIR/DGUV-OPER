@@ -2,7 +2,7 @@
 
 <!--
     Author: AFWi, LSc
-    Datum:  20.08.2026
+    Datum:  21.08.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Bundle_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
@@ -221,15 +221,19 @@
 		</resource>
 	</entry>
 
-	<!-- ======= ENTRY 01 — Versicherte Person (PATIENT) ========================================================== -->
+	<!-- ======= ENTRY 01 — Versicherte Person (PATIENT) — Herkunft: DGUV_OPER_Bsp_VersichertePerson_01 ===================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 		<resource>
 			<Patient>
+
+                <!--Meta-Daten-->
 				<id value="482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
 				</meta>
+
+                <!--Narrativ-->
 				<text>
 					<status value="generated" />
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -237,6 +241,8 @@
 							VersichertePerson-Profils der DGUV</h1>
 					</div>
 				</text>
+
+                <!-- Nationalität -->
 				<extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
 					<extension url="code">
 						<valueCodeableConcept>
@@ -254,17 +260,8 @@
 						</valuePeriod>
 					</extension>
 				</extension>
-				<!-- GKV Identifier -->
-				<identifier>
-					<type>
-						<coding>
-							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
-							<code value="KVZ10" />
-						</coding>
-					</type>
-					<system value="http://fhir.de/sid/gkv/kvid-10" />
-					<value value="S123456789" />
-				</identifier>
+
+                <!--Name, Vorname der versicherten Person-->
 				<name>
 					<use value="official" />
 					<family value="Mustermann">
@@ -274,28 +271,9 @@
 					</family>
 					<given value="Lionel" />
 				</name>
-				<telecom>
-					<system value="phone" />
-					<value value="0049177/00000000" />
-				</telecom>
-				<gender value="male" />
+
+                <!--Geburtsdatum der versicherten Person-->
 				<birthDate value="2004-11-12" />
-				<address>
-					<type value="both" />
-					<line value="Musterweg 1">
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
-							<valueString value="Musterweg" />
-						</extension>
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-							<valueString value="1" />
-						</extension>
-					</line>
-					<city value="Musterhausen" />
-					<postalCode value="11111" />
-					<country value="DE" />
-				</address>
 			</Patient>
 		</resource>
 	</entry>
@@ -623,6 +601,7 @@
 		</resource>
 
 	</entry>
+
 	<!-- ======= ENTRY 06 B — Diagnose Strukturiert (CONDITION) B ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab-2" />
@@ -714,18 +693,19 @@
 
 	</entry>
 
-	<!-- ======= ENTRY 07 — OPProzedur (PROCEDURE ) ========================================================== -->
+	<!-- ======= ENTRY 07 — OPProzedur (PROCEDURE ) — Herkunft: DGUV_OPER_Bsp_OPProzedur_00 ================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/Procedure/76310f12-f67c-4f49-8bda-7ffc98b17058" />
 		<resource>
 			<Procedure xmlns="http://hl7.org/fhir">
 				<id value="76310f12-f67c-4f49-8bda-7ffc98b17058" />
-  <!--Meta-Daten-->
+
+                <!--Meta-Daten-->
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
 				</meta>
 
-  <!--Narrativ-->
+                <!--Narrativ-->
 				<text>
 					<status value="generated" />
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -733,7 +713,7 @@
 					</div>
 				</text>
 
-  <!--Narkoseform/-bezeichnung-->
+                <!--Narkoseform/-bezeichnung-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
 					<valueCodeableConcept>
 						<coding>
@@ -745,25 +725,25 @@
 					</valueCodeableConcept>
 				</extension>
 
-  <!--Schnittzeit-->
+                <!--Schnittzeit-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
 					<valueDateTime value="2026-02-25T09:15:00+01:00"/>
 				</extension>
 
-  <!--Nahtzeit-->
+                <!--Nahtzeit-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
 					<valueDateTime value="2026-02-25T10:05:00+01:00"/>
 				</extension>
 
-  <!--OP-Befund und Verlauf-->
+                <!--OP-Befund und Verlauf-->
                 <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
                     <valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht."/>
                 </extension>
 
-  <!--Status der Prozedur-->
+                <!--Status der Prozedur-->
 				<status value="completed" />
 
-  <!--OP-Prozedur (OPS, SNOMED und Freitext)-->
+                <!--OP-Prozedur (OPS, SNOMED und Freitext)-->
 				<code>
                     <coding>
                       <extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
@@ -786,27 +766,27 @@
 					<text value="Exzision des Wurmfortsatzes" />
 				</code>
 				
-  <!--Verunfallte Person-->
+                <!--Verunfallte Person-->
 				<subject>
 					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				</subject>
 				
-  <!--Fallnummer-->
+                <!--Fallnummer-->
                 <encounter>
                   <identifier>
                     <value value="FALL-2026-000123"/>
                   </identifier>
                 </encounter>
 
-  <!--OP-Datum-->
+                <!--OP-Datum-->
 				<performedDateTime value="2026-02-25" />
 				
-  <!--OP-Indikation-->
+                <!--OP-Indikation-->
 				<reasonCode>
 					<text value="Starke Schmerzen im rechten Unterbauch. Wurmfortsatz stark entzündet." />
 				</reasonCode>
 
-  <!--Körperstelle-->
+                <!--Körperstelle-->
 				<bodySite>
 					<coding>
 						<system value="http://snomed.info/sct" />
@@ -816,12 +796,12 @@
 					<text value="Appendix" />
 				</bodySite>
 
-  <!--Hinweise zur Nachbehandlung-->
+               <!--Hinweise zur Nachbehandlung-->
                <followUp>
                  <text value="Teilbelastung für 6 Wochen, anschließend schrittweiser Belastungsaufbau."/>
                </followUp>
 
-  <!--Referenz auf Implantat-->
+               <!--Referenz auf Implantat-->
                <focalDevice>
                  <manipulated>
                    <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
@@ -903,6 +883,7 @@
 		</resource>
 
 	</entry>
+
 	<!-- ======= ENTRY 09 — Implantat (DEVICE) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c" />
