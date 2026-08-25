@@ -365,6 +365,7 @@
     </element>
     <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation.value[x]">
       <path value="Procedure.focalDevice.manipulated.extension.value[x]" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation.value[x].code">
