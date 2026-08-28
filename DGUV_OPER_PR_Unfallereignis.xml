@@ -25,14 +25,23 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile:operProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
       <mustSupport value="true" />
-    </element>
-    <element id="Observation.extension">
-      <path value="Observation.extension" />
-      <max value="1" />
     </element>
     <element id="Observation.extension:Pflegeunfall">
       <path value="Observation.extension" />

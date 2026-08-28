@@ -26,6 +26,19 @@
     </element>
     <element id="Organization.meta.profile">
       <path value="Organization.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.meta.profile:operProfile">
+      <path value="Organization.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
@@ -163,110 +176,6 @@
       <path value="Organization.name" />
       <short value="Name des Unfallversicherungsträgers" />
       <mustSupport value="true" />
-    </element>
-    <element id="Organization.telecom.value">
-      <path value="Organization.telecom.value" />
-      <short value="Konkrete Kontaktdaten" />
-    </element>
-    <element id="Organization.address">
-      <path value="Organization.address" />
-      <slicing>
-        <rules value="open" />
-      </slicing>
-      <short value="Adresse des Unfallversicherungsträgers" />
-      <max value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift">
-      <path value="Organization.address" />
-      <sliceName value="Strassenanschrift" />
-      <max value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.extension:Stadtteil">
-      <path value="Organization.address.extension" />
-      <sliceName value="Stadtteil" />
-      <max value="0" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line">
-      <path value="Organization.address.line" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension">
-      <path value="Organization.address.line.extension" />
-      <min value="2" />
-      <max value="3" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Strasse">
-      <path value="Organization.address.line.extension" />
-      <sliceName value="Strasse" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
-      <path value="Organization.address.line.extension.value[x]" />
-      <short value="Konkreter Strassenname" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
-      <path value="Organization.address.line.extension" />
-      <sliceName value="Hausnummer" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">
-      <path value="Organization.address.line.extension.value[x]" />
-      <short value="Konkrete Hausnummer" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz">
-      <path value="Organization.address.line.extension" />
-      <sliceName value="Adresszusatz" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.line.extension:Adresszusatz.value[x]">
-      <path value="Organization.address.line.extension.value[x]" />
-      <short value="Konkreter Adresszusatz" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.city">
-      <path value="Organization.address.city" />
-      <short value="Name der Stadt" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Strassenanschrift.postalCode">
-      <path value="Organization.address.postalCode" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Postfach">
-      <path value="Organization.address" />
-      <sliceName value="Postfach" />
-      <max value="1" />
-    </element>
-    <element id="Organization.address:Postfach.extension:Stadtteil">
-      <path value="Organization.address.extension" />
-      <sliceName value="Stadtteil" />
-      <max value="0" />
-    </element>
-    <element id="Organization.address:Postfach.line">
-      <path value="Organization.address.line" />
-      <min value="1" />
-      <max value="1" />
-    </element>
-    <element id="Organization.address:Postfach.line.extension">
-      <path value="Organization.address.line.extension" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Postfach.line.extension:Postfach">
-      <path value="Organization.address.line.extension" />
-      <sliceName value="Postfach" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Postfach.line.extension:Postfach.value[x]">
-      <path value="Organization.address.line.extension.value[x]" />
-      <short value="Konkrete Postfachbezeichnung" />
-    </element>
-    <element id="Organization.address:Postfach.city">
-      <path value="Organization.address.city" />
-      <short value="Name der Stadt" />
-      <min value="1" />
-    </element>
-    <element id="Organization.address:Postfach.postalCode">
-      <path value="Organization.address.postalCode" />
-      <min value="1" />
     </element>
   </differential>
 </StructureDefinition>

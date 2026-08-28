@@ -21,14 +21,14 @@
       <constraint>
         <key value="dguv-HistoMibi-1" />
         <severity value="error" />
-        <human value="Wenn Histo -/Mibi-Untersuchung veranlasst boolean=true muss Observation.value befuellt sein" />
+        <human value="Wurde eine histol./mikrob. Untersuchung veranlasst (boolean = true), dann muss auch eine freitextl. Untersuchungsbeschreibung (value) existieren." />
         <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = true implies valueString.exists()" />
       </constraint>
       <constraint>
         <key value="dguv-HistoMibi-2" />
         <severity value="error" />
-        <human value="Wenn Histo-/Mibi-Untersuchung veranlasst = false ist darf Observation.value nicht befuellt sein" />
-        <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = false implies valueString.empty()" />
+        <human value="Wurde KEINE histol./mikrob. Untersuchung veranlasst (boolean = false), dann darf auch KEINE freitextl. Untersuchungsbeschreibung (value) existieren." />
+        <expression value="extension.where(url = 'http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst').valueBoolean.first() = false implies valueString.exists().not()" />
       </constraint>
     </element>
     <element id="Observation.id">
@@ -42,6 +42,19 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile:operProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />

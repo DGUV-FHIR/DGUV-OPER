@@ -1,43 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-    Author: AFW
-    Datum:  30.04.26
+ Author: AFW
+ Datum:  30.04.26
 
-    Die Beispieldatei DGUV_OPER_Bsp_Autor_01.xml wird zur Verifikation des Szenarios Maximalbefüllung eingesetzt.
-    In diesem Szenario erfolgt eine vollständige Belegung sämtlicher gemäß Spezifikation als must support deklarierter Attribute 
-    des Autors.
+ Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Autor_01.xml" dient der Validierung
+ folgenden Szenarios (Standardfall):
+ 
+ P: Maximalbefüllung einer Instanz Autor (Meta-Daten, Name unter Einhaltung der Constraints hum-2, hum-4)
 -->
 
 <Practitioner xmlns="http://hl7.org/fhir">
-      <id value="DGUV-OPER-Bsp-Autor-01" />
-    <meta>
-        <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor"/> 
-    </meta>
+  <!--Meta-Daten-->
+  <id value="DGUV-OPER-Bsp-Autor-01" />
+  <meta>
+    <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor"/> 
+  </meta>
 
-    <text>
-        <status value="generated"/>
-        <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>Operateur</h1>
-            <p>Diese Ressource beschreibt den Autor bzw. Operateur, der formell für die Durchführung des operativen Eingriffs verantwortlich ist.</p>
-        </div>
-    </text>
+  <!--Narrativ-->
+  <text>
+    <status value="generated"/>
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <h1>Operateur</h1>
+      <p>Diese Ressource beschreibt den Autor bzw. Operateur, der formell für die Durchführung des operativen Eingriffs verantwortlich ist.</p>
+    </div>
+  </text>
 
-
-
-    <!-- Name Operatuer -->
-    <name>
-        <use value="official"/>
-        <family value="Musteraerztin14">
-            <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
-                    <valueString value="Musteraerztin14" />
-            </extension>
-        </family>
-        <given value="Maria"/>
-        <prefix value="Dr.">
-            <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
-                <valueCode value="AC" />
-            </extension>
-        </prefix>
-    </name>
+  <!-- Name Operateur -->
+  <name>
+    <use value="official"/>
+    <family value="Musteraerztin14">
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+        <valueString value="Musteraerztin14" />
+      </extension>
+    </family>
+    <given value="Maria"/>
+    <prefix value="Dr.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+        <valueCode value="AC" />
+      </extension>
+    </prefix>
+  </name>
 
 </Practitioner>

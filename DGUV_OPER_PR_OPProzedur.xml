@@ -6,7 +6,7 @@
   <title value="OPProzedur" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil bildet die OP-Prozedur inkl. OP-Indikation, Narkose, Schnitt- und Nahtzeit ab." />
+  <description value="Dieses Profil bildet die OP-Prozedur inkl. OP-Indikation, Narkose, Schnitt- und Nahtzeit und OPBefundVerlauf ab." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -16,7 +16,7 @@
   <differential>
     <element id="Procedure">
       <path value="Procedure" />
-      <short value="Prozedur" />
+      <short value="OPProzedur" />
     </element>
     <element id="Procedure.id">
       <path value="Procedure.id" />
@@ -29,9 +29,27 @@
     </element>
     <element id="Procedure.meta.profile">
       <path value="Procedure.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.meta.profile:operProfile">
+      <path value="Procedure.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.extension">
+      <path value="Procedure.extension" />
+      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.extension:Narkose">
@@ -104,40 +122,31 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.identifier">
-      <path value="Procedure.identifier" />
+    <element id="Procedure.extension:OPBefundVerlauf">
+      <path value="Procedure.extension" />
+      <sliceName value="OPBefundVerlauf" />
+      <min value="1" />
       <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf" />
+      </type>
+      <mustSupport value="true" />
+      <isModifier value="false" />
+    </element>
+    <element id="Procedure.extension:OPBefundVerlauf.value[x]">
+      <path value="Procedure.extension.value[x]" />
+      <min value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Procedure.status">
       <path value="Procedure.status" />
       <fixedCode value="completed" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.category">
-      <path value="Procedure.category" />
-      <mustSupport value="false" />
-    </element>
-    <element id="Procedure.category.coding">
-      <path value="Procedure.category.coding" />
-      <max value="1" />
-      <mustSupport value="false" />
-    </element>
-    <element id="Procedure.category.coding.system">
-      <path value="Procedure.category.coding.system" />
-      <patternUri value="http://snomed.info/sct" />
-      <mustSupport value="false" />
-    </element>
-    <element id="Procedure.category.coding.code">
-      <path value="Procedure.category.coding.code" />
-      <mustSupport value="false" />
-    </element>
-    <element id="Procedure.category.coding.display">
-      <path value="Procedure.category.coding.display" />
-      <mustSupport value="false" />
-    </element>
     <element id="Procedure.code">
       <path value="Procedure.code" />
-      <short value="Angabe des OPS und Snomed Codes" />
+      <short value="Angabe der OPProzedur als OPS-/Snomed-Codes oder Freitext" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
@@ -231,7 +240,7 @@
     </element>
     <element id="Procedure.code.text">
       <path value="Procedure.code.text" />
-      <short value="Angabe der Prozedur als Freitext" />
+      <short value="Angabe der OPProzedur als Freitext" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.subject">
@@ -249,32 +258,22 @@
     </element>
     <element id="Procedure.encounter">
       <path value="Procedure.encounter" />
-      <short value="Fallnummer" />
+      <short value="Angabe der Fallnummer" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.encounter.display">
-      <path value="Procedure.encounter.display" />
-      <short value="Fallnummer" />
+    <element id="Procedure.encounter.identifier">
+      <path value="Procedure.encounter.identifier" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.encounter.identifier.value">
+      <path value="Procedure.encounter.identifier.value" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Procedure.performed[x]">
       <path value="Procedure.performed[x]" />
-      <slicing>
-        <discriminator>
-          <type value="type" />
-          <path value="$this" />
-        </discriminator>
-        <rules value="open" />
-      </slicing>
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.performed[x]:performedDateTime">
-      <path value="Procedure.performed[x]" />
-      <sliceName value="performedDateTime" />
-      <short value="OPDatum" />
       <min value="1" />
       <type>
         <code value="dateTime" />
@@ -283,7 +282,7 @@
     </element>
     <element id="Procedure.reasonCode">
       <path value="Procedure.reasonCode" />
-      <short value="Indikation (Grund für Operation)" />
+      <short value="Indikation (Grund für Operation) als Freitext" />
       <min value="1" />
       <max value="1" />
       <mustSupport value="true" />
@@ -322,21 +321,39 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference">
-      <path value="Procedure.usedReference" />
+    <element id="Procedure.followUp">
+      <path value="Procedure.followUp" />
+      <short value="Freitextliche Hinweise des Operateurs zur Nachbehandlung" />
+      <comment value="Dieses Attribut bildet im Zusammenhang mit dem stationären Operationsbericht die freitextlichen Hinweise des Operateurs zur Nachbehandlung ab (z. B. anschließender Belastungsbeginn und Belastungsaufbau)." />
+      <min value="1" />
+      <max value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.followUp.text">
+      <path value="Procedure.followUp.text" />
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.focalDevice">
+      <path value="Procedure.focalDevice" />
+      <short value="Referenz auf Implantat" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Procedure.focalDevice.manipulated">
+      <path value="Procedure.focalDevice.manipulated" />
       <type>
         <code value="Reference" />
         <targetProfile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat" />
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference.extension">
-      <path value="Procedure.usedReference.extension" />
+    <element id="Procedure.focalDevice.manipulated.extension">
+      <path value="Procedure.focalDevice.manipulated.extension" />
       <max value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation">
-      <path value="Procedure.usedReference.extension" />
+    <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation">
+      <path value="Procedure.focalDevice.manipulated.extension" />
       <sliceName value="Seitenlokalisation" />
       <max value="1" />
       <type>
@@ -346,28 +363,23 @@
       <mustSupport value="true" />
       <isModifier value="false" />
     </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x]">
-      <path value="Procedure.usedReference.extension.value[x]" />
+    <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation.value[x]">
+      <path value="Procedure.focalDevice.manipulated.extension.value[x]" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].system">
-      <path value="Procedure.usedReference.extension.value[x].system" />
+    <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation.value[x].code">
+      <path value="Procedure.focalDevice.manipulated.extension.value[x].code" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].code">
-      <path value="Procedure.usedReference.extension.value[x].code" />
+    <element id="Procedure.focalDevice.manipulated.extension:Seitenlokalisation.value[x].display">
+      <path value="Procedure.focalDevice.manipulated.extension.value[x].display" />
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Procedure.usedReference.extension:Seitenlokalisation.value[x].display">
-      <path value="Procedure.usedReference.extension.value[x].display" />
-      <min value="1" />
-      <mustSupport value="true" />
-    </element>
-    <element id="Procedure.usedReference.reference">
-      <path value="Procedure.usedReference.reference" />
+    <element id="Procedure.focalDevice.manipulated.reference">
+      <path value="Procedure.focalDevice.manipulated.reference" />
       <min value="1" />
       <mustSupport value="true" />
     </element>

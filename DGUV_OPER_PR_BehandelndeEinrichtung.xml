@@ -25,6 +25,19 @@
     </element>
     <element id="Organization.meta.profile">
       <path value="Organization.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Organization.meta.profile:operProfile">
+      <path value="Organization.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung" />
@@ -84,11 +97,6 @@
       <short value="Konkrete IKNR" />
       <mustSupport value="true" />
     </element>
-    <element id="Organization.identifier:Telematik-ID">
-      <path value="Organization.identifier" />
-      <sliceName value="Telematik-ID" />
-      <max value="1" />
-    </element>
     <element id="Organization.name">
       <path value="Organization.name" />
       <short value="Name der behandelnden Einrichtung" />
@@ -110,11 +118,6 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
-    <element id="Organization.address:Strassenanschrift.extension:Stadtteil">
-      <path value="Organization.address.extension" />
-      <sliceName value="Stadtteil" />
-      <max value="0" />
-    </element>
     <element id="Organization.address:Strassenanschrift.type">
       <path value="Organization.address.type" />
       <mustSupport value="true" />
@@ -122,12 +125,11 @@
     <element id="Organization.address:Strassenanschrift.line">
       <path value="Organization.address.line" />
       <min value="1" />
-      <max value="1" />
+      <max value="2" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension">
       <path value="Organization.address.line.extension" />
-      <min value="2" />
       <max value="3" />
       <mustSupport value="true" />
     </element>
@@ -135,7 +137,6 @@
       <path value="Organization.address.line.extension" />
       <sliceName value="Strasse" />
       <short value="Straßenname (ohne Hausnummer)" />
-      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Strasse.value[x]">
@@ -146,7 +147,6 @@
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer">
       <path value="Organization.address.line.extension" />
       <sliceName value="Hausnummer" />
-      <min value="1" />
       <mustSupport value="true" />
     </element>
     <element id="Organization.address:Strassenanschrift.line.extension:Hausnummer.value[x]">

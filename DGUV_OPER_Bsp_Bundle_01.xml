@@ -1,18 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Author: AFWi, LSc
+    Datum:  21.08.2026
+
+    Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Bundle_01.xml" dient der Validierung 
+    folgenden Szenarios (Standardfall):
+    
+    P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz Bundle (Meta-Daten, Narrativ, Berichtsstatus,
+       Berichtskennzeichnung, verunfallte Person, Berichtserstellungsdatum/-ersteller/-titel, Sektionen und Untersektionen)
+-->
+
 <Bundle xmlns="http://hl7.org/fhir">
+    <!--Meta-Daten-->
 	<id value="55d75b64f-a8a1-49b8-8d33-bd16423b3e6e" />
 	<meta>
 		<profile value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
 	</meta>
+
+    <!--Identifier-->
 	<identifier>
 		<system value="http://fhir.dguv.de/OPER/NamingSystem/DGUV-OPER-NS-Nachrichtenkennung"/>
 		<value value="1255d75b64f-a8a1-49b8-8d33-bd16423b3e6e345" />
 	</identifier>
+
 	<!-- Dokumenten Art -->
 	<type value="document" />
-	<!-- Zeitpunkt -->
+
+	<!-- Zeitpunkt Erstellung Bundle -->
 	<timestamp value="2025-06-10T12:00:00+01:00" />
 
-	<!-- ======= ENTRY 0 — COMPOSITION ========================================================== -->
+	<!-- ======= ENTRY 00 — COMPOSITION ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Composition/c00f7826-5a3e-49aa-b499-3f8c6599bd2b" />
 		<resource>
@@ -132,7 +150,7 @@
 					</section>
 
 				</section>
-				<!-- SECTION: OP-Daten { [OP-Befund und -Verlauf] + [] [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
+				<!-- SECTION: OP-Daten {  mit [OPProzedur] + [Histo -/mikrobiologische Untersuchung] + [Implantat] } -->
 				<section>
 					<code>
 						<coding>
@@ -142,21 +160,6 @@
 							<display value="OP-Daten" />
 						</coding>
 					</code>
-					<!-- OP-Daten [OP-Befund und -Verlauf] -->
-					<section>
-						<code>
-							<coding>
-								<system
-									value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
-								<code value="OPBV" />
-								<display value="OP-Befund und -Verlauf" />
-							</coding>
-						</code>
-						<entry>
-							<reference
-								value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
-						</entry>
-					</section>
 					<!-- OP-Daten [OPProzedur] -->
 					<section>
 						<code>
@@ -201,19 +204,6 @@
 						</entry>
 					</section>
 				</section>
-				<!-- SECTION: PostoperativeTherapieempfehlung -->
-				<section>
-					<code>
-						<coding>
-							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
-							<code value="POTE" />
-							<display value="Postoperative Therapieempfehlung" />
-						</coding>
-					</code>
-					<entry>
-						<reference value="http://fhir.dguv.de/OPER/Observation/fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
-					</entry>
-				</section>
 				<!-- SECTION: BehandelndeEinrichtung -->
 				<section>
 					<code>
@@ -230,15 +220,20 @@
 			</Composition>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 1 — Versicherte Person (PATIENT) ========================================================== -->
+
+	<!-- ======= ENTRY 01 — Versicherte Person (PATIENT) — Herkunft: DGUV_OPER_Bsp_VersichertePerson_01 ===================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 		<resource>
 			<Patient>
+
+                <!--Meta-Daten-->
 				<id value="482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
 				</meta>
+
+                <!--Narrativ-->
 				<text>
 					<status value="generated" />
 					<div xmlns="http://www.w3.org/1999/xhtml">
@@ -246,6 +241,8 @@
 							VersichertePerson-Profils der DGUV</h1>
 					</div>
 				</text>
+
+                <!-- Nationalität -->
 				<extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
 					<extension url="code">
 						<valueCodeableConcept>
@@ -263,17 +260,8 @@
 						</valuePeriod>
 					</extension>
 				</extension>
-				<!-- GKV Identifier -->
-				<identifier>
-					<type>
-						<coding>
-							<system value="http://fhir.de/CodeSystem/identifier-type-de-basis" />
-							<code value="KVZ10" />
-						</coding>
-					</type>
-					<system value="http://fhir.de/sid/gkv/kvid-10" />
-					<value value="S123456789" />
-				</identifier>
+
+                <!--Name, Vorname der versicherten Person-->
 				<name>
 					<use value="official" />
 					<family value="Mustermann">
@@ -283,32 +271,14 @@
 					</family>
 					<given value="Lionel" />
 				</name>
-				<telecom>
-					<system value="phone" />
-					<value value="0049177/00000000" />
-				</telecom>
-				<gender value="male" />
+
+                <!--Geburtsdatum der versicherten Person-->
 				<birthDate value="2004-11-12" />
-				<address>
-					<type value="both" />
-					<line value="Musterweg 1">
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
-							<valueString value="Musterweg" />
-						</extension>
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-							<valueString value="1" />
-						</extension>
-					</line>
-					<city value="Musterhausen" />
-					<postalCode value="11111" />
-					<country value="DE" />
-				</address>
 			</Patient>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 2 — Autor (PRACTITIONER) ========================================================== -->
+
+	<!-- ======= ENTRY 02 — Autor (PRACTITIONER) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
 		<resource>
@@ -348,7 +318,7 @@
 		</resource>
 	</entry>
 
-	<!-- ======= ENTRY 3 — Unfallereignis (OBSERVATION) ========================================================== -->
+	<!-- ======= ENTRY 03 — Unfallereignis (OBSERVATION) ========================================================== -->
 	<entry>
 		<fullUrl
 			value="http://fhir.dguv.de/OPER/Practitioner/Observation/08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
@@ -403,7 +373,8 @@
 			</Observation>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 4 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
+
+	<!-- ======= ENTRY 04 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60" />
 		<resource>
@@ -489,7 +460,8 @@
 			</Organization>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 5 — Diagnose Freitext (CONDITION) ========================================================== -->
+
+	<!-- ======= ENTRY 05 — Diagnose Freitext (CONDITION) ========================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/84507618-4ff5-46d9-9e61-8ab15c9ce2a4" />
 		<resource>
@@ -539,7 +511,8 @@
 			</Condition>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 6 — Diagnose Strukturiert (CONDITION) A ==================================================== -->
+
+	<!-- ======= ENTRY 06 A — Diagnose Strukturiert (CONDITION) A ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab" />
 		<resource>
@@ -628,7 +601,8 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 7 — Diagnose Strukturiert (CONDITION) B ==================================================== -->
+
+	<!-- ======= ENTRY 06 B — Diagnose Strukturiert (CONDITION) B ==================================================== -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Condition/9acff578-cca8-4f9c-9f58-49e5cb91bbab-2" />
 		<resource>
@@ -718,122 +692,133 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 8 — OpBefundVerlauf (OBSERVATION) ========================================================= -->
-	<entry>
-		<fullUrl value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
-		<resource>
-			<Observation xmlns="http://hl7.org/fhir">
 
-				<!--Meta-Daten-->
-				<id value="ab3a0636-dd23-4e30-b950-698fb4b1cd9b" />
-				<meta>
-					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-OpBefundVerlauf" />
-				</meta>
-
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<p>
-							OP-Befund und -Verlauf: Intraoperativer Befund unauffällig,
-							keine Komplikationen. Der operative Verlauf war regelrecht.
-						</p>
-					</div>
-				</text>
-
-				<!--Status-->
-				<status value="final" />
-
-				<!--Teilberichtsinhalt-->
-				<code>
-					<coding>
-						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="OPBV" />
-						<display value="OPBefundVerlauf" />
-					</coding>
-				</code>
-
-				<!--Versicherte Person-->
-				<subject>
-					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
-				</subject>
-
-				<!--Freitextbeschreibung von OP-Befund/-verlauf-->
-				<valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht." />
-
-			</Observation>
-		</resource>
-
-	</entry>
-	<!-- ======= ENTRY 9 — OPProzedur (PROCEDURE ) ========================================================== -->
+	<!-- ======= ENTRY 07 — OPProzedur (PROCEDURE ) — Herkunft: DGUV_OPER_Bsp_OPProzedur_00 ================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/Procedure/76310f12-f67c-4f49-8bda-7ffc98b17058" />
 		<resource>
 			<Procedure xmlns="http://hl7.org/fhir">
 				<id value="76310f12-f67c-4f49-8bda-7ffc98b17058" />
+
+                <!--Meta-Daten-->
 				<meta>
 					<profile value="http://fhir.dguv.de/OPER/Procedure/DGUV-OPER-PR-OPProzedur" />
 				</meta>
-				<!--Status-->
+
+                <!--Narrativ-->
 				<text>
 					<status value="generated" />
 					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+						<h1>Hier finden Sie ein Beispiel der OPProzedur einer verunfallten Person.</h1>
 					</div>
 				</text>
-				<!-- Extension: Narkose -->
+
+                <!--Narkoseform/-bezeichnung-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose">
 					<valueCodeableConcept>
 						<coding>
 							<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
-							<code value="AA" />
-							<display value="Allgemeinanästhesie" />
+							<code value="LA" />
+							<display value="Lokalanästhesie" />
 						</coding>
+                        <text value="Drei Tropfen auf die Haut"/>
 					</valueCodeableConcept>
 				</extension>
-				<!-- Extension: Schnittzeit -->
+
+                <!--Schnittzeit-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Schnittzeit">
-					<valueDateTime value="2024-03-12T08:15:00+01:00" />
+					<valueDateTime value="2026-02-25T09:15:00+01:00"/>
 				</extension>
-				<!-- Extension: Nahtzeit -->
+
+                <!--Nahtzeit-->
 				<extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Nahtzeit">
-					<valueDateTime value="2024-03-12" />
+					<valueDateTime value="2026-02-25T10:05:00+01:00"/>
 				</extension>
+
+                <!--OP-Befund und Verlauf-->
+                <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf">
+                    <valueString value="Intraoperativer Befund: Krank. Keine Komplikationen. Verlauf regelrecht."/>
+                </extension>
+
+                <!--Status der Prozedur-->
 				<status value="completed" />
+
+                <!--OP-Prozedur (OPS, SNOMED und Freitext)-->
 				<code>
+                    <coding>
+                      <extension url="http://fhir.de/StructureDefinition/seitenlokalisation">
+                        <valueCoding>
+                          <system value="https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ICD_SEITENLOKALISATION"/>
+                          <code value="R"/>
+                          <display value="rechts"/>
+                        </valueCoding>
+                      </extension>
+
+                      <system value="http://fhir.de/CodeSystem/bfarm/ops" />
+                      <code value="5-470" />
+                      <display value="Appendektomie" />
+                    </coding>
 					<coding>
 						<system value="http://snomed.info/sct" />
 						<code value="80146002" />
 						<display value="Appendectomy" />
 					</coding>
-					<text value="Appendektomie" />
+					<text value="Exzision des Wurmfortsatzes" />
 				</code>
+				
+                <!--Verunfallte Person-->
 				<subject>
 					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 				</subject>
-				<encounter>
-					<display value="Fallnummer 2026-000987" />
-				</encounter>
-				<performedDateTime value="2024-03-12T08:00:00+01:00" />
+				
+                <!--Fallnummer-->
+                <encounter>
+                  <identifier>
+                    <value value="FALL-2026-000123"/>
+                  </identifier>
+                </encounter>
+
+                <!--OP-Datum-->
+				<performedDateTime value="2026-02-25" />
+				
+                <!--OP-Indikation-->
 				<reasonCode>
-					<coding>
-						<system value="http://snomed.info/sct" />
-						<code value="74400008" />
-						<display value="Appendicitis" />
-					</coding>
-					<text value="Akute Appendizitis" />
+					<text value="Starke Schmerzen im rechten Unterbauch. Wurmfortsatz stark entzündet." />
 				</reasonCode>
+
+                <!--Körperstelle-->
 				<bodySite>
 					<coding>
 						<system value="http://snomed.info/sct" />
 						<code value="66754008" />
-						<display value="Appendix structure" />
+						<display value="Appendix structure (body structure)" />
 					</coding>
 					<text value="Appendix" />
 				</bodySite>
+
+               <!--Hinweise zur Nachbehandlung-->
+               <followUp>
+                 <text value="Teilbelastung für 6 Wochen, anschließend schrittweiser Belastungsaufbau."/>
+               </followUp>
+
+               <!--Referenz auf Implantat-->
+               <focalDevice>
+                 <manipulated>
+                   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+                     <valueCoding>
+                       <system value="http://snomed.info/sct"/>
+                       <code value="419465000"/>
+                       <display value="Unilateral right"/>
+                     </valueCoding>
+                   </extension>
+                   <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c"/>
+                 </manipulated>
+               </focalDevice>
 			</Procedure>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 10 —HistoMibi (OBSERVATION) ========================================================= -->
+
+	<!-- ======= ENTRY 08 — HistoMibiUntersuchung (OBSERVATION) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Observation/591d73fb-8d4a-4c92-ac1a-afa009b1cfc2" />
 		<resource>
@@ -898,7 +883,8 @@
 		</resource>
 
 	</entry>
-	<!-- ======= ENTRY 11 Implantat (DEVICE) ========================================================= -->
+
+	<!-- ======= ENTRY 09 — Implantat (DEVICE) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c" />
 		<resource>
@@ -937,50 +923,8 @@
 			</Device>
 		</resource>
 	</entry>
-	<!-- ======= ENTRY 12 PostoperativeTherapieempfehlung (OBSERVATION) ========================================================= -->
-	<entry>
-		<fullUrl value="http://fhir.dguv.de/OPER/Observation/fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
-		<resource>
-			<Observation xmlns="http://hl7.org/fhir">
 
-				<!--Meta-Daten-->
-				<id value="fce850fc-45cb-4c04-8cf2-69bbfe602fb9" />
-				<meta>
-					<profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-PostoperativeTherapieempfehlung" />
-				</meta>
-
-
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<p>Postoperative Therapieempfehlung: physiotherapeutische Nachbehandlung über 6 Wochen.</p>
-					</div>
-				</text>
-
-				<!--Status-->
-				<status value="final" />
-
-				<!--Teilberichtsinhalt-->
-				<code>
-					<coding>
-						<system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="POTE" />
-						<display value="PostoperativeTherapieempfehlung" />
-					</coding>
-				</code>
-
-				<!--Verunfallte Person-->
-				<subject>
-					<reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
-				</subject>
-
-				<!--Freitextbeschreibung der postoperativen Therapieempfehlung-->
-				<valueString value="Empfohlen wird eine physiotherapeutische Nachbehandlung über 6 Wochen mit anschließender Verlaufskontrolle." />
-
-			</Observation>
-		</resource>
-	</entry>
-	<!-- ======= ENTRY 13 Behandelnde Einrichtung (ORGANIZATION) ========================================================= -->
+	<!-- ======= ENTRY 10 — Behandelnde Einrichtung (ORGANIZATION) ========================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organisation/8c2b5a27-9d82-45a6-8167-9858707656e6" />
 		<resource>

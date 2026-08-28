@@ -6,7 +6,8 @@
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Status, Teilberichtsinhalt, Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung
+ P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Untersuchungsveranlassung: ja, Verweis auf OP-Prozedur, Status, Teilberichtsinhalt,
+    Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung: Constr. "dguv-HistoMibi-1" erfüllt)
 -->
 <Observation xmlns="http://hl7.org/fhir">
 
@@ -16,15 +17,12 @@
     <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung"/>
   </meta>
   
-  
   <!-- Pflicht-Extension: Untersuchung veranlasst -->
-  
-	<!-- Extension: Untersuchung veranlasst -->
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst">
     <valueBoolean value="true"/>
   </extension>
 
-   
+    <!-- Bezug zur OP-Prozedur -->
    <partOf>
     <reference value="Procedure/OP-67890"/>
   </partOf>
@@ -32,7 +30,7 @@
   <!--Status-->
   <status value="final"/>
 
-  <!-- Kodierung laut Profil -->
+  <!-- Kodierung laut Profil: Teilberichtsinhalt -->
   <code>
     <coding>
       <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
@@ -41,21 +39,11 @@
     </coding>
   </code>
 
-
-
   <!-- Referenz auf die versicherte Person-->
   <subject>
     <reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
   </subject> 
 
-
-	
-
-
- 
-  <!-- Bezug zur OP-Prozedur -->
- 
- 
   <!--Freitextbeschreibung der veranlassten histologischen und mikrobiologischen Untersuchung(en) -->
   <valueString value="Es wurde ein 1,2 cm großes Gewebefragment aus dem entzündlich veränderten Weichteilbereich der rechten Unterarmregion entnommen. Das Material wurde zur histologischen Beurteilung der Gewebearchitektur sowie zur mikrobiologischen Diagnostik (Bakterien-, Pilz- und Resistenzenachweis) eingesandt"/>
   
