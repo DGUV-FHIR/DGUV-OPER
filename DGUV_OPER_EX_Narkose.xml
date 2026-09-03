@@ -43,7 +43,6 @@
     <element id="Extension.value[x].text">
       <path value="Extension.value[x].text" />
       <short value="Freitextliche Beschreibung der Narkose" />
-      <mustSupport value="false" />
     </element>
   </differential>
 </StructureDefinition>
