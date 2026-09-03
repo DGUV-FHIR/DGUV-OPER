@@ -104,6 +104,7 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
+      <short value="Kennzeichnung des OPER-Observationprofiltyps" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding">
@@ -114,18 +115,21 @@
     </element>
     <element id="Observation.code.coding.system">
       <path value="Observation.code.coding.system" />
+      <short value="CodeSystem für OPER-Observationprofiltypen" />
       <min value="1" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.code">
       <path value="Observation.code.coding.code" />
+      <short value="Kürzel des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedCode value="HMUN" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding.display">
       <path value="Observation.code.coding.display" />
+      <short value="Bezeichnung des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedString value="HistologischeMikrobiologischeUntersuchung" />
       <mustSupport value="true" />
