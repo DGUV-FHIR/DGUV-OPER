@@ -90,6 +90,10 @@
       <min value="1" />
       <mustSupport value="true" />
     </element>
+    <element id="Procedure.extension:Narkose.value[x].text">
+      <path value="Procedure.extension.value[x].text" />
+      <mustSupport value="true" />
+    </element>
     <element id="Procedure.extension:Schnittzeit">
       <path value="Procedure.extension" />
       <sliceName value="Schnittzeit" />

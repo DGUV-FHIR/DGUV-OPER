@@ -66,8 +66,8 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <short value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
-      <definition value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
+      <short value="Kennzeichnung des OPER-Observationprofiltyps" />
+      <definition value="Kennzeichnung des OPER-Observationprofiltyps" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding">
@@ -95,21 +95,21 @@
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.system">
       <path value="Observation.code.coding.system" />
-      <short value="CodeSystem für OPER-Teilberichtsinhalte" />
+      <short value="CodeSystem für OPER-Observationprofiltypen" />
       <min value="1" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.code">
       <path value="Observation.code.coding.code" />
-      <short value="Kürzel für konkreten OPER-Teilberichtsinhalt" />
+      <short value="Kürzel des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedCode value="UFER" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.display">
       <path value="Observation.code.coding.display" />
-      <short value="Konkrete Bezeichnung für OPER-Teilberichtsinhalt" />
+      <short value="Bezeichnung des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedString value="Unfallereignis" />
       <mustSupport value="true" />
