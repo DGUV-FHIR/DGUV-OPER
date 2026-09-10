@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
   Author: AFW / LSc
-  Datum: 18.08.2026
+  Datum: 10.09.2026
 
   Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_VersichertePerson_01.xml" dient der Validierung des folgenden Szenarios (Standardfall): 
  
   P: Maximalbefüllung einer Instanz des Profils VersichertePerson unter Verwendung mdst. der mit MustSupport gekennzeichneten Attribute
-  (Meta-Daten, Narrativ, Vor-/Nachname der versicherten Person, Geburtsdatum der versicherten Person sowie Nationalität)
+  (Meta-Daten, Narrativ, Vor-/Nachname usw. der versicherten Person, Geburtsdatum der versicherten Person sowie Nationalität)
  
  -->
 <Patient xmlns="http://hl7.org/fhir">
@@ -45,15 +45,34 @@
     </extension>
   </extension>
 
-  <!--Name, Vorname der versicherten Person-->
+  <!--Namenszusatz, Name, Namensnachsatz, Vorsatzwort, Vorname, Präfix(-Qualifier) der versicherten Person-->
   <name>
     <use value="official" />
-    <family value="Mustermann">
+
+    <family value="Prof. Dr. Eleonore Fürstin van der Vogelweide sen. FH MdL">
+      <extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+        <valueString value="Fürstin" />
+      </extension>
       <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
-        <valueString value="Mustermann" />
+        <valueString value="Vogelweide" />
+      </extension>
+      <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+        <valueString value="van der" />
       </extension>
     </family>
-    <given value="Lionel" />
+
+    <given value="Eleonore" />
+
+    <prefix value="Prof. Dr.">
+      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+        <valueCode value="AC" />
+      </extension>
+    </prefix>
+
+    <suffix value="sen." />
+    <suffix value="FH" />
+    <suffix value="MdL" />
+
   </name>
 
   <!--Geburtsdatum der versicherten Person-->
