@@ -4,7 +4,7 @@
   <url value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
   <version value="0.1" />
   <name value="DGUV_OPER_CS_Teilberichtsinhalt" />
-  <title value="Teilberichtsinhalt" />
+  <title value="OPER-Observation-Profiltypen" />
   <status value="draft" />
   <experimental value="false" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
@@ -19,14 +19,6 @@
   <concept>
     <code value="HMUN" />
     <display value="HistologischeMikrobiologischeUntersuchung" />
-  </concept>
-  <concept>
-    <code value="OPBV" />
-    <display value="OPBefundVerlauf" />
-  </concept>
-  <concept>
-    <code value="POTE" />
-    <display value="PostoperativeTherapieempfehlung" />
   </concept>
   <concept>
     <code value="UFER" />
