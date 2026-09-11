@@ -30,7 +30,7 @@
 	<!-- Zeitpunkt Erstellung Bundle -->
 	<timestamp value="2025-06-10T12:00:00+01:00" />
 
-	<!-- ======= ENTRY 00 — COMPOSITION ========================================================== -->
+	<!-- ======= ENTRY 00 — COMPOSITION ============================================================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Composition/c00f7826-5a3e-49aa-b499-3f8c6599bd2b" />
 		<resource>
@@ -221,245 +221,269 @@
 		</resource>
 	</entry>
 
-	<!-- ======= ENTRY 01 — Versicherte Person (PATIENT) — Herkunft: DGUV_OPER_Bsp_VersichertePerson_01 ===================== -->
+	<!-- ======= ENTRY 01 — Versicherte Person (PATIENT) — Herkunft: DGUV_OPER_Bsp_VersichertePerson_01 ============================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
 		<resource>
-			<Patient>
 
-                <!--Meta-Daten-->
-				<id value="482bb42d-a37b-45f7-8893-0abe669bd8ba" />
-				<meta>
-					<profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
-				</meta>
-
-                <!--Narrativ-->
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h1>Hier finden Sie ein Beispiel einer verunfallten Person entsprechend des
-							VersichertePerson-Profils der DGUV</h1>
-					</div>
-				</text>
-
-                <!-- Nationalität -->
-				<extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
-					<extension url="code">
-						<valueCodeableConcept>
-							<coding>
-								<system value="urn:iso:std:iso:3166" />
-								<code value="DE" />
-								<display value="Germany" />
-							</coding>
-						</valueCodeableConcept>
-					</extension>
-					<extension url="period">
-						<valuePeriod>
-							<start value="2004-11-12" />
-							<end value="2024-01-01" />
-						</valuePeriod>
-					</extension>
-				</extension>
-
-                <!--Name, Vorname der versicherten Person-->
-				<name>
-					<use value="official" />
-					<family value="Mustermann">
-						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
-							<valueString value="Mustermann" />
-						</extension>
-					</family>
-					<given value="Lionel" />
-				</name>
-
-                <!--Geburtsdatum der versicherten Person-->
-				<birthDate value="2004-11-12" />
-			</Patient>
+          <Patient xmlns="http://hl7.org/fhir">
+          
+            <!--Meta-Daten-->
+             <id value="482bb42d-a37b-45f7-8893-0abe669bd8ba"/> 
+            <meta>
+              <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
+            </meta>
+          
+            <!--Narrativ-->
+            <text>
+              <status value="generated" />
+              <div xmlns="http://www.w3.org/1999/xhtml">
+                <h1>Hier finden Sie ein Beispiel einer verunfallten Person entsprechend des VersichertePerson-Profils der DGUV</h1>
+              </div>
+            </text>
+          
+            <!-- Nationalität -->
+            <extension url="http://hl7.org/fhir/StructureDefinition/patient-nationality">
+              <extension url="code" >
+                  <valueCodeableConcept>
+                    <coding>
+                      <system value="urn:iso:std:iso:3166" />
+                      <code value="DE" />
+                      <display value="Germany" />
+                    </coding>
+                  </valueCodeableConcept>
+              </extension>
+               <extension url="period" >
+                <valuePeriod>
+                  <start value="2004-11-12"/>
+                  <end value="2024-01-01"/>
+                </valuePeriod>
+              </extension>
+            </extension>
+          
+            <!--Namenszusatz, Name, Namensnachsatz, Vorsatzwort, Vorname, Präfix(-Qualifier) der versicherten Person-->
+            <name>
+              <use value="official" />
+          
+              <family value="Prof. Dr. Eleonore Fürstin van der Vogelweide sen. FH MdL">
+                <extension url="http://fhir.de/StructureDefinition/humanname-namenszusatz">
+                  <valueString value="Fürstin" />
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                  <valueString value="Vogelweide" />
+                </extension>
+                <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-prefix">
+                  <valueString value="van der" />
+                </extension>
+              </family>
+          
+              <given value="Eleonore" />
+          
+              <prefix value="Prof. Dr.">
+                <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+                  <valueCode value="AC" />
+                </extension>
+              </prefix>
+          
+              <suffix value="sen." />
+              <suffix value="FH" />
+              <suffix value="MdL" />
+          
+            </name>
+          
+            <!--Geburtsdatum der versicherten Person-->
+            <birthDate value="2004-11-12" />
+          
+          </Patient>
 		</resource>
 	</entry>
 
-	<!-- ======= ENTRY 02 — Autor (PRACTITIONER) ========================================================== -->
+	<!-- ======= ENTRY 02 — Autor (PRACTITIONER) — Herkunft: DGUV_OPER_Bsp_Autor_01 ================================================= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Practitioner/53192032-6365-4659-8cc2-f9a7df67a466" />
 		<resource>
-			<Practitioner xmlns="http://hl7.org/fhir">
-				<id value="53192032-6365-4659-8cc2-f9a7df67a466" />
-				<meta>
-					<profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
-				</meta>
 
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h1>Operateur</h1>
-						<p>Diese Ressource beschreibt den Autor bzw. Operateur, der formell für die
-							Durchführung des operativen Eingriffs verantwortlich ist.</p>
-					</div>
-				</text>
+          <Practitioner xmlns="http://hl7.org/fhir">
+            <!--Meta-Daten-->
+            <id value="53192032-6365-4659-8cc2-f9a7df67a466" />
+            <meta>
+              <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor"/> 
+            </meta>
+          
+            <!--Narrativ-->
+            <text>
+              <status value="generated"/>
+              <div xmlns="http://www.w3.org/1999/xhtml">
+                <h1>Operateur</h1>
+                <p>Diese Ressource beschreibt den Autor bzw. Operateur, der formell für die Durchführung des operativen Eingriffs verantwortlich ist.</p>
+              </div>
+            </text>
+          
+            <!-- Name Operateur -->
+            <name>
+              <use value="official"/>
+              <family value="Musteraerztin14">
+                <extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
+                  <valueString value="Musteraerztin14" />
+                </extension>
+              </family>
+              <given value="Maria"/>
+              <prefix value="Dr.">
+                <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
+                  <valueCode value="AC" />
+                </extension>
+              </prefix>
+            </name>
+          
+          </Practitioner>
+        </resource>
+    </entry>
 
-
-				<!-- Name Operatuer -->
-				<name>
-					<use value="official" />
-					<family value="Musteraerztin14">
-						<extension url="http://hl7.org/fhir/StructureDefinition/humanname-own-name">
-							<valueString value="Musteraerztin14" />
-						</extension>
-					</family>
-					<given value="Maria" />
-					<prefix value="Dr.">
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-EN-qualifier">
-							<valueCode value="AC" />
-						</extension>
-					</prefix>
-				</name>
-			</Practitioner>
-		</resource>
-	</entry>
-
-	<!-- ======= ENTRY 03 — Unfallereignis (OBSERVATION) ========================================================== -->
+	<!-- ======= ENTRY 03 — Unfallereignis (OBSERVATION) — Herkunft: DGUV_OPER_Bsp_Unfallereignis_01 ================================ -->
 	<entry>
 		<fullUrl
 			value="http://fhir.dguv.de/OPER/Practitioner/Observation/08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
 		<resource>
-			<Observation>
-				<id value="08b39f82-9dbf-4315-92f5-5f0011d37a5c" />
-				<meta>
-					<profile
-						value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
-				</meta>
 
+          <Observation xmlns="http://hl7.org/fhir">
+            <id value="08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
+            <meta>
+              <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis"/>
+            </meta>
+          
+            <text>
+              <status value="generated"/>
+              <div xmlns="http://www.w3.org/1999/xhtml">
+                <h1>Hier finden Sie ein Beispiel des Unfallereignisses einer verunfallten Person entsprechend dem Profil DGUV_OPER_PR_Unfallereignis</h1>
+              </div>
+            </text> 
+          
+            <!-- Aktenzeichen als Identifier -->
+            <identifier>
+              <system value="http://fhir.dguv.de/Basis/NamingSystem/DGUV-Basis-NS-Aktenzeichen"/>
+              <value value="BGV-AZ-2025/365" />
+            </identifier>
+          
+            <!-- Observation status -->
+            <status value="final"/>
+          
+            <!-- Teilberichtsinhalt Unfallereignis  -->
+            <code>
+              <coding>
+                <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt"/>
+                <code value="UFER"/>
+                <display value="Unfallereignis"/>
+              </coding>
+            </code>
+          
+            <!-- VersichertePerson Referenz -->
+            <subject> 
+              <reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
+            </subject>
+          
+            <!-- Unfallzeitpunkt-->
+            <effectiveDateTime value="2025-12-12T17:00:00+00:00"/>
+          
+          </Observation>
+        </resource>
+    </entry>
 
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<p>
-							Unfallereignis der versicherten Person am 12.12.2025
-							mit medizinischer Relevanz für die nachfolgende Behandlung.
-						</p>
-					</div>
-				</text>
-
-
-				<!-- Aktenzeichen als Identifier -->
-				<identifier>
-					<system
-						value="http://fhir.dguv.de/Basis/NamingSystem/DGUV-Basis-NS-Aktenzeichen" />
-					<value value="BGV-AZ-2025/365" />
-				</identifier>
-
-				<!-- Observation status -->
-				<status value="final" />
-
-				<!-- Teilberichtsinhalt Unfallereignis -->
-				<code>
-					<coding>
-						<system
-							value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
-						<code value="UFER" />
-						<display value="Unfallereignis" />
-					</coding>
-				</code>
-
-				<!-- VersichertePerson Referenz -->
-				<subject>
-					<reference
-						value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba" />
-				</subject>
-
-				<!-- Unfallzeitpunkt-->
-				<effectiveDateTime value="2025-12-12T17:00:00+00:00" />
-			</Observation>
-		</resource>
-	</entry>
-
-	<!-- ======= ENTRY 04 — Unfallversicherungstraeger (ORGANIZATION) ========================================================== -->
+	<!-- ======= ENTRY 04 — Unfallversicherungstraeger (ORGANIZATION) — Herkunft: DGUV_OPER_Bsp_Unfallversicherungstraeger_02 ======= -->
 	<entry>
 		<fullUrl value="http://fhir.dguv.de/OPER/Organization/180f219f-97a8-486d-99d9-ed631fe4fc60" />
 		<resource>
-			<Organization>
-				<id value="180f219f-97a8-486d-99d9-ed631fe4fc60" />
-				<meta>
-					<profile
-						value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
-				</meta>
 
-				<text>
-					<status value="generated" />
-					<div xmlns="http://www.w3.org/1999/xhtml">
-						<h1>Hier finden Sie ein Beispiel für den Unfallversicherungstraeger einer
-							verunfallten Person</h1>
-					</div>
-				</text>
+          <Organization xmlns="http://hl7.org/fhir">
+              <id value="180f219f-97a8-486d-99d9-ed631fe4fc60" />
+              <meta>
+                  <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
+              </meta>
+          
+              <text>
+                  <status value="generated"/>
+                  <div xmlns="http://www.w3.org/1999/xhtml">
+                  <h1>Hier finden Sie ein Beispiel für den Unfallversicherungstraeger einer verunfallten Person.</h1>
+                  </div>
+              </text> 
+          
+              <!--   Institutionskennzeichen   -->
+              <identifier>
+                  <type>
+                      <coding>
+                          <system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
+                          <code value="XX" />
+                          <display value="Organization identifier" />
+                      </coding>
+                  </type>
+                  <system value="http://fhir.de/sid/arge-ik/iknr" />
+                  <value value="120391742" />
+              </identifier>
+          
+              <!--Telematik-ID-->
+              <identifier>
+                  <type>
+                      <coding>
+                          <system value="http://terminology.hl7.org/CodeSystem/v2-0203"/>
+                          <code value="PRN"/>
+                          <display value="Provider number" />
+                       </coding>
+                  </type>
+                  <system value="https://gematik.de/fhir/sid/telematik-id"/>
+                  <value value="8-01-0000000090"/>
+              </identifier>
+          
+          
+              <!-- Name des Unfallversicherungsträgers-->
+              <name value="Braunschweigischer GUVV" />
+          
+              <!-- Telefon-Kontakt zum Unfallversicherungsträger -->
+              <telecom>
+          		<system value="phone"/>
+          		<value value="0531 27374-0"/>
+          	</telecom>
+          
+              <!-- E-Mail-Kontakt zum Unfallversicherungsträger -->
+              <telecom>
+          		<system value="email"/>
+          		<value value="info@bs-guv.de"/>
+          	</telecom>
+          
+              <!-- Strassen-Adresse des Unfallversicherungsträgers -->
+              <address>
+                  <type value="both" />
+                  <line value="Berliner Platz 1 C (Ring-Center)">
+                      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
+                          <valueString value="Berliner Platz" />
+                      </extension>
+                      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
+                          <valueString value="1 C" />
+                      </extension>
+                      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
+                          <valueString value="(Ring-Center)" />
+                      </extension>
+                  </line>
+                  <city value="Braunschweig" />
+                  <postalCode value="38102" />
+                  <country value="DE"/>
+              </address>
+          
+              <!-- Postfach-Adresse des Unfallversicherungsträgers -->
+              <address>
+                  <type value="postal"/>
+                  <line value="Postfach 121212">
+                      <extension url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-postBox">
+                          <valueString value="Postfach 121212"/>
+                      </extension>
+                  </line>
+                  <city value="Braunschweig"/>
+                  <postalCode value="38109"/>
+                  <country value="DE"/>
+              </address>
+          
+          </Organization>
 
-				<!-- Institutionskennzeichen -->
-				<identifier>
-					<type>
-						<coding>
-							<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-							<code value="XX" />
-							<display value="Organization identifier" />
-						</coding>
-					</type>
-					<system value="http://fhir.de/sid/arge-ik/iknr" />
-					<value value="120391742" />
-				</identifier>
-
-				<!--Telematik-ID-->
-				<identifier>
-					<type>
-						<coding>
-							<system value="http://terminology.hl7.org/CodeSystem/v2-0203" />
-							<code value="PRN" />
-							<display value="Provider number" />
-						</coding>
-					</type>
-					<system value="https://gematik.de/fhir/sid/telematik-id" />
-					<value value="8-01-0000000090" />
-				</identifier>
-
-
-				<!-- Name des Unfallversicherungsträgers-->
-				<name value="Braunschweigischer GUVV" />
-
-				<!-- Telefon-Kontakt zum Unfallversicherungsträger -->
-				<telecom>
-					<system value="phone" />
-					<value value="0531 27374-0" />
-				</telecom>
-
-				<!-- E-Mail-Kontakt zum Unfallversicherungsträger -->
-				<telecom>
-					<system value="email" />
-					<value value="info@bs-guv.de" />
-				</telecom>
-
-				<!-- Strassen-Adresse des Unfallversicherungsträgers -->
-				<address>
-					<type value="both" />
-					<line value="Berliner Platz 1 C (Ring-Center)">
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-streetName">
-							<valueString value="Berliner Platz" />
-						</extension>
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-houseNumber">
-							<valueString value="1 C" />
-						</extension>
-						<extension
-							url="http://hl7.org/fhir/StructureDefinition/iso21090-ADXP-additionalLocator">
-							<valueString value="(Ring-Center)" />
-						</extension>
-					</line>
-					<city value="Braunschweig" />
-					<postalCode value="38102" />
-					<country value="DE" />
-				</address>
-
-			</Organization>
-		</resource>
-	</entry>
+        </resource>
+    </entry>
 
 	<!-- ======= ENTRY 05 — Diagnose Freitext (CONDITION) ========================================================== -->
 	<entry>
