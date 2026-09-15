@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 03.08.2026
+ Datum: 15.09.2026
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_BehandelndeEinrichtung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
- P: Maximalbefüllung einer Instanz BehandelndeEinrichtung (Meta-Daten, Institutionskennzeichen (IKNR),
+ P: Maximalbefüllung einer Instanz BehandelndeEinrichtung (Meta-Daten, Narrativ, Institutionskennzeichen (IKNR),
     Name der Einrichtung, Straßenanschrift mit Stadtteil, Straße, Hausnummer, optionaler Adresszusatz, PLZ, Ort, Land)
 -->
 <Organization xmlns="http://hl7.org/fhir">
@@ -13,6 +13,16 @@
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-BehandelndeEinrichtung"/>
   </meta>
+
+  <!--Narrativ-->
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        Behandelnde Einrichtung: Ort, wo Operation stattfindet.
+      </p>
+    </div>
+  </text>
 
   <!--Identifikatoren der behandelnden Einrichtung-->
   <!--Institutionskennzeichen (IKNR) - Slice "Institutionskennzeichen"-->

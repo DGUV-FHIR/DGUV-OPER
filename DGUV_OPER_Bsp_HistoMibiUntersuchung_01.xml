@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- 
- Author: AFW
- Datum: 13.03.2026
+ Author: AFW / LSc
+ Datum: 14.09.2026
  
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_HistoMibiUntersuchung_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Untersuchungsveranlassung: ja, Verweis auf OP-Prozedur, Status, Teilberichtsinhalt,
+ P: Maximalbefüllung einer Instanz HistoMibiUntersuchung (Meta-Daten, Narrativ, Untersuchungsveranlassung: ja, Verweis auf OP-Prozedur, Status, Teilberichtsinhalt,
     Verunfallte Person, Freitextbeschreibung veranlasster HistoMibiUntersuchung: Constr. "dguv-HistoMibi-1" erfüllt)
 -->
 <Observation xmlns="http://hl7.org/fhir">
@@ -17,6 +17,18 @@
     <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung"/>
   </meta>
   
+  <!--Narrativ-->
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        Histologische und mikrobiologische Untersuchung wurde veranlasst.
+        Entnommenes Gewebematerial wurde zur histologischen Beurteilung sowie
+        mikrobiologischen Diagnostik eingesandt.
+      </p>
+    </div>
+  </text>
+
   <!-- Pflicht-Extension: Untersuchung veranlasst -->
   <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-HistoMibiUntersuchungVeranlasst">
     <valueBoolean value="true"/>
