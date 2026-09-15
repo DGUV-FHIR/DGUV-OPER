@@ -1,22 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: LSc
-    Datum:  11.05.2026
+    Datum:  15.09.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Unfallereignis_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung eines Unfallereignisses (Aktenzeichen, Status,
+    P: Maximalbefüllung eines Unfallereignisses (Meta-Daten, Narrativ, Aktenzeichen, Status,
       Teilberichtsinhalt, Referenz auf versicherte Person, Unfallzeitpunkt)
 
 
 -->
 <Observation xmlns="http://hl7.org/fhir">
+  <!--Meta-Daten-->
   <id value="unfereign-01"/>
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis"/>
   </meta>
 
+  <!--Narrativ-->
   <text>
     <status value="generated"/>
     <div xmlns="http://www.w3.org/1999/xhtml">

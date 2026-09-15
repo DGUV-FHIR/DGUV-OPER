@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: LSc
-    Datum:  04.03.2026
+    Datum:  15.09.2026
 
     Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Unfallversicherungstraeger_02.xml" dient der Validierung 
     folgenden Szenarios:
@@ -11,11 +11,13 @@
 -->
 
 <Organization xmlns="http://hl7.org/fhir">
+    <!--Meta-Daten-->
     <id value="uv-traeger-02" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
     </meta>
 
+    <!--Narrativ-->
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">

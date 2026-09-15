@@ -7,8 +7,8 @@
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Bundle_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz Bundle (Meta-Daten, Narrativ, Berichtsstatus,
-       Berichtskennzeichnung, verunfallte Person, Berichtserstellungsdatum/-ersteller/-titel, Sektionen und Untersektionen)
+    P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz Bundle (Meta-Daten, Identifier, Bundle-Typ,
+       Erstellungszeitpunkt, Entries: Composition, VersichertePerson, Autor)
 -->
 
 <Bundle xmlns="http://hl7.org/fhir">
@@ -346,11 +346,13 @@
 		<resource>
 
           <Observation xmlns="http://hl7.org/fhir">
+            <!--Meta-Daten-->
             <id value="08b39f82-9dbf-4315-92f5-5f0011d37a5c"/>
             <meta>
               <profile value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis"/>
             </meta>
           
+            <!--Narrativ-->
             <text>
               <status value="generated"/>
               <div xmlns="http://www.w3.org/1999/xhtml">
@@ -394,11 +396,13 @@
 		<resource>
 
           <Organization xmlns="http://hl7.org/fhir">
+              <!--Meta-Daten-->
               <id value="180f219f-97a8-486d-99d9-ed631fe4fc60" />
               <meta>
                   <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
               </meta>
           
+              <!--Narrativ-->
               <text>
                   <status value="generated"/>
                   <div xmlns="http://www.w3.org/1999/xhtml">

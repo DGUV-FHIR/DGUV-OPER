@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: AFW
- Datum:  30.04.26
+ Datum:  15.09.2026
 
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Autor_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz Autor (Meta-Daten, Name unter Einhaltung der Constraints hum-2, hum-4)
+ P: Maximalbefüllung einer Instanz Autor (Meta-Daten, Narrativ, Name unter Einhaltung der Constraints hum-2, hum-4)
 -->
 
 <Practitioner xmlns="http://hl7.org/fhir">
