@@ -101,16 +101,12 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Bundle.entry:Composition.resource.section">
-      <path value="Bundle.entry.resource.section" />
-      <min value="6" />
-      <max value="6" />
-    </element>
     <element id="Bundle.entry:VersichertePerson">
       <path value="Bundle.entry" />
       <sliceName value="VersichertePerson" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:VersichertePerson.resource">
       <path value="Bundle.entry.resource" />
@@ -119,12 +115,14 @@
         <code value="Resource" />
         <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:Autor">
       <path value="Bundle.entry" />
       <sliceName value="Autor" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:Autor.resource">
       <path value="Bundle.entry.resource" />
@@ -133,6 +131,7 @@
         <code value="Resource" />
         <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
       </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

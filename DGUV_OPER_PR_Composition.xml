@@ -134,7 +134,8 @@
         </discriminator>
         <rules value="closed" />
       </slicing>
-      <min value="1" />
+      <min value="5" />
+      <max value="5" />
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:Unfallereignis">
@@ -260,6 +261,7 @@
     <element id="Composition.section:Diagnosen.code.coding.system">
       <path value="Composition.section.code.coding.system" />
       <min value="1" />
+      <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:Diagnosen.code.coding.code">
@@ -283,7 +285,7 @@
         </discriminator>
         <rules value="open" />
       </slicing>
-      <min value="1" />
+      <min value="2" />
       <mustSupport value="true" />
     </element>
     <element id="Composition.section:Diagnosen.section:DiagnoseFreitext">

@@ -2,7 +2,7 @@
 
 <!--
     Author: AFWi, LSc
-    Datum:  20.08.2026
+    Datum:  11.09.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Composition_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
@@ -22,8 +22,7 @@
     <text>
         <status value="generated" />
         <div xmlns="http://www.w3.org/1999/xhtml">
-            <h1>Hier finden Sie ein Beispiel der Composition für einen stationären
-                DGUV-stationären-Operationsbericht.</h1>
+            <h1>Hier finden Sie ein Beispiel der Composition für einen stationären DGUV-OP-Bericht.</h1>
         </div>
     </text>
 
@@ -133,22 +132,8 @@
             </coding>
         </code>
 
-       <!--  OP-Daten [OP-Befund und -Verlauf] -->
+        <!-- OP-Daten  [OPProzedur] -->
         <section>
-            <code>
-                <coding>
-                    <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
-                    <code value="OPBV"/>
-                    <display value="OP-Befund und -Verlauf"/>
-                </coding>
-            </code>
-            <entry>
-                <reference value="http://fhir.dguv.de/OPER/Observation/ab3a0636-dd23-4e30-b950-698fb4b1cd9b"/>
-            </entry>
-        </section>
-
-         <!-- OP-Daten  [OPProzedur] -->
-          <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
@@ -176,7 +161,7 @@
         </section>
 
         <!-- OP-Daten  [Implantat] -->
-          <section>
+        <section>
             <code>
                 <coding>
                     <system value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections"/>
