@@ -48,33 +48,6 @@
       <fixedCanonical value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
       <mustSupport value="true" />
     </element>
-    <element id="Practitioner.identifier">
-      <path value="Practitioner.identifier" />
-      <slicing>
-        <rules value="open" />
-      </slicing>
-      <max value="0" />
-    </element>
-    <element id="Practitioner.identifier:ANR">
-      <path value="Practitioner.identifier" />
-      <sliceName value="ANR" />
-      <max value="0" />
-    </element>
-    <element id="Practitioner.identifier:EFN">
-      <path value="Practitioner.identifier" />
-      <sliceName value="EFN" />
-      <max value="0" />
-    </element>
-    <element id="Practitioner.identifier:ZANR">
-      <path value="Practitioner.identifier" />
-      <sliceName value="ZANR" />
-      <max value="0" />
-    </element>
-    <element id="Practitioner.identifier:Telematik-ID">
-      <path value="Practitioner.identifier" />
-      <sliceName value="Telematik-ID" />
-      <max value="0" />
-    </element>
     <element id="Practitioner.name">
       <path value="Practitioner.name" />
       <slicing>
