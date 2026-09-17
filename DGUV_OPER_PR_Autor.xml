@@ -51,7 +51,7 @@
     <element id="Practitioner.name">
       <path value="Practitioner.name" />
       <slicing>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <max value="1" />
       <mustSupport value="true" />
