@@ -73,7 +73,7 @@
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <slicing>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <mustSupport value="true" />
     </element>
