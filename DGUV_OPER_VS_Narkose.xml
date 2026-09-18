@@ -1,0 +1,78 @@
+<ValueSet xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-VS-Narkose-SNOMED" />
+  <url value="http://fhir.dguv.de/OPER/ValueSet/DGUV-OPER-VS-Narkose-SNOMED" />
+  <version value="0.1" />
+  <name value="DGUV_OPER_VS_Narkose_SNOMED" />
+  <title value="Narkose (SNOMED CT)" />
+  <status value="active" />
+  <experimental value="false" />
+  <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
+  <contact>
+    <telecom>
+      <system value="url" />
+      <value value="https://www.dguv.de" />
+    </telecom>
+  </contact>
+  <description value="Dieses ValueSet enthält eine explizite SNOMED-CT-Codeliste zur Beschreibung der für die DGUV relevanten Narkosearten." />
+  <compose>
+    <include>
+      <system value="http://snomed.info/sct" />
+      <concept>
+        <code value="50697003" />
+        <display value="Allgemeinanästhesie" />
+      </concept>
+      <concept>
+        <code value="398239001" />
+        <display value="Analgosedierung" />
+      </concept>
+      <concept>
+        <code value="868251000" />
+        <display value="Balancierte Anästhesie" />
+      </concept>
+      <concept>
+        <code value="231261002" />
+        <display value="Kombinierte Spinal-/Epiduralanästhesi" />
+      </concept>
+      <concept>
+        <code value="288185006" />
+        <display value="Inhalationsanästhesie" />
+      </concept>
+      <concept>
+        <code value="44596000" />
+        <display value="Infiltrationsanästhesie" />
+      </concept>
+      <concept>
+        <code value="303355006" />
+        <display value="Intravenöse Regionalanästhesie" />
+      </concept>
+      <concept>
+        <code value="386761002" />
+        <display value="Lokalanästhesie" />
+      </concept>
+      <concept>
+        <code value="231344003" />
+        <display value="Oberflächenanästhesie" />
+      </concept>
+      <concept>
+        <code value="18946005" />
+        <display value="Periduralanästhesie" />
+      </concept>
+      <concept>
+        <code value="88815003" />
+        <display value="Periphere Leitungsanästhesie" />
+      </concept>
+      <concept>
+        <code value="27372005" />
+        <display value="Regionalanästhesie" />
+      </concept>
+      <concept>
+        <code value="303356007" />
+        <display value="Rückenmarknahe Leitungsanästhesie" />
+      </concept>
+      <concept>
+        <code value="231249005" />
+        <display value="Spinalanästhesie" />
+      </concept>
+    </include>
+  </compose>
+</ValueSet>

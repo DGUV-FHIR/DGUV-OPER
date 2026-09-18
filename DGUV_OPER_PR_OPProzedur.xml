@@ -67,7 +67,6 @@
     <element id="Procedure.extension:Narkose.value[x]">
       <path value="Procedure.extension.value[x]" />
       <min value="1" />
-      <mustSupport value="true" />
     </element>
     <element id="Procedure.extension:Narkose.value[x].coding">
       <path value="Procedure.extension.value[x].coding" />
