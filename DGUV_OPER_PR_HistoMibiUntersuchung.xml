@@ -4,10 +4,10 @@
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-HistoMibiUntersuchung" />
   <version value="0.1" />
   <name value="DGUV_OPER_PR_HistoMibiUntersuchung" />
-  <title value="Histo -/mikrobiologische Untersuchung" />
+  <title value="Histo-/mikrobiologische Untersuchung" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Hier werden die histologischen bzw. mikrobiologischen Untersuchungen angegeben." />
+  <description value="Dieses Profil enthält die histologischen bzw. mikrobiologischen Untersuchungen im Zusammenhang mit dem stationären Operationsbericht." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
