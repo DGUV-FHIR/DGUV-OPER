@@ -2,13 +2,13 @@
 
 <!--
     Author: AFWi, LSc
-    Datum:  18.09.2026
+    Datum:  24.09.2026
 
     Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Bundle_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
     P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz Bundle (Meta-Daten, Identifier, Bundle-Typ,
-       Erstellungszeitpunkt, Entries: Composition, VersichertePerson, Autor)
+       Erstellungszeitpunkt, Entries: Composition, VersichertePerson, Autor, ...)
 -->
 
 <Bundle xmlns="http://hl7.org/fhir">
@@ -231,6 +231,22 @@
 						<entry>
 							<reference
 								value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-2" />
+						</entry>
+					</section>
+
+					<!-- SECTION 09 C: OP-Daten [Implantat] -->
+					<section>
+						<code>
+							<coding>
+								<system
+									value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-CompositionSections" />
+								<code value="IMPT" />
+								<display value="Implantat" />
+							</coding>
+						</code>
+						<entry>
+							<reference
+								value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-3" />
 						</entry>
 					</section>
 				</section>
@@ -853,8 +869,8 @@
               <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
                 <valueCoding>
                   <system value="http://snomed.info/sct"/>
-                  <code value="419465000"/>
-                  <display value="Unilateral right"/>
+                  <code value="24028007"/>
+                  <display value="Right"/>
                 </valueCoding>
               </extension>
               <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c"/>
@@ -867,11 +883,25 @@
               <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
                 <valueCoding>
                   <system value="http://snomed.info/sct"/>
-                  <code value="419465000"/>
-                  <display value="Unilateral right"/>
+                  <code value="7771000"/>
+                  <display value="Left"/>
                 </valueCoding>
               </extension>
               <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-2"/>
+            </manipulated>
+          </focalDevice>
+        
+          <!--Referenz auf Implantat 9 C-->
+          <focalDevice>
+            <manipulated>
+              <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
+                <valueCoding>
+                  <system value="http://snomed.info/sct"/>
+                  <code value="51440002"/>
+                  <display value="Right and left"/>
+                </valueCoding>
+              </extension>
+              <reference value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-3"/>
             </manipulated>
           </focalDevice>
         </Procedure>
@@ -983,7 +1013,7 @@
       </resource>
     </entry>
 
-	<!-- ======= ENTRY 09 B — Implantat (DEVICE) — Herkunft: DGUV_OPER_Bsp_Implantat_01 ======= -->
+	<!-- ======= ENTRY 09 B — Implantat (DEVICE) — Herkunft: DGUV_OPER_Bsp_Implantat_01, leicht angepasst ======= -->
 	<entry>
       <fullUrl value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-2" />
       <resource>
@@ -1000,7 +1030,7 @@
             <status value="generated" />
             <div xmlns="http://www.w3.org/1999/xhtml">
               <p>
-                Implantat: Titanplatte zur Osteosynthese des rechten Radius,
+                Implantat: Titanplatte zur Osteosynthese des linken Radius,
                 sieben Loch, implantiert im Rahmen des operativen Eingriffs.
               </p>
             </div>
@@ -1008,12 +1038,55 @@
         
           <!--Freitext-Implantatbeschreibung (Extension: ImplantatFreitext)-->
           <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext">
-            <valueString value="Titanplatte zur Osteosynthese des rechten Radius, 7-Loch"/>
+            <valueString value="Titanplatte zur Osteosynthese des linken Radius, 7-Loch"/>
           </extension>
         
           <!--Gerätename, Namenstyp-->
           <deviceName>
             <name value="Radius-Titanplatte 7-Loch"/>
+            <type value="manufacturer-name"/>
+          </deviceName>
+        
+          <!--Verunfallte/versicherte Person (patient)-->
+          <patient>
+            <reference value="http://fhir.dguv.de/OPER/Patient/482bb42d-a37b-45f7-8893-0abe669bd8ba"/>
+          </patient>
+        </Device>
+
+      </resource>
+    </entry>
+
+	<!-- ======= ENTRY 09 C — Implantat (DEVICE) — Herkunft: DGUV_OPER_Bsp_Implantat_01, leicht angepasst ======= -->
+	<entry>
+      <fullUrl value="http://fhir.dguv.de/OPER/Device/6e6b2663-0339-46e5-9625-65537195ba5c-3" />
+      <resource>
+
+        <Device xmlns="http://hl7.org/fhir">
+          <!--Meta-Daten-->
+          <id value="6e6b2663-0339-46e5-9625-65537195ba5c-3"/>
+          <meta>
+            <profile value="http://fhir.dguv.de/OPER/Device/DGUV-OPER-PR-Implantat"/>
+          </meta>
+        
+          <!--Narrativ-->
+          <text>
+            <status value="generated" />
+            <div xmlns="http://www.w3.org/1999/xhtml">
+              <p>
+                Implantat: Titanplatte zur Osteosynthese des rechten und linken Radius,
+                zwölf Loch, implantiert im Rahmen des operativen Eingriffs.
+              </p>
+            </div>
+          </text>
+        
+          <!--Freitext-Implantatbeschreibung (Extension: ImplantatFreitext)-->
+          <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-ImplantatFreitext">
+            <valueString value="Titanplatte zur Osteosynthese des rechten und linken Radius, 12-Loch"/>
+          </extension>
+        
+          <!--Gerätename, Namenstyp-->
+          <deviceName>
+            <name value="Radius-Titanplatte 12-Loch"/>
             <type value="manufacturer-name"/>
           </deviceName>
         
