@@ -33,7 +33,7 @@
       </type>
       <binding>
         <strength value="required" />
-        <valueSet value="http://hl7.org/fhir/ValueSet/bodysite-laterality" />
+        <valueSet value="http://hl7.eu/fhir/base/ValueSet/siteLaterality-eu" />
       </binding>
     </element>
   </differential>

@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     Author: LSc
-    Datum:  04.03.2026
+    Datum:  15.09.2026
 
     Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Unfallversicherungstraeger_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
-    P: Maximalbefüllung eines Unfallversicherungsträgers (IK-Nr., Telematik-ID, Name, Telefon-/Email-Kontakt, Straßenadresse)
+    P: Maximalbefüllung eines Unfallversicherungsträgers (Meta-Daten, Narrativ, IK-Nr., Telematik-ID, Name, Telefon-/Email-Kontakt, Straßenadresse)
 
 -->
 
 <Organization xmlns="http://hl7.org/fhir">
+    <!--Meta-Daten-->
     <id value="uv-traeger-01" />
     <meta>
         <profile value="http://fhir.dguv.de/OPER/Organization/DGUV-OPER-PR-Unfallversicherungstraeger" />
     </meta>
 
+    <!--Narrativ-->
     <text>
         <status value="generated"/>
         <div xmlns="http://www.w3.org/1999/xhtml">
@@ -48,7 +50,6 @@
         <system value="https://gematik.de/fhir/sid/telematik-id"/>
         <value value="8-01-0000000090"/>
     </identifier>
-
 
     <!-- Name des Unfallversicherungsträgers-->
     <name value="Braunschweigischer GUVV" />

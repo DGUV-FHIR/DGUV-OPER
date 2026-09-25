@@ -47,7 +47,7 @@
     <element id="Patient.name">
       <path value="Patient.name" />
       <slicing>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <short value="Name der versicherten Person" />
       <max value="1" />

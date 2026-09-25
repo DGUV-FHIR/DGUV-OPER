@@ -2,13 +2,13 @@
 
 <!--
     Author: AFWi, LSc
-    Datum:  11.09.2026
+    Datum:  15.09.2026
 
-    Die vorliegende Beispiel-Datei "DGUV-OPER-Bsp-Composition_01.xml" dient der Validierung 
+    Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_Composition_01.xml" dient der Validierung 
     folgenden Szenarios (Standardfall):
     
     P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz Composition (Meta-Daten, Narrativ, Berichtsstatus,
-       Berichtskennzeichnung, verunfallte Person, Berichtserstellungsdatum/-ersteller/-titel, Sektionen und Untersektionen)
+       Berichtskennzeichnung, verunfallte Person, Berichtserstellungszeitpunkt/-ersteller/-titel, Sektionen und Untersektionen)
 -->
 
 <Composition xmlns="http://hl7.org/fhir">

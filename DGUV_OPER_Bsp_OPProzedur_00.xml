@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc, Copilot
- Datum: 20.08.2026
+ Datum: 25.09.2026
 
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_OPProzedur_00.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
 
- P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz OPProzedur (Meta-Daten, Narkose, Schnitt-,Nahtzeit, OP-Befund/-verlauf,
-    OP-Status, OPS-Code mit KBV-Seitigkeit, Snomed-Code, OP-Freitext, verunfallte Person, Fallnummer, OP-Zeitpunkt, OP-Grund, Körperstelle,
+ P: Maximalbefüllung (alle MustSupport-Attribute u. a.) einer Instanz OPProzedur (Meta-Daten, Narrativ, Narkose, Schnitt-,Nahtzeit, OP-Befund/-verlauf,
+    OP-Status, OPS-Code mit KBV-Seitigkeit, Snomed-Code, OP-Freitext, verunfallte Person, Fallnummer, OP-Datum, OP-Grund, Körperstelle,
     Nachbehandlung, Implantat mit SNOMED-Seitigkeit).
 -->
 
@@ -119,8 +119,8 @@
       <extension url="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Seitenlokalisation">
         <valueCoding>
           <system value="http://snomed.info/sct"/>
-          <code value="419465000"/>
-          <display value="Unilateral right"/>
+          <code value="24028007"/>
+          <display value="Right"/>
         </valueCoding>
       </extension>
       <reference value="urn:uuid:implantat-001"/>

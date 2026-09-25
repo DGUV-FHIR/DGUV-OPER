@@ -47,7 +47,7 @@
     <element id="Organization.identifier">
       <path value="Organization.identifier" />
       <slicing>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <short value="Identifikator für den Unfallversicherungsträger" />
       <min value="1" />
