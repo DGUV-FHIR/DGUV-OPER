@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-EX-OPBefundVerlauf" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf" />
   <version value="0.1" />
   <name value="DGUV_OPER_EX_OPBefundVerlauf" />
+  <title value="OP-Befund und -Verlauf" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
   <description value="Diese Extension ermöglicht die Beschreibung des operativen Vorgehens, bei der Operation aufgetretene besondere Ereignisse und den intraoperativen Befund." />
