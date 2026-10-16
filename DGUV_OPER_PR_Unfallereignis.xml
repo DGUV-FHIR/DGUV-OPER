@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-PR-Unfallereignis" />
   <url value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
-  <version value="0.1" />
+  <version value="1.0" />
   <name value="DGUV_OPER_PR_Unfallereignis" />
   <title value="Unfallereignis" />
   <status value="draft" />
@@ -25,14 +26,23 @@
     </element>
     <element id="Observation.meta.profile">
       <path value="Observation.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Observation.meta.profile:operProfile">
+      <path value="Observation.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Observation/DGUV-OPER-PR-Unfallereignis" />
       <mustSupport value="true" />
-    </element>
-    <element id="Observation.extension">
-      <path value="Observation.extension" />
-      <max value="1" />
     </element>
     <element id="Observation.extension:Pflegeunfall">
       <path value="Observation.extension" />
@@ -57,14 +67,14 @@
     </element>
     <element id="Observation.code">
       <path value="Observation.code" />
-      <short value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
-      <definition value="Kennzeichnung des ENLA-Teilberichtsinhalts" />
+      <short value="Kennzeichnung des OPER-Observationprofiltyps" />
+      <definition value="Kennzeichnung des OPER-Observationprofiltyps" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding">
       <path value="Observation.code.coding" />
       <slicing>
-        <rules value="open" />
+        <rules value="closed" />
       </slicing>
       <mustSupport value="true" />
     </element>
@@ -86,21 +96,21 @@
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.system">
       <path value="Observation.code.coding.system" />
-      <short value="CodeSystem für OPER-Teilberichtsinhalte" />
+      <short value="CodeSystem für OPER-Observationprofiltypen" />
       <min value="1" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Teilberichtsinhalt" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.code">
       <path value="Observation.code.coding.code" />
-      <short value="Kürzel für konkreten OPER-Teilberichtsinhalt" />
+      <short value="Kürzel des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedCode value="UFER" />
       <mustSupport value="true" />
     </element>
     <element id="Observation.code.coding:Teilberichtsinhalt.display">
       <path value="Observation.code.coding.display" />
-      <short value="Konkrete Bezeichnung für OPER-Teilberichtsinhalt" />
+      <short value="Bezeichnung des OPER-Observationprofiltyps" />
       <min value="1" />
       <fixedString value="Unfallereignis" />
       <mustSupport value="true" />

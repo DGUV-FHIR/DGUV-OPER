@@ -2,12 +2,12 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-PR-Bundle" />
   <url value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
-  <version value="0.1" />
+  <version value="1.0" />
   <name value="DGUV_OPER_PR_Bundle" />
   <title value="Stationärer Operationsbericht - Bundle" />
   <status value="draft" />
   <publisher value="Deutsche Gesetzliche Unfallversicherung e.V. (DGUV)" />
-  <description value="Dieses Profil spezifiziert den strukturierten Aufbau des stationären DGUV‑Operationsberichts" />
+  <description value="Dieses Profil spezifiziert den strukturierten Aufbau des stationären DGUV‑Operationsberichts." />
   <fhirVersion value="4.0.1" />
   <kind value="resource" />
   <abstract value="false" />
@@ -26,6 +26,19 @@
     </element>
     <element id="Bundle.meta.profile">
       <path value="Bundle.meta.profile" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="$this" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <min value="1" />
+      <mustSupport value="true" />
+    </element>
+    <element id="Bundle.meta.profile:operProfile">
+      <path value="Bundle.meta.profile" />
+      <sliceName value="operProfile" />
       <min value="1" />
       <max value="1" />
       <fixedCanonical value="http://fhir.dguv.de/OPER/Bundle/DGUV-OPER-PR-Bundle" />
@@ -88,16 +101,12 @@
       </type>
       <mustSupport value="true" />
     </element>
-    <element id="Bundle.entry:Composition.resource.section">
-      <path value="Bundle.entry.resource.section" />
-      <min value="6" />
-      <max value="6" />
-    </element>
     <element id="Bundle.entry:VersichertePerson">
       <path value="Bundle.entry" />
       <sliceName value="VersichertePerson" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:VersichertePerson.resource">
       <path value="Bundle.entry.resource" />
@@ -106,12 +115,14 @@
         <code value="Resource" />
         <profile value="http://fhir.dguv.de/OPER/Patient/DGUV-OPER-PR-VersichertePerson" />
       </type>
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:Autor">
       <path value="Bundle.entry" />
       <sliceName value="Autor" />
       <min value="1" />
       <max value="1" />
+      <mustSupport value="true" />
     </element>
     <element id="Bundle.entry:Autor.resource">
       <path value="Bundle.entry.resource" />
@@ -120,6 +131,7 @@
         <code value="Resource" />
         <profile value="http://fhir.dguv.de/OPER/Practitioner/DGUV-OPER-PR-Autor" />
       </type>
+      <mustSupport value="true" />
     </element>
   </differential>
 </StructureDefinition>

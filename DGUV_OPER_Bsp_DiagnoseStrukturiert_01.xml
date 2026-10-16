@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 09.03.2026
+ Datum: 14.09.2026
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseStrukturiert_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
 
- P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, clinical/verificationStatus (lt. icd-5),
+ P: Maximalbefüllung einer Instanz DiagnoseStrukturiert (Meta-Daten, Narrativ, clinical/verificationStatus (lt. icd-5),
     ICD‑10‑GM‑Codierung mit Mehrfachcodierungs‑Kennzeichen, Seitenlokalisation, Diagnosesicherheit
     sowie Referenz auf Verunfallte Person)
 -->
@@ -15,6 +15,17 @@
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseStrukturiert"/>
   </meta>
+
+  <!--Narrativ-->
+  <text>
+    <status value="generated" />
+      <div xmlns="http://www.w3.org/1999/xhtml">
+        <p>
+          Strukturierte Diagnose: Fraktur des Unterarms (ICD-10-GM: S52.50),
+          rechte Seite, gesicherte Diagnose.
+       </p>
+      </div>
+  </text>
 
   <!--clinicalStatus-->
   <clinicalStatus>

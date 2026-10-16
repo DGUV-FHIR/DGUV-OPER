@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
  Author: LSc
- Datum: 25.02.2026
+ Datum: 14.09.2026
 
  Die vorliegende Beispiel-Datei "DGUV_OPER_Bsp_DiagnoseFreitext_01.xml" dient der Validierung
  folgenden Szenarios (Standardfall):
  
- P: Maximalbefüllung einer Instanz DiagnoseFreitext (Meta-Daten, Fraktur: ja, AO-Klassifikation, Freitextdiagnose, Verunfallte Person)
+ P: Maximalbefüllung einer Instanz DiagnoseFreitext (Meta-Daten, Narrativ, Fraktur: ja, AO-Klassifikation, Freitextdiagnose, Verunfallte Person)
 -->
 
 <Condition xmlns="http://hl7.org/fhir">
@@ -15,6 +15,17 @@
   <meta>
     <profile value="http://fhir.dguv.de/OPER/Condition/DGUV-OPER-PR-DiagnoseFreitext"/>
   </meta>
+
+  <!--Narrativ-->
+  <text>
+    <status value="generated" />
+    <div xmlns="http://www.w3.org/1999/xhtml">
+      <p>
+        Diagnose (Freitext): Geschlossene Fraktur des rechten Unterarms.
+        Es liegt eine Fraktur vor, klassifiziert als AO A1.
+      </p>
+    </div>
+  </text>
 
   <!--Frakturklassifikation-->
   <extension url="http://fhir.dguv.de/Basis/Extension/DGUV-Basis-EX-Frakturklassifikation">

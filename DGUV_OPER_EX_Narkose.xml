@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="DGUV-OPER-EX-Narkose" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-Narkose" />
-  <version value="0.1" />
+  <version value="1.0" />
   <name value="DGUV_OPER_EX_Narkose" />
   <title value="Narkose" />
   <status value="draft" />
@@ -32,9 +33,17 @@
         <code value="CodeableConcept" />
       </type>
     </element>
+    <element id="Extension.value[x].coding">
+      <path value="Extension.value[x].coding" />
+      <short value="Beschreibung der Narkose über einen Code" />
+    </element>
     <element id="Extension.value[x].coding.system">
       <path value="Extension.value[x].coding.system" />
       <fixedUri value="http://fhir.dguv.de/OPER/CodeSystem/DGUV-OPER-CS-Narkose" />
+    </element>
+    <element id="Extension.value[x].text">
+      <path value="Extension.value[x].text" />
+      <short value="Freitextliche Beschreibung der Narkose" />
     </element>
   </differential>
 </StructureDefinition>
