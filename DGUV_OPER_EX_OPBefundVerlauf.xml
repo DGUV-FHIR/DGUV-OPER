@@ -2,7 +2,7 @@
 <StructureDefinition xmlns="http://hl7.org/fhir">
   <id value="DGUV-OPER-EX-OPBefundVerlauf" />
   <url value="http://fhir.dguv.de/OPER/Extension/DGUV-OPER-EX-OPBefundVerlauf" />
-  <version value="0.1" />
+  <version value="1.0" />
   <name value="DGUV_OPER_EX_OPBefundVerlauf" />
   <title value="OP-Befund und -Verlauf" />
   <status value="draft" />
